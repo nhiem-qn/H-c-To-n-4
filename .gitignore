@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Bản sao dữ liệu học tập cá nhân
+*-tien-do.json
+*-bang-diem.csv
+.env
+.env.*
+*.log

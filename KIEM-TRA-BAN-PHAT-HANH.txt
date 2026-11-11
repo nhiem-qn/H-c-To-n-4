@@ -1,0 +1,30 @@
+VƯỜN TOÁN 4 — KIỂM TRA BẢN PHÁT HÀNH
+Ngày: 11/11/2026
+
+ĐẠT
+- 73 bài theo mục lục hai PDF Kết nối tri thức.
+- 175 ngày gợi ý; ID liên tiếp, trang nằm trong bài tương ứng.
+- Bao phủ trang 6–130 tập 1 và 4–118 tập 2.
+- 248 trang nội dung có ảnh; PDF đầy đủ vẫn được giữ.
+- Mọi ảnh và tài liệu phụ thuộc được đóng gói cục bộ.
+- 7 300 lượt sinh câu hỏi có đề, đáp án, lời giải và phương án hợp lệ.
+- Đủ 5 câu cho mọi ngày học trong 175 ngày.
+- 54 tổ hợp mốc/chặng định kì đủ số câu và không vượt sang học kì trước.
+- Chấm nhận phân số tương đương và số có phân cách hàng nghìn.
+- Mẫu số 0 và câu bỏ trống không được nhận thành số 0.
+- Dựng nội dung sáu màn hình chính, 24 phần bài mẫu, kết quả bài kiểm tra,
+  sáu bộ chọn chặng và hội thoại theo bài bằng DOM mô phỏng.
+- Kiểm tra cú pháp các tệp JavaScript và Python.
+
+CHƯA KIỂM TRA
+- Hiển thị trực quan và thao tác đầy đủ trong trình duyệt thật.
+- Giọng nữ tiếng Việt và micro trên thiết bị gia đình.
+- Triển khai thực tế lên GitHub Pages.
+- Thẩm định sư phạm độc lập từng lời giảng và từng buổi.
+
+PHẠM VI
+- 27 tài liệu Word được nhập vào thư viện, giữ bản gốc tải xuống.
+- 31 câu trích/chuyển thể được nhập có nguồn. Các câu khác là bổ sung.
+- Tài liệu thuộc bộ Cánh Diều và Chân trời sáng tạo chưa nhập.
+- Gia sư phản hồi theo kịch bản; không phải AI hội thoại mở.
+- Lịch 175 ngày là lịch đề xuất, không phải phân phối chương trình chính thức.
