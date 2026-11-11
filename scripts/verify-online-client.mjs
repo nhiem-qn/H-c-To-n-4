@@ -15,6 +15,7 @@ db.exec(readFileSync('online-server/drizzle/0005_contest_schedule.sql','utf8'));
 db.exec(readFileSync('online-server/drizzle/0006_rewards_reports.sql','utf8'));
 db.exec(readFileSync('online-server/drizzle/0007_student_terms.sql','utf8'));
 db.exec(readFileSync('online-server/drizzle/0008_ai_advisor.sql','utf8'));
+db.exec(readFileSync('online-server/drizzle/0009_friends_weekend.sql','utf8'));
 const origin='https://hoc-toan-cung-mia-online.glovedbetta.chatgpt.site';
 async function admin(path,data){let r=await worker.fetch(new Request(origin+'/api/admin/'+path,{method:data?'POST':'GET',headers:{Origin:origin,'Content-Type':'application/json','oai-authenticated-user-id':'teacher','oai-authenticated-user-email':env.ADMIN_EMAIL},body:data?JSON.stringify(data):undefined}),env,{});assert(r.ok);return r.json()}
 let pupilA=await admin('students',{name:'An & Lan'}),pupilB=await admin('students',{name:'Bình 4A'}),room=await admin('rooms',{day:1,seconds:30,kind:'daily',count:5});

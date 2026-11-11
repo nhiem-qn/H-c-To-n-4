@@ -40,6 +40,7 @@ jobs:
           node scripts/verify-exam-playback.mjs
           node scripts/verify-learning.cjs
           node scripts/verify-advisor.cjs
+          node scripts/verify-self-tests.cjs
           node scripts/verify-studio-player.mjs
           node scripts/verify-studio-content.cjs
           node online-server/build.mjs
@@ -50,6 +51,8 @@ jobs:
           node online-server/tests/rewards.test.mjs
           node online-server/tests/student-terms.test.mjs
           node online-server/tests/advisor.test.mjs
+          node online-server/tests/social.test.mjs
+          node online-server/tests/weekend-sessions.test.mjs
           node online-server/tests/standalone.test.mjs
           node online-server/tests/cloudflare-onboarding.test.mjs
           node scripts/verify-online-client.mjs
