@@ -11,6 +11,10 @@
 
 Admin bản độc lập đăng nhập bằng tên và mật khẩu riêng. Mật khẩu được băm trên máy chủ; quyền được kiểm tra ở API, không dựa vào việc ẩn nút trên giao diện. GitHub Actions triển khai Worker + D1 vào tài khoản Cloudflare của bạn, không cần Codex/ChatGPT chạy. Trong lúc chưa chuyển, cấu hình `mode: legacy` giữ máy chủ cũ để không làm mất dữ liệu. Học sinh chỉ cần tên và mã riêng do admin cấp; mã được băm trên máy chủ, chỉ hiển thị một lần khi cấp hoặc đặt lại.
 
+## Chạy trên Windows bằng một lần bấm
+
+Tải **MIA-Windows-Portable.zip** trong [GitHub Releases](https://github.com/nhiem-qn/H-c-To-n-4/releases/latest), giải nén rồi mở **CHAY-MIA.cmd**. Gói có sẵn bộ chạy Python, không cần cài thêm. Có thể tạo lối tắt Desktop bằng **TAO-LOI-TAT.cmd**. Xem [hướng dẫn Windows](CAI-TREN-WINDOWS.md).
+
 ## Chạy ứng dụng
 
 Giữ nguyên cấu trúc thư mục và mở `index.html` trong Chrome/Edge. Không cần npm hoặc bước build.
