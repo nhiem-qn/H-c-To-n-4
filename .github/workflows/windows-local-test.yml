@@ -1,0 +1,33 @@
+name: Thử bộ chạy trên Windows thật
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tải bộ chạy Windows
+        shell: pwsh
+        run: |
+          Invoke-WebRequest 'https://www.python.org/ftp/python/3.14.9/python-3.14.9-embed-amd64.zip' -OutFile "$env:RUNNER_TEMP/python.zip"
+          Expand-Archive "$env:RUNNER_TEMP/python.zip" -DestinationPath runtime
+      - name: Thử Python đi kèm và máy chủ local
+        shell: pwsh
+        run: |
+          & runtime/python.exe scripts/verify-local.py
+          if ($LASTEXITCODE -ne 0) { throw 'Local tests failed' }
+          $server = Start-Process runtime/python.exe -ArgumentList 'CHAY-TREN-MAY.py','8000','--no-browser' -PassThru -NoNewWindow
+          try {
+            $ready = $false
+            for ($i = 0; $i -lt 20; $i++) {
+              try { $config = Invoke-WebRequest 'http://127.0.0.1:8000/config.js'; $ready = $true; break } catch { Start-Sleep -Milliseconds 500 }
+            }
+            if (-not $ready -or $config.Content -notmatch '127.0.0.1:8000') { throw 'Launcher did not start' }
+            $page = Invoke-WebRequest 'http://127.0.0.1:8000/'
+            if ($page.Content -notmatch 'Học Toán') { throw 'Missing application' }
+            $health = Invoke-RestMethod 'http://127.0.0.1:8000/api/health'
+            if (-not $health.ok) { throw 'Cloud bridge failed' }
+            Write-Output 'PASS: bundled Windows Python, localhost app, origin guards and HTTPS cloud bridge.'
+          } finally { Stop-Process -Id $server.Id -ErrorAction SilentlyContinue }
