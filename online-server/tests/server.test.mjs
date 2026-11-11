@@ -8,6 +8,7 @@ const env={AUTH_MODE:'sites',ADMIN_EMAIL:'owner@example.test',DB:{prepare:q=>new
 sql.exec(readFileSync(new URL('../drizzle/0001_standalone_admin.sql',import.meta.url),'utf8'));sql.exec(readFileSync(new URL('../drizzle/0002_import_checkpoint.sql',import.meta.url),'utf8'));
 sql.exec(readFileSync(new URL('../drizzle/0003_daily_exams.sql',import.meta.url),'utf8'));
 sql.exec(readFileSync(new URL('../drizzle/0004_learning_indexes.sql',import.meta.url),'utf8'));
+sql.exec(readFileSync(new URL('../drizzle/0005_contest_schedule.sql',import.meta.url),'utf8'));
 const origin='https://mia.example.test';let clock=Date.now();const originalNow=Date.now;Date.now=()=>clock;
 async function call(path,method='GET',data,token=null,admin=false,expected=200){let headers={Origin:origin};if(data)headers['Content-Type']='application/json';if(token)headers.Authorization='Bearer '+token;if(admin){headers['oai-authenticated-user-id']='owner-id';headers['oai-authenticated-user-email']=env.ADMIN_EMAIL}let response=await worker.fetch(new Request(origin+path,{method,headers,body:data?JSON.stringify(data):undefined}),env,{});let out=await response.json();assert.equal(response.status,expected,JSON.stringify(out));return out}
 await call('/api/admin/students','GET',null,null,false,401);

@@ -139,3 +139,23 @@ Dữ liệu nằm trong `progress.learning`, được lưu riêng theo học sin
 `studio-player.js` dùng thời gian của chính tệp MP3 và mốc câu đã kiểm chứng để chuyển bước và viết bảng. Tạm dừng dừng cả hai; có nghe chậm, bước trước/tiếp và minh họa chia phần ở ví dụ phân số. Bỏ qua bước không tự ghi nhận đã nghe trọn bài. Học sinh có thể xác nhận đã đọc riêng; mức hiểu vẫn dựa trên câu đã chấm.
 
 Khi sửa lời giảng: chạy `node scripts/prepare-studio.cjs`, sau đó `python scripts/generate-studio-audio.py` (cần `edge-tts` cho người phát triển). Công cụ tạo MP3 và mốc câu một lần; ứng dụng học không cần Codex, khóa AI hay máy đã tạo âm thanh. Chạy các kiểm tra `verify-learning.cjs`, `verify-studio-player.mjs`, `verify-studio-content.cjs` và `online-server/tests/learning.test.mjs` trước khi triển khai.
+
+
+## Cuộc thi giữa tuần / cuối tuần và cách vào phòng
+
+Mặc định giờ Việt Nam: thứ Tư 20h mở phòng giữa tuần, Chủ nhật 20h mở phòng cuối tuần; 20h01 bắt đầu câu đầu. Mỗi buổi 10 câu, 60 giây/câu và 8 giây xem đáp án, tự chuyển câu và chốt kết quả. Đề lấy kiến thức từ đầu tuần học hiện tại đến ngày đang học, theo ngày bắt đầu năm học admin đã cấu hình. Hai buổi này thay lời mời bài thi ngày trong lịch hiển thị, tránh mời học sinh vào hai cuộc thi cùng giờ.
+
+Cron `0 13 * * *` vẫn mở đúng 20h Việt Nam. API lịch cũng tạo bù nếu Cron bị trễ. Một buổi/ngày chỉ có một phòng chính thức: nếu admin đã tạo phòng giữa tuần/cuối tuần cho ngày đó, giữ phòng của admin; nếu chưa có, tạo phòng mở tự động. D1 batch và chỉ mục duy nhất bảo vệ trường hợp admin và học sinh cùng đến lúc mở lịch. Admin muốn thêm cuộc thi khác chọn **Cuộc thi riêng, giữ lịch tự động của tuần**. Phòng đã tạo trước bản cập nhật vẫn dùng mã như cũ.
+
+Admin có hai lựa chọn độc lập:
+
+- **Cách vào:** bấm thông báo để vào ngay, hoặc nhập mã phòng.
+- **Cách chạy:** tự bắt đầu/chuyển câu theo lịch, hoặc admin bấm điều khiển.
+
+Giờ hẹn trên trang admin là giờ bắt đầu làm bài; phòng mở trước đó một phút. Chọn thứ Tư/Chủ nhật sẽ điền sẵn buổi kế tiếp lúc 20h01. Mọi giờ được chuyển rõ về `+07:00`, không phụ thuộc máy admin đặt múi giờ nào. Không tạo trùng phòng chính thức đã có; dùng phòng hiện tại hoặc tạo cuộc thi riêng.
+
+Lịch và thông báo hiển thị trên web, có chuông khi ứng dụng đang mở và người dùng đã bật âm thanh. Học sinh vẫn đăng nhập bằng tài khoản riêng; vào trực tiếp chỉ bỏ mã phòng, không bỏ đăng nhập. Danh sách công khai không chứa mã phòng, tên học sinh hoặc đáp án. Phòng dùng mã không thể vào qua API nút trực tiếp. Mã và đáp án vẫn được kiểm tra tại máy chủ.
+
+Bảng `room_settings` được đưa vào sao lưu và khôi phục, giữ cả cách vào, giờ thi và việc thay lịch tự động. Bản sao cũ thiếu bảng này vẫn được nhận. Giao diện có cảnh 3D nhỏ dùng chung từ `world3d.js`, tải mô hình thủ tục từ thư viện Three.js đã kèm sẵn; không cần dịch vụ 3D hay AI bên ngoài. Cảnh trang trí được ẩn trong lúc thi để giữ tập trung và giảm tải đồ họa.
+
+Các lựa chọn AI miễn phí và giới hạn hiện tại được ghi riêng trong [AI-MIEN-PHI.md](AI-MIEN-PHI.md). Chưa tự bật nhà cung cấp AI nào trong bản cập nhật này.

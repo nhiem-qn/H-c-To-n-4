@@ -6,10 +6,12 @@ import worker from '../online-server/dist/server/index.js';
 import {correct} from '../online-server/worker/bank.js';
 const db=new DatabaseSync(':memory:');db.exec(readFileSync('online-server/drizzle/0000_mia.sql','utf8'));
 class Statement{constructor(q,args=[]){this.q=q;this.args=args}bind(...a){return new Statement(this.q,a)}async first(){return db.prepare(this.q).get(...this.args)||null}async all(){return{results:db.prepare(this.q).all(...this.args)}}async run(){return{meta:{changes:Number(db.prepare(this.q).run(...this.args).changes)}}}}
-const env={AUTH_MODE:'sites',ADMIN_EMAIL:'teacher@example.test',DB:{prepare:q=>new Statement(q),async batch(items){let out=[];for(let s of items)out.push(await s.run());return out}}};
+let batchTail=Promise.resolve();
+const env={AUTH_MODE:'sites',ADMIN_EMAIL:'teacher@example.test',DB:{prepare:q=>new Statement(q),async batch(items){let job=batchTail.then(async()=>{db.exec('BEGIN');try{let out=[];for(let s of items)out.push(await s.run());db.exec('COMMIT');return out}catch(error){db.exec('ROLLBACK');throw error}});batchTail=job.catch(()=>{});return job}}};
 db.exec(readFileSync('online-server/drizzle/0001_standalone_admin.sql','utf8'));db.exec(readFileSync('online-server/drizzle/0002_import_checkpoint.sql','utf8'));
 db.exec(readFileSync('online-server/drizzle/0003_daily_exams.sql','utf8'));
 db.exec(readFileSync('online-server/drizzle/0004_learning_indexes.sql','utf8'));
+db.exec(readFileSync('online-server/drizzle/0005_contest_schedule.sql','utf8'));
 const origin='https://hoc-toan-cung-mia-online.glovedbetta.chatgpt.site';
 async function admin(path,data){let r=await worker.fetch(new Request(origin+'/api/admin/'+path,{method:data?'POST':'GET',headers:{Origin:origin,'Content-Type':'application/json','oai-authenticated-user-id':'teacher','oai-authenticated-user-email':env.ADMIN_EMAIL},body:data?JSON.stringify(data):undefined}),env,{});assert(r.ok);return r.json()}
 let pupilA=await admin('students',{name:'An & Lan'}),pupilB=await admin('students',{name:'Bình 4A'}),room=await admin('rooms',{day:1,seconds:30,kind:'daily',count:5});

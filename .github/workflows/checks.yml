@@ -25,6 +25,7 @@ jobs:
           node --check studio-audio.js
           node --check config.js
           node --check classroom3d.js
+          node --check world3d.js
           node --check data.js
           node --check guides.js
           node --check questions.js
@@ -43,6 +44,7 @@ jobs:
           node online-server/build.mjs
           node online-server/tests/server.test.mjs
           node online-server/tests/daily.test.mjs
+          node online-server/tests/contests.test.mjs
           node online-server/tests/learning.test.mjs
           node online-server/tests/standalone.test.mjs
           node online-server/tests/cloudflare-onboarding.test.mjs

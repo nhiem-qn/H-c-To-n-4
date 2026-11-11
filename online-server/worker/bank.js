@@ -112,4 +112,5 @@ question=function(key,seed=1){if(CONCEPTS[key]){let r=CONCEPTS[key][seed%CONCEPT
 ].forEach((r,i)=>ORIGINAL.push({key:r[0],q:r[1],answer:String(r[2]),why:r[3],source:r[4],options:null,id:'source-hk2-'+i,minLesson:r[0]==='mean'?46:r[0]==='unitary'?47:r[0]==='div2'?44:r[0]==='mul2'?43:r[0]==='mulprop'?40:r[0]==='ten'?41:18}));
 ORIGINAL.find(q=>q.id==='source-9').minLesson=10;
 
-export {LESSONS,DAYS,makeExam,correct,numeric};
+function makeRangeExam(start,end,count=10){let keys=[...new Set(DAYS.filter(d=>d.id>=start&&d.id<=end).flatMap(d=>expandKey(LESSONS[d.lesson-1].key)))],qs=shuffle(ORIGINAL.filter(q=>keys.includes(q.key)&&(!q.minLesson||DAYS[end-1].lesson>=q.minLesson))).slice(0,Math.floor(count/3)),seen=new Set(qs.map(q=>q.q));for(let i=0;qs.length<count&&i<2000;i++){let q=question(keys[i%keys.length],Math.floor(Math.random()*100000));if(!seen.has(q.q)){seen.add(q.q);qs.push(q)}}return{start,end,qs:shuffle(qs)}}
+export {LESSONS,DAYS,makeExam,makeRangeExam,correct,numeric};
