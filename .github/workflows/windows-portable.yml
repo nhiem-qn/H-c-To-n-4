@@ -1,0 +1,30 @@
+name: Đóng gói MIA cho Windows
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: windows-portable-release
+  cancel-in-progress: false
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Kiểm tra bộ chạy local
+        run: python3 scripts/verify-local.py
+      - name: Tải Python Embedded chính thức
+        run: curl --fail --location --retry 3 https://www.python.org/ftp/python/3.14.9/python-3.14.9-embed-amd64.zip --output /tmp/python-windows.zip
+      - name: Đóng gói và kiểm tra toàn bộ ZIP
+        run: python3 scripts/build-windows.py /tmp/python-windows.zip /tmp/mia-windows
+      - name: Tạo bản tải về trên GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_COMMIT: ${{ github.sha }}
+        run: |
+          if gh release view windows-portable-2026-11-11 >/dev/null 2>&1; then
+            gh release upload windows-portable-2026-11-11 /tmp/mia-windows/MIA-Windows-Portable.zip /tmp/mia-windows/SHA256.txt --clobber
+          else
+            gh release create windows-portable-2026-11-11 /tmp/mia-windows/MIA-Windows-Portable.zip /tmp/mia-windows/SHA256.txt --target "$RELEASE_COMMIT" --title "Học Toán cùng MIA · Bản chạy local trên Windows" --notes-file CAI-TREN-WINDOWS.md
+          fi
