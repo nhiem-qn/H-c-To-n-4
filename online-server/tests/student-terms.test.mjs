@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';import {fixture,TEST_PASSWORD} from './fixtures.mjs';
+const real=Date.now;let time=Date.parse('2027-01-31T23:15:00+07:00');Date.now=()=>time;
+try{
+const f=fixture();const admin=await f.call('/api/admin-auth/login','POST',{username:'mia-admin',password:TEST_PASSWORD});
+let expected={1:'2027-02-28T23:15:00+07:00',3:'2027-04-30T23:15:00+07:00',6:'2027-07-31T23:15:00+07:00',12:'2028-01-31T23:15:00+07:00'};
+let pupils=[];for(let months of [1,3,6,12]){let p=await f.call('/api/admin/students','POST',{name:'Bé học '+months,months},admin.token,201);assert.equal(p.student.expires_at,Date.parse(expected[months]));assert.equal(p.student.created_at,time);pupils.push(p)}
+for(let months of [0,2,13,null,'abc'])await f.call('/api/admin/students','POST',{name:'Không hợp lệ',months},admin.token,400);
+let p=pupils[0],login=()=>f.call('/api/login','POST',{name:p.student.name,pin:p.pin}),token=(await login()).token;
+await f.call('/api/admin/students/'+p.student.id+'/renew','POST',{months:1},token,401);
+let old=p.student.expires_at,renewed=await f.call('/api/admin/students/'+p.student.id+'/renew','POST',{months:3},admin.token);assert.equal(renewed.student.expires_at,Date.parse('2027-05-28T23:15:00+07:00'),'active renewal extends from expiry, clamps calendar day');assert(renewed.student.expires_at>old);
+f.sql.prepare('UPDATE students SET expires_at=? WHERE id=?').run(time,p.student.id);
+let expired=await f.call('/api/login','POST',{name:p.student.name,pin:p.pin},null,401);assert.equal(expired.code,'ACCOUNT_EXPIRED');
+for(let [path,method,data] of [['me','GET'],['progress','GET'],['progress','PUT',{progress:{completed:[],results:[],read:[]}}],['presence','POST',{}],['family-report','GET'],['rooms/ABCDEF/join','POST',{}],['rooms/ABCDEF/heartbeat','POST',{}],['rooms/ABCDEF/answer','POST',{index:0,value:'1'}]]){let result=await f.call('/api/'+path,method,data,token,401);assert.equal(result.code,'ACCOUNT_EXPIRED',path)}
+assert.equal((await f.call('/api/community','GET',null,token)).authenticated,false);
+let reset=await f.call('/api/admin/students/'+p.student.id+'/reset','POST',{},admin.token);p.pin=reset.pin;assert.equal((await f.call('/api/login','POST',{name:p.student.name,pin:p.pin},null,401)).code,'ACCOUNT_EXPIRED','reset PIN does not renew');
+await f.call('/api/admin/students/'+p.student.id+'/active','POST',{active:true},admin.token);assert.equal((await f.call('/api/login','POST',{name:p.student.name,pin:p.pin},null,401)).code,'ACCOUNT_EXPIRED','unlock does not renew');
+renewed=await f.call('/api/admin/students/'+p.student.id+'/renew','POST',{months:6},admin.token);assert.equal(renewed.student.expires_at,Date.parse(expected[6]),'expired renewal starts now');token=(await login()).token;await f.call('/api/me','GET',null,token);
+await f.call('/api/admin/students/'+p.student.id+'/active','POST',{active:false},admin.token);await f.call('/api/admin/students/'+p.student.id+'/renew','POST',{months:1},admin.token);await f.call('/api/login','POST',{name:p.student.name,pin:p.pin},null,401);
+let legacy=pupils[1];f.sql.prepare('UPDATE students SET expires_at=NULL,term_months=NULL WHERE id=?').run(legacy.student.id);await f.call('/api/login','POST',{name:legacy.student.name,pin:legacy.pin});let list=await f.call('/api/admin/students','GET',null,admin.token);assert.equal(list.students.find(s=>s.id===legacy.student.id).expires_at,null);assert.equal(list.students.find(s=>s.id===p.student.id).active,0);
+const backup=await f.call('/api/admin/export','GET',null,admin.token),target=fixture(),ta=await target.call('/api/admin-auth/login','POST',{username:'mia-admin',password:TEST_PASSWORD});let job=await target.call('/api/admin/import','POST',{backup},ta.token);while(!job.ok){let index=job.nextBatch,offset=0,batch;for(let table of job.order){let chunks=Math.ceil(backup.tables[table].length/25);if(index<offset+chunks){batch={table,rows:backup.tables[table].slice((index-offset)*25,(index-offset+1)*25)};break}offset+=chunks}job=await target.call('/api/admin/import','POST',{checksum:job.checksum,batchIndex:index,rows:batch.rows},ta.token)}
+assert.deepEqual(target.sql.prepare('SELECT id,expires_at,term_months,renewed_at FROM students ORDER BY id').all(),f.sql.prepare('SELECT id,expires_at,term_months,renewed_at FROM students ORDER BY id').all());
+// A legacy backup remains valid; absent term fields become explicitly unset.
+let oldBackup=structuredClone(backup);for(let s of oldBackup.tables.students)for(let key of ['expires_at','term_months','renewed_at'])delete s[key];const oldTarget=fixture(),oa=await oldTarget.call('/api/admin-auth/login','POST',{username:'mia-admin',password:TEST_PASSWORD});await oldTarget.call('/api/admin/import','POST',{backup:oldBackup},oa.token);
+// End-of-month in a leap year uses the last valid Vietnamese calendar day.
+time=Date.parse('2028-01-31T00:15:00+07:00');const leap=fixture(),la=await leap.call('/api/admin-auth/login','POST',{username:'mia-admin',password:TEST_PASSWORD});let lp=await leap.call('/api/admin/students','POST',{name:'Bé năm nhuận',months:1},la.token,201);assert.equal(lp.student.expires_at,Date.parse('2028-02-29T00:15:00+07:00'));
+console.log('PASS: 1/3/6/12 calendar-month terms, Vietnam/leap/month-end dates, existing session expiry across all protected APIs, admin-only renewal, active/expired renewal bases, no unlock/PIN bypass, legacy compatibility and backup preservation.');
+}finally{Date.now=real}
