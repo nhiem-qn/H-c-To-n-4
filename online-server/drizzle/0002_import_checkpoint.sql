@@ -1,0 +1,2 @@
+ALTER TABLE data_transfer ADD COLUMN manifest TEXT NOT NULL DEFAULT '[]';
+ALTER TABLE data_transfer ADD COLUMN next_batch INTEGER NOT NULL DEFAULT 0;

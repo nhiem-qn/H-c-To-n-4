@@ -1,5 +1,7 @@
 import {LESSONS,DAYS,makeExam,correct,numeric} from './bank.js';
-const APP='https://nhiem-qn.github.io/H-c-To-n-4/';
+const DEFAULT_APP='https://nhiem-qn.github.io/H-c-To-n-4/';
+function appUrl(env){return String(env.APP_URL||DEFAULT_APP).replace(/\/?$/,'/')}
+function standalone(env){return env.AUTH_MODE!=='sites'}
 const LIMIT=40,ONLINE_MS=22000,SESSION_MS=7*86400000;
 const now=()=>Date.now();
 const json=(value,status=200)=>Response.json(value,{status,headers:{'Cache-Control':'no-store'}});
@@ -14,7 +16,7 @@ async function body(request,max=30000){if(Number(request.headers.get('content-le
 const all=async(db,sql,...args)=>(await db.prepare(sql).bind(...args).all()).results;
 const first=(db,sql,...args)=>db.prepare(sql).bind(...args).first();
 const run=(db,sql,...args)=>db.prepare(sql).bind(...args).run();
-async function admin(request,env){
+async function legacyAdmin(request,env){
  const id=request.headers.get('oai-authenticated-user-id'),email=request.headers.get('oai-authenticated-user-email');
  if(!id)fail(401,'Đăng nhập ChatGPT để quản trị.');
  const existing=await first(env.DB,'SELECT user_id FROM admins LIMIT 1');
@@ -22,6 +24,49 @@ async function admin(request,env){
  if(!env.ADMIN_EMAIL||normalizeName(email)!==normalizeName(env.ADMIN_EMAIL))fail(403,'Chỉ chủ ứng dụng được kích hoạt quyền admin.');
  await run(env.DB,'INSERT OR IGNORE INTO admins(user_id,created_at) VALUES(?,?)',id,now());
  const owner=await first(env.DB,'SELECT user_id FROM admins LIMIT 1');if(owner.user_id!==id)fail(403,'Không có quyền admin.');return id
+}
+async function credentialVersion(env){return hash(String(env.ADMIN_PASSWORD_HASH||'')+':'+String(env.ADMIN_PASSWORD_SALT||''))}
+function adminConfigured(env){return /^[a-f0-9]{64}$/.test(env.ADMIN_PASSWORD_HASH||'')&&/^[a-f0-9]{32}$/.test(env.ADMIN_PASSWORD_SALT||'')}
+async function derivePassword(password,salt){let key=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveBits']);let value=await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:Uint8Array.from(salt.match(/../g),x=>parseInt(x,16)),iterations:100000},key,256);return Array.from(new Uint8Array(value),x=>x.toString(16).padStart(2,'0')).join('')}
+async function admin(request,env){
+ if(!standalone(env))return legacyAdmin(request,env);
+ const token=(request.headers.get('authorization')||'').replace(/^Bearer /,'');if(!/^[a-f0-9]{48}$/.test(token))fail(401,'Đăng nhập bằng tài khoản và mật khẩu admin.');
+ const session=await first(env.DB,'SELECT token_hash,version FROM admin_sessions WHERE token_hash=? AND expires_at>?',await hash(token),now());
+ if(!session||!equal(session.version,await credentialVersion(env)))fail(401,'Phiên admin đã hết hạn. Vui lòng đăng nhập lại.');return env.ADMIN_USERNAME||'admin'
+}
+const TRANSFER_FIELDS={students:['id','name','normalized','pin_hash','pin_salt','active','created_at'],rooms:['code','title','questions','status','question_index','started_at','deadline','seconds','created_at','ended_at'],participants:['room_code','student_id','seat','joined_at','last_seen','present','blocked'],answers:['room_code','student_id','question_index','value','correct','submitted_at'],progress:['student_id','payload','updated_at']};
+async function exportData(env){let job=await first(env.DB,'SELECT status FROM data_transfer WHERE id=1');if(job?.status==='pending')fail(409,'Đang khôi phục dữ liệu; hãy hoàn tất trước khi xuất.');let tables={};for(let [name,fields] of Object.entries(TRANSFER_FIELDS))tables[name]=await all(env.DB,'SELECT '+fields.join(',')+' FROM '+name+' ORDER BY rowid');return{format:'MIA-BACKUP',version:1,exportedAt:new Date().toISOString(),tables}}
+async function importData(env,backup){
+ if(backup?.format!=='MIA-BACKUP'||backup.version!==1||!backup.tables)fail(400,'Không đúng tệp sao lưu MIA.');let count=0;
+ for(let [name,fields] of Object.entries(TRANSFER_FIELDS)){let rows=backup.tables[name];if(!Array.isArray(rows))fail(400,'Thiếu dữ liệu '+name);count+=rows.length;for(let row of rows){if(!row||typeof row!=='object'||fields.some(f=>!(f in row)||!(row[f]===null||typeof row[f]==='string'||(typeof row[f]==='number'&&Number.isFinite(row[f])))))fail(400,'Dữ liệu '+name+' không hợp lệ.')}}
+ if(count>20000)fail(413,'Bản sao vượt quá 20.000 bản ghi.');
+ const students=new Set(backup.tables.students.map(s=>s.id)),rooms=new Set(backup.tables.rooms.map(r=>r.code));
+ if(students.size!==backup.tables.students.length||new Set(backup.tables.students.map(s=>s.normalized)).size!==students.size||rooms.size!==backup.tables.rooms.length)fail(400,'Bản sao có mã hoặc tên trùng.');
+ for(let [table,fields] of Object.entries(TRANSFER_FIELDS))for(let row of backup.tables[table])if(fields.some(f=>row[f]===null&&!(table==='rooms'&&['started_at','deadline','ended_at'].includes(f))))fail(400,'Bản sao thiếu trường bắt buộc.');
+ for(let table of ['participants','answers','progress']){let rows=backup.tables[table],keys=rows.map(r=>table==='progress'?r.student_id:r.room_code+':'+r.student_id+(table==='answers'?':'+r.question_index:''));if(new Set(keys).size!==rows.length)fail(400,'Bản sao có bản ghi trùng.')}
+ if(new Set(backup.tables.participants.map(r=>r.room_code+':'+r.seat)).size!==backup.tables.participants.length||backup.tables.participants.some(r=>!Number.isInteger(r.seat)||r.seat<0||r.seat>=LIMIT||![0,1].includes(r.present)||![0,1].includes(r.blocked))||backup.tables.answers.some(r=>!Number.isInteger(r.question_index)||r.question_index<0||r.question_index>24||![0,1].includes(r.correct)))fail(400,'Ghế hoặc đáp án trong bản sao không hợp lệ.');
+ for(let s of backup.tables.students){cleanName(s.name);if(normalizeName(s.name)!==s.normalized||!/^[a-f0-9]{64}$/.test(s.pin_hash)||!/^[a-f0-9]{32}$/.test(s.pin_salt)||![0,1].includes(s.active))fail(400,'Tài khoản học sinh trong bản sao không hợp lệ.')}
+ for(let r of backup.tables.rooms){roomCode(r.code);let qs;try{qs=JSON.parse(r.questions)}catch{fail(400,'Đề thi trong bản sao không hợp lệ.')}if(!Array.isArray(qs)||qs.length<1||qs.length>25||qs.some(q=>typeof q.q!=='string'||typeof q.answer!=='string'||!Array.isArray(q.options)))fail(400,'Đề thi trong bản sao không hợp lệ.')}
+ for(let row of [...backup.tables.participants,...backup.tables.answers])if(!students.has(row.student_id)||!rooms.has(row.room_code))fail(400,'Bản sao thiếu học sinh hoặc phòng được tham chiếu.');
+ for(let p of backup.tables.progress){if(!students.has(p.student_id))fail(400,'Tiến độ không có học sinh tương ứng.');try{JSON.parse(p.payload)}catch{fail(400,'Tiến độ trong bản sao không hợp lệ.')}}
+ const checksum=await hash(JSON.stringify(backup)),job=await first(env.DB,'SELECT * FROM data_transfer WHERE id=1');
+ let manifest=[];for(let [table,fields] of Object.entries(TRANSFER_FIELDS)){let rows=backup.tables[table];for(let offset=0;offset<rows.length;offset+=25){let chunk=rows.slice(offset,offset+25);manifest.push({table,count:chunk.length,hash:await hash(JSON.stringify(chunk))})}}
+ if(job?.status==='pending'&&job.checksum!==checksum)fail(409,'Hãy dùng đúng tệp đang nhập dở để hoàn tất.');
+ if(job?.status==='done'&&job.checksum===checksum)return transferState({...job,manifest:JSON.stringify(manifest)});
+ if(!job||job.status!=='pending'){let existing=await first(env.DB,'SELECT (SELECT COUNT(*) FROM students)+(SELECT COUNT(*) FROM rooms) AS n');if(existing.n)fail(409,'Chỉ khôi phục vào cơ sở dữ liệu trống để không ghi đè dữ liệu đang có.');await run(env.DB,"INSERT INTO data_transfer(id,checksum,status,created_at,manifest,next_batch) VALUES(1,?,'pending',?,?,0) ON CONFLICT(id) DO UPDATE SET checksum=excluded.checksum,status='pending',created_at=excluded.created_at,manifest=excluded.manifest,next_batch=0",checksum,now(),JSON.stringify(manifest))}
+ else if(JSON.parse(job.manifest||'[]').length===0&&manifest.length)await run(env.DB,'UPDATE data_transfer SET manifest=?,next_batch=0 WHERE id=1',JSON.stringify(manifest));
+ if(!manifest.length)await run(env.DB,"UPDATE data_transfer SET status='done' WHERE id=1");
+ return transferState(await first(env.DB,'SELECT * FROM data_transfer WHERE id=1'))
+}
+function transferState(job){let manifest=JSON.parse(job.manifest||'[]'),next=job.next_batch||0,records=manifest.reduce((n,b)=>n+b.count,0),processed=manifest.slice(0,next).reduce((n,b)=>n+b.count,0);return{ok:job.status==='done',checksum:job.checksum,nextBatch:next,records,processed,order:Object.keys(TRANSFER_FIELDS),batchSize:25}}
+async function importBatch(env,b){
+ let job=await first(env.DB,'SELECT * FROM data_transfer WHERE id=1');if(!job||job.checksum!==b.checksum)fail(409,'Không khớp bản sao đang khôi phục.');if(job.status==='done')return transferState(job);
+ if(!Number.isInteger(b.batchIndex)||b.batchIndex<0)fail(400,'Lô dữ liệu không hợp lệ.');
+ if(b.batchIndex<job.next_batch)return transferState(job);if(b.batchIndex!==job.next_batch)fail(409,'Hãy tiếp tục đúng lô dữ liệu được máy chủ yêu cầu.');
+ let manifest=JSON.parse(job.manifest||'[]'),batch=manifest[b.batchIndex];if(!batch||!Array.isArray(b.rows)||b.rows.length!==batch.count||!equal(await hash(JSON.stringify(b.rows)),batch.hash))fail(400,'Lô dữ liệu không khớp tệp sao lưu.');
+ let fields=TRANSFER_FIELDS[batch.table],statements=b.rows.map(row=>env.DB.prepare('INSERT OR IGNORE INTO '+batch.table+'('+fields.join(',')+') VALUES('+fields.map(()=>'?').join(',')+')').bind(...fields.map(f=>batch.table==='participants'&&f==='present'?0:row[f])));
+ statements.push(env.DB.prepare('UPDATE data_transfer SET next_batch=?,status=? WHERE id=1 AND checksum=? AND next_batch=?').bind(b.batchIndex+1,b.batchIndex+1===manifest.length?'done':'pending',job.checksum,b.batchIndex));
+ await env.DB.batch(statements);return transferState(await first(env.DB,'SELECT * FROM data_transfer WHERE id=1'))
 }
 async function student(request,env){let token=(request.headers.get('authorization')||'').replace(/^Bearer /,'');if(!/^[a-f0-9]{48}$/.test(token))fail(401,'Vui lòng đăng nhập bằng tên và mã riêng.');let row=await first(env.DB,'SELECT s.id,s.name FROM sessions t JOIN students s ON s.id=t.student_id WHERE t.token_hash=? AND t.expires_at>? AND s.active=1',await hash(token),now());if(!row)fail(401,'Phiên đăng nhập đã hết hạn hoặc tài khoản đã bị khóa.');return row}
 async function rateLimit(env,key,max=12){let time=now(),bucket=key+':'+Math.floor(time/60000);await run(env.DB,'INSERT INTO rate_limits(key,attempts,expires_at) VALUES(?,1,?) ON CONFLICT(key) DO UPDATE SET attempts=attempts+1',bucket,time+120000);let r=await first(env.DB,'SELECT attempts FROM rate_limits WHERE key=?',bucket);if(r.attempts>max)fail(429,'Bạn thử quá nhiều lần. Vui lòng chờ một phút.');}
@@ -36,7 +81,17 @@ async function snapshot(env,r,self=null,isAdmin=false){
  return{serverTime:time,room:{code:r.code,title:r.title,status:r.status,index:r.question_index,total:questions.length,seconds:r.seconds,deadline:r.deadline,startedAt:r.started_at,revealed},question,participants,selfId:self?.id||null,submitted:self?answers.some(a=>a.student_id===self.id&&a.question_index===r.question_index):false,isAdmin}
 }
 async function api(request,env,url){const p=url.pathname,method=request.method;
- if(p==='/api/health')return json({ok:true,app:'Học Toán cùng MIA',version:1});
+ if(p==='/api/health')return json({ok:true,app:'Học Toán cùng MIA',version:2,authMode:standalone(env)?'standalone':'sites'});
+ if(p==='/api/admin-auth/status')return json({mode:standalone(env)?'standalone':'sites',configured:standalone(env)?adminConfigured(env):true});
+ if(p==='/api/admin-auth/login'&&method==='POST'){
+  if(!standalone(env))fail(409,'Máy chủ cũ vẫn dùng đăng nhập chủ ứng dụng. Hãy triển khai bản độc lập từ GitHub Actions.');if(!adminConfigured(env))fail(503,'Chưa cấu hình mật khẩu admin trên máy chủ.');
+  const b=await body(request),ip=request.headers.get('cf-connecting-ip')||'unknown';await rateLimit(env,'admin-ip:'+ip,8);
+  const username=String(b.username||''),password=String(b.password||'');if(password.length>256)fail(401,'Tên hoặc mật khẩu admin không đúng.');let candidate=await derivePassword(password,env.ADMIN_PASSWORD_SALT);
+  if(!equal(candidate,env.ADMIN_PASSWORD_HASH)||normalizeName(username)!==normalizeName(env.ADMIN_USERNAME||'admin'))fail(401,'Tên hoặc mật khẩu admin không đúng.');
+  let token=random(),expiresAt=now()+8*3600000;await run(env.DB,'INSERT INTO admin_sessions(token_hash,version,expires_at) VALUES(?,?,?)',await hash(token),await credentialVersion(env),expiresAt);return json({token,username:env.ADMIN_USERNAME||'admin',expiresAt})
+ }
+ if(p==='/api/admin-auth/logout'&&method==='POST'){await admin(request,env);await run(env.DB,'DELETE FROM admin_sessions WHERE token_hash=?',await hash((request.headers.get('authorization')||'').slice(7)));return json({ok:true})}
+ if(!['/api/admin/session','/api/admin/export','/api/admin/import'].includes(p)){let transfer=await first(env.DB,'SELECT status FROM data_transfer WHERE id=1');if(transfer?.status==='pending')fail(503,'Đang khôi phục bản sao lưu. Admin cần nhập lại đúng tệp để hoàn tất.')}
  if(p==='/api/login'&&method==='POST'){
   const b=await body(request),name=normalizeName(b.name),ip=request.headers.get('cf-connecting-ip')||'unknown';await rateLimit(env,'ip:'+ip,120);await rateLimit(env,'name:'+name,10);
   const s=await first(env.DB,'SELECT * FROM students WHERE normalized=? AND active=1',name);if(!s||!equal(s.pin_hash,await hash(s.pin_salt+':'+String(b.pin||'').trim().toUpperCase())))fail(401,'Tên hoặc mã riêng không đúng. Hãy hỏi admin để được cấp lại.');
@@ -51,8 +106,10 @@ async function api(request,env,url){const p=url.pathname,method=request.method;
  }
  if(p.startsWith('/api/admin/')){
   const owner=await admin(request,env);
-  if(method!=='GET'&&request.headers.get('origin')!==url.origin)fail(403,'Yêu cầu quản trị phải gửi từ trang admin.');
-  if(p==='/api/admin/session')return json({role:'admin',appUrl:APP,ownerId:owner});
+  if(method!=='GET'&&request.headers.get('origin')!==url.origin&&(!standalone(env)||request.headers.get('origin')!==new URL(appUrl(env)).origin))fail(403,'Yêu cầu quản trị phải gửi từ trang admin.');
+  if(p==='/api/admin/export'&&method==='GET')return json(await exportData(env));
+  if(p==='/api/admin/import'&&method==='POST'){const b=await body(request,8000000);return json(b.backup?await importData(env,b.backup):await importBatch(env,b))}
+  if(p==='/api/admin/session')return json({role:'admin',appUrl:appUrl(env),ownerId:owner});
   if(p==='/api/admin/students'&&method==='GET')return json({students:await all(env.DB,'SELECT s.id,s.name,s.active,s.created_at,p.updated_at FROM students s LEFT JOIN progress p ON p.student_id=s.id ORDER BY s.created_at DESC LIMIT 2000')});
   if(p==='/api/admin/students'&&method==='POST'){
    const b=await body(request),name=cleanName(b.name),id=crypto.randomUUID(),pin=code(),salt=random(16);
@@ -67,7 +124,7 @@ async function api(request,env,url){const p=url.pathname,method=request.method;
   if(p==='/api/admin/rooms'&&method==='GET')return json({rooms:(await all(env.DB,'SELECT code,title,status,created_at,question_index FROM rooms ORDER BY created_at DESC LIMIT 50')),lessons:LESSONS.map(l=>({id:l.id,title:l.title})),days:DAYS.map(d=>({id:d.id,lesson:d.lesson}))});
   if(p==='/api/admin/rooms'&&method==='POST'){
    const b=await body(request),day=Number(b.day),seconds=Number(b.seconds||30),count=Number(b.count||10);if(!Number.isInteger(day)||day<1||day>175||!Number.isInteger(seconds)||seconds<10||seconds>300||!Number.isInteger(count)||count<1||count>25)fail(400,'Kiểm tra ngày học, số câu (1–25) và thời gian (10–300 giây).');
-   let exam=makeExam(day,b.kind==='daily'?'daily':b.kind==='term'?'term':'week');let qs=exam.qs.slice(0,count).map(q=>({...q,options:choices(q)}));let c=code().slice(0,6);await run(env.DB,'INSERT INTO rooms(code,title,questions,seconds,created_at) VALUES(?,?,?,?,?)',c,String(b.title||'Phòng thi cùng MIA').slice(0,80),JSON.stringify(qs),seconds,now());return json({code:c,appUrl:APP+'?room='+c+'#online'},201)
+   let exam=makeExam(day,b.kind==='daily'?'daily':b.kind==='term'?'term':'week');let qs=exam.qs.slice(0,count).map(q=>({...q,options:choices(q)}));let c=code().slice(0,6);await run(env.DB,'INSERT INTO rooms(code,title,questions,seconds,created_at) VALUES(?,?,?,?,?)',c,String(b.title||'Phòng thi cùng MIA').slice(0,80),JSON.stringify(qs),seconds,now());return json({code:c,appUrl:appUrl(env)+'?room='+c+'#online'},201)
   }
   match=p.match(/^\/api\/admin\/rooms\/([A-Z2-9]{6})(?:\/(start|next|finish|kick|allow))?$/);
   if(match){let r=await getRoom(env,match[1]),action=match[2];if(method==='GET'&&!action)return json(await snapshot(env,r,null,true));
@@ -100,11 +157,12 @@ async function api(request,env,url){const p=url.pathname,method=request.method;
  }
  fail(404,'Không tìm thấy chức năng.');
 }
-export default {async fetch(request,env,ctx){const url=new URL(request.url),origin=request.headers.get('origin'),allowed=origin===new URL(APP).origin||origin===url.origin;let response;
+export default {async fetch(request,env,ctx){const url=new URL(request.url),origin=request.headers.get('origin'),allowed=origin===new URL(appUrl(env)).origin||origin===url.origin;let response;
  try{
   if(request.method==='OPTIONS'){if(!allowed)return new Response(null,{status:403});response=new Response(null,{status:204})}
+  else if(url.pathname==='/admin'&&standalone(env))return Response.redirect(appUrl(env)+'admin.html',302);
   else if(url.pathname==='/admin'){try{await admin(request,env);response=new Response(ADMIN_HTML,{headers:{'Content-Type':'text/html;charset=utf-8','Cache-Control':'no-store'}})}catch(e){if(e.status===401)return Response.redirect(url.origin+'/signin-with-chatgpt?return_to=%2Fadmin',302);throw e}}
-  else if(url.pathname==='/'&&!url.searchParams.has('health'))return Response.redirect(APP+'#online',302);
+  else if(url.pathname==='/'&&!url.searchParams.has('health'))return Response.redirect(appUrl(env)+'#online',302);
   else if(origin&&!allowed)response=json({error:'Nguồn truy cập không được phép.'},403);
   else response=await api(request,env,url);
  }catch(e){response=json({error:e.status?e.message:'Máy chủ đang gặp lỗi. Vui lòng thử lại.'},e.status||500);if(!e.status)console.error(e.message)}

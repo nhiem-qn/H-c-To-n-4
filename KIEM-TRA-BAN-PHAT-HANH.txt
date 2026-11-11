@@ -53,3 +53,15 @@ CẬP NHẬT MIA VÀ THI ONLINE — 11/11/2026
 - Chưa kiểm tra trực quan phòng 3D trên trình duyệt thật ở bản cập nhật này:
   công cụ cua_repl.js theo quy trình preview Sites không có trong phiên.
   Có giao diện ghế dự phòng khi WebGL không hoạt động.
+
+BẢN ADMIN ĐỘC LẬP — 11/11/2026
+- Trang admin.html và đăng nhập tên + mật khẩu riêng nằm trong mã GitHub.
+- Worker mặc định không tin header ChatGPT; dùng PBKDF2 và phiên admin riêng.
+- Workflow GitHub Actions tạo/cập nhật Worker + D1 thuộc tài khoản Cloudflare
+  của chủ kho; config.js chỉ đổi sau khi kiểm tra đăng nhập thật thành công.
+- Đã kiểm tra đăng nhập/đăng xuất admin từ giao diện bằng API độc lập, phân
+  quyền học sinh/admin, đổi mật khẩu làm hết hiệu lực phiên cũ, sao lưu và
+  khôi phục theo lô có checkpoint, giữ được mã học sinh và tiến độ.
+- Đã chạy Wrangler build/dry-run thành công. Chưa triển khai vào tài khoản
+  Cloudflare của người dùng: cần ba GitHub Secrets theo DEPLOY-CLOUDFLARE.md.
+- Bản máy chủ cũ được giữ và bổ sung xuất sao lưu để chuyển dữ liệu.

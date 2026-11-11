@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import worker from '../dist/server/index.js';
+import {fixture,base,front,TEST_PASSWORD} from './fixtures.mjs';
+async function restore(target,backup,token){let d=await target.call('/api/admin/import','POST',{backup},token),batches=[];for(let name of d.order)for(let i=0;i<backup.tables[name].length;i+=d.batchSize)batches.push(backup.tables[name].slice(i,i+d.batchSize));while(!d.ok)d=await target.call('/api/admin/import','POST',{checksum:d.checksum,batchIndex:d.nextBatch,rows:batches[d.nextBatch]},token);return d}
+const a=fixture();
+assert.equal((await a.call('/api/health')).authMode,'standalone');assert.equal((await a.call('/api/admin-auth/status')).configured,true);
+await a.call('/api/admin/session','GET',null,null,401,{'oai-authenticated-user-id':'forged-owner','oai-authenticated-user-email':a.env.ADMIN_EMAIL});
+await a.call('/api/admin-auth/login','POST',{username:'mia-admin',password:'wrong'},null,401);
+let auth=await a.call('/api/admin-auth/login','POST',{username:'mia-admin',password:TEST_PASSWORD});assert(auth.token&&!JSON.stringify(auth).includes(TEST_PASSWORD));
+assert.equal((await a.call('/api/admin/session','GET',null,auth.token)).role,'admin');
+let pupil=await a.call('/api/admin/students','POST',{name:'An 4A'},auth.token,201);await a.call('/api/admin/students','POST',{name:'Bình 4A'},auth.token,201);
+let child=await a.call('/api/login','POST',{name:pupil.student.name,pin:pupil.pin});await a.call('/api/admin/students','GET',null,child.token,401);
+await a.call('/api/progress','PUT',{progress:{completed:[1],read:[1],results:[]}},child.token);
+let room=await a.call('/api/admin/rooms','POST',{day:1,count:5,seconds:30,kind:'daily'},auth.token,201);await a.call('/api/rooms/'+room.code+'/join','POST',{},child.token);await a.call('/api/admin/rooms/'+room.code+'/start','POST',{},auth.token);let qs=JSON.parse(a.sql.prepare('SELECT questions FROM rooms').get().questions);await a.call('/api/rooms/'+room.code+'/answer','POST',{index:0,value:qs[0].answer},child.token);
+const backup=await a.call('/api/admin/export','GET',null,auth.token);assert.equal(backup.format,'MIA-BACKUP');assert.equal(backup.tables.students.length,2);assert(!('admin_sessions'in backup.tables));assert(!JSON.stringify(backup).includes(pupil.pin));
+const b=fixture();const loginB=await b.call('/api/admin-auth/login','POST',{username:'mia-admin',password:TEST_PASSWORD});await restore(b,backup,loginB.token);
+let migrated=await b.call('/api/login','POST',{name:pupil.student.name,pin:pupil.pin});assert.deepEqual((await b.call('/api/progress','GET',null,migrated.token)).progress.completed,[1]);assert.equal(b.sql.prepare('SELECT present FROM participants').get().present,0);assert.equal(b.sql.prepare('SELECT correct FROM answers').get().correct,1);
+await b.call('/api/admin/import','POST',{backup:{...backup,exportedAt:'different'}},loginB.token,409);await b.call('/api/admin/import','POST',{backup},migrated.token,401);
+const largeBackup=structuredClone(backup);for(let i=0;i<30;i++)largeBackup.tables.students.push({...backup.tables.students[0],id:crypto.randomUUID(),name:'Test40-'+i,normalized:('Test40-'+i).toLowerCase()});
+const c=fixture();const loginC=await c.call('/api/admin-auth/login','POST',{username:'mia-admin',password:TEST_PASSWORD});let originalBatch=c.env.DB.batch;let interrupted=false;c.env.DB.batch=async items=>{if(!interrupted){interrupted=true;await items[0].run();throw Error('Simulated interrupted import')}return originalBatch(items)};
+let started=await c.call('/api/admin/import','POST',{backup:largeBackup},loginC.token);await c.call('/api/admin/import','POST',{checksum:started.checksum,batchIndex:0,rows:[{...largeBackup.tables.students[0],name:'Tampered'}]},loginC.token,400);await c.call('/api/admin/import','POST',{checksum:started.checksum,batchIndex:0,rows:largeBackup.tables.students.slice(0,25)},loginC.token,500);await c.call('/api/login','POST',{name:pupil.student.name,pin:pupil.pin},null,503);await c.call('/api/admin/import','POST',{backup:{...backup,exportedAt:'different'}},loginC.token,409);c.env.DB.batch=originalBatch;await restore(c,largeBackup,loginC.token);assert.equal(c.sql.prepare('SELECT COUNT(*) n FROM students').get().n,32);
+let oldHash=a.env.ADMIN_PASSWORD_HASH;a.env.ADMIN_PASSWORD_HASH='0'.repeat(64);await a.call('/api/admin/session','GET',null,auth.token,401);a.env.ADMIN_PASSWORD_HASH=oldHash;
+await a.call('/api/admin-auth/logout','POST',{},auth.token);await a.call('/api/admin/session','GET',null,auth.token,401);
+let redirect=await worker.fetch(new Request(base+'/admin'),a.env,{});assert.equal(redirect.status,302);assert.equal(redirect.headers.get('location'),front+'/H-c-To-n-4/admin.html');
+console.log('PASS: standalone password admin, forged ChatGPT headers denied, student/admin isolation, session revocation, safe backup/migration with old student codes and resumable interrupted import.');

@@ -6,7 +6,7 @@ Mở https://nhiem-qn.github.io/H-c-To-n-4/#online. Học sinh nhập tên và m
 
 Bảng xanh ở phía trên hiển thị câu hỏi, các phương án và đồng hồ. Dãy ghế và nhân vật 3D nằm bên dưới. Danh sách bên phải cho biết các bạn trong phòng và số câu đúng. Câu trả lời chỉ được chốt khi máy chủ nhận; đúng/sai hiện sau khi hết giờ. Mỗi câu chỉ trả lời một lần.
 
-Admin mở https://hoc-toan-cung-mia-online.glovedbetta.chatgpt.site/admin và đăng nhập bằng tài khoản ChatGPT chủ ứng dụng. Admin thêm tên, cấp mã, xem báo cáo, tạo phòng và điều khiển câu hỏi. Hãy lưu mã khi vừa cấp; nếu quên, dùng Cấp lại mã. Khi cấp lại, các phiên cũ của học sinh bị đăng xuất.
+Admin độc lập mở https://nhiem-qn.github.io/H-c-To-n-4/admin.html và đăng nhập bằng tên + mật khẩu riêng sau khi triển khai Cloudflare theo DEPLOY-CLOUDFLARE.md. Nếu config.js còn mode legacy, trang sẽ hướng dẫn chuyển đổi và giữ đường dẫn bản cũ để sao lưu. Admin thêm tên, cấp mã, xem báo cáo, tạo phòng và điều khiển câu hỏi. Hãy lưu mã khi vừa cấp; nếu quên, dùng Cấp lại mã. Khi cấp lại, các phiên cũ của học sinh bị đăng xuất.
 
 Phần online cần Internet và máy chủ; GitHub Pages chỉ phục vụ giao diện. Tiến độ của mỗi học sinh đăng nhập được lưu riêng trên máy chủ. Học ngoại tuyến không đăng nhập vẫn dùng vùng lưu cục bộ ban đầu. Khóa tài khoản chỉ do admin thực hiện ở máy chủ.
 
@@ -137,3 +137,7 @@ Các tệp chính để chỉnh sửa: `data.js` (bài/ngày/tài liệu), `guid
 Bản đọc bài đã được tạo lại với lời giới thiệu “Cô là Mi A”, giọng nữ Hoài My sáng hơn, tốc độ +4% và cao độ +10 Hz. Vào Dành cho phụ huynh → Nghe giọng nữ cô Mi A để nghe thử. Tốc độ phát vẫn có thể điều chỉnh theo khả năng tiếp thu của con.
 
 Các kiểm tra mới: quyền admin, mã học sinh, tách tiến độ, hai học sinh tham gia cùng phòng, chấm trên máy chủ, không lộ đáp án trước giờ, từ chối đáp án lặp/muộn, rời phòng, mất tín hiệu, mời ra, khóa tài khoản và cấp lại mã. Kiểm tra máy chủ dùng SQLite tương thích D1 và hai client frontend riêng. Chưa kiểm tra trực quan mô hình 3D trên thiết bị gia đình; khi WebGL không chạy, danh sách ghế dự phòng được dùng.
+
+## Triển khai và vận hành không cần Codex
+
+Làm theo DEPLOY-CLOUDFLARE.md: nhập ba GitHub Secrets, rồi chạy workflow Deploy MIA độc lập. API sẽ chạy trên Cloudflare của bạn, trang admin nằm trên GitHub Pages và dùng mật khẩu riêng. Không cần Codex hoặc ChatGPT sau khi chuyển. Chỉ bản cũ dùng đăng nhập chủ ứng dụng để xuất dữ liệu trước khi ngừng dùng.

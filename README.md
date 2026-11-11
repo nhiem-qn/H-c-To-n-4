@@ -6,9 +6,10 @@
 
 - Ứng dụng: https://nhiem-qn.github.io/H-c-To-n-4/
 - Vào lớp / thi online: https://nhiem-qn.github.io/H-c-To-n-4/#online
-- Trang admin: https://hoc-toan-cung-mia-online.glovedbetta.chatgpt.site/admin
+- Trang admin trên GitHub Pages: https://nhiem-qn.github.io/H-c-To-n-4/admin.html
+- Triển khai độc lập: [DEPLOY-CLOUDFLARE.md](DEPLOY-CLOUDFLARE.md)
 
-Admin đăng nhập qua ChatGPT bằng tài khoản chủ ứng dụng. Máy chủ xác thực và cấp quyền theo danh tính do nền tảng cung cấp, không dựa vào việc ẩn nút trên giao diện. Học sinh chỉ cần tên và mã riêng do admin cấp; mã được băm trên máy chủ, chỉ hiển thị một lần khi cấp hoặc đặt lại.
+Admin bản độc lập đăng nhập bằng tên và mật khẩu riêng. Mật khẩu được băm trên máy chủ; quyền được kiểm tra ở API, không dựa vào việc ẩn nút trên giao diện. GitHub Actions triển khai Worker + D1 vào tài khoản Cloudflare của bạn, không cần Codex/ChatGPT chạy. Trong lúc chưa chuyển, cấu hình `mode: legacy` giữ máy chủ cũ để không làm mất dữ liệu. Học sinh chỉ cần tên và mã riêng do admin cấp; mã được băm trên máy chủ, chỉ hiển thị một lần khi cấp hoặc đặt lại.
 
 ## Chạy ứng dụng
 
@@ -24,7 +25,7 @@ Trên macOS/Linux có thể dùng `python3`. Mở địa chỉ được in ra tr
 
 ## Tạo lớp và mở thi online
 
-1. Mở trang admin, đăng nhập đúng tài khoản ChatGPT chủ ứng dụng.
+1. Sau khi triển khai theo hướng dẫn Cloudflare, mở `admin.html` và đăng nhập bằng tên + mật khẩu admin riêng.
 2. Thêm từng tên học sinh. Sao chép mã riêng vừa hiện và gửi riêng cho học sinh.
 3. Chọn ngày học/phạm vi, số giây mỗi câu và tạo phòng.
 4. Sao chép liên kết phòng để gửi cho các bạn. Mỗi học sinh đăng nhập bằng tên và mã riêng rồi vào chỗ.
@@ -56,6 +57,8 @@ Học sinh đăng nhập có thể quay lại học hằng ngày; tiến độ �
 | `guides.js` | Lời giảng, ví dụ, lỗi thường gặp |
 | `online.js` | Đăng nhập học sinh, đồng bộ tiến độ và phòng thi |
 | `classroom3d.js` | Phòng ghế/nhân vật Three.js và chuyển động vào/ra |
+| `admin.html` | Trang quản trị đăng nhập mật khẩu, thêm học sinh, tạo phòng và sao lưu dữ liệu |
+| `config.js` | Địa chỉ API công khai; workflow cập nhật khi triển khai thành công |
 | `online-server/` | Worker API, cơ sở dữ liệu D1, trang admin, migrations và kiểm tra nhiều người |
 | `voices.js` | Chọn giọng nữ cho hội thoại; loại giọng nam và yêu cầu xác nhận giọng chưa rõ |
 | `assets/audio/` | 73 bản đọc bài giảng bằng giọng nữ Hoài My và tệp thông tin đối chiếu |
@@ -110,8 +113,8 @@ Khi sửa lời giảng, cập nhật âm thanh tương ứng. Công cụ dành 
 
 ## Nâng cấp phần máy chủ
 
-Phần tự học và giao diện được cập nhật bằng GitHub Pages. Phần `online-server/` chạy trên Sites/Cloudflare Worker và D1; đẩy lên GitHub **không tự triển khai lại API**. Người có quyền Sites cần build, đồng bộ nguồn và publish máy chủ qua quy trình Sites khi đổi phần này. Trường `d1` trong manifest là tên binding `DB`. Không sửa migration đã áp dụng; thêm migration mới nếu cần đổi schema.
+Làm theo [hướng dẫn triển khai độc lập](DEPLOY-CLOUDFLARE.md): thêm ba GitHub Secrets, chạy workflow **Deploy MIA độc lập**, rồi dùng trang admin trên GitHub Pages. Sau khi bật `MIA_AUTO_DEPLOY=true`, các lần sửa máy chủ/admin ở nhánh main có thể tự triển khai. Không cần Codex để vận hành, đăng nhập hoặc cập nhật qua workflow.
 
-Biến runtime `ADMIN_EMAIL` chỉ dùng để cấp quyền lần đầu cho đúng chủ ứng dụng. Sau lần đầu, ID đăng nhập ổn định được lưu trong bảng `admins`. Giá trị này là cấu hình riêng ở máy chủ, không được đưa vào Git hoặc JavaScript trình duyệt. Máy chủ dùng đường đăng nhập do Sites quản lý; không tự viết OAuth.
+Mã mặc định dùng `AUTH_MODE=standalone`, phiên admin riêng và mật khẩu băm PBKDF2. Bản legacy giữ đăng nhập nền tảng chỉ để chuyển dữ liệu. Không sửa migration đã áp dụng; thêm migration mới khi đổi schema.
 
 Giọng Mi A dùng Hoài My với tốc độ +4%, cao độ +10 Hz để sáng và nhanh nhẹn hơn. Đây là điều chỉnh âm sắc của giọng nữ tổng hợp, không phải xác minh tuổi người nói. Các tệp MP3 đã mang lời giới thiệu “Cô là Mi A”.

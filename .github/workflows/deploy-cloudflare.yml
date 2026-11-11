@@ -1,0 +1,79 @@
+name: Deploy MIA độc lập
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'online-server/**'
+      - 'admin.html'
+      - '.github/workflows/deploy-cloudflare.yml'
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: mia-cloudflare-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || vars.MIA_AUTO_DEPLOY == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: online-server/package-lock.json
+      - name: Kiểm tra cấu hình bắt buộc
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          ADMIN_PASSWORD: ${{ secrets.MIA_ADMIN_PASSWORD }}
+        run: |
+          node -e "for(const key of ['CF_TOKEN','CF_ACCOUNT','ADMIN_PASSWORD'])if(!process.env[key])throw Error('Thiếu secret: '+key+'. Xem DEPLOY-CLOUDFLARE.md.');if(process.env.ADMIN_PASSWORD.length<12)throw Error('Mật khẩu admin cần ít nhất 12 kí tự.');"
+      - name: Kiểm tra ứng dụng trước khi triển khai
+        run: |
+          node scripts/verify-content.cjs
+          node scripts/verify-voices.cjs
+          node online-server/build.mjs
+          node online-server/tests/server.test.mjs
+          node online-server/tests/standalone.test.mjs
+          node scripts/verify-online-client.mjs
+          node scripts/verify-admin-page.mjs
+      - name: Cài công cụ Cloudflare theo lockfile
+        working-directory: online-server
+        run: npm ci --no-audit --no-fund
+      - name: Triển khai Worker, D1 và đăng nhập admin độc lập
+        id: cloudflare
+        working-directory: online-server
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          MIA_ADMIN_PASSWORD: ${{ secrets.MIA_ADMIN_PASSWORD }}
+          MIA_ADMIN_USERNAME: ${{ vars.MIA_ADMIN_USERNAME || 'admin' }}
+          MIA_WORKER_NAME: ${{ vars.MIA_WORKER_NAME || 'mia-online' }}
+          MIA_APP_URL: ${{ vars.MIA_APP_URL }}
+          WRANGLER_SEND_METRICS: 'false'
+        run: npm run deploy:cloudflare
+      - name: Cập nhật máy chủ công khai của giao diện GitHub
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add config.js
+          if ! git diff --cached --quiet; then
+            git commit -m 'Configure MIA standalone Cloudflare API'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Yêu cầu GitHub Pages cập nhật giao diện
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+      - name: Đường dẫn sử dụng
+        env:
+          API_URL: ${{ steps.cloudflare.outputs.api_url }}
+          ADMIN_URL: ${{ steps.cloudflare.outputs.admin_url }}
+        run: |
+          echo "Máy chủ độc lập: $API_URL"
+          echo "Admin trên GitHub Pages: $ADMIN_URL"

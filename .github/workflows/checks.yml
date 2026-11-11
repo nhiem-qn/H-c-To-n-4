@@ -17,6 +17,7 @@ jobs:
           node --check app.js
           node --check voices.js
           node --check online.js
+          node --check config.js
           node --check classroom3d.js
           node --check data.js
           node --check guides.js
@@ -29,4 +30,6 @@ jobs:
         run: |
           node online-server/build.mjs
           node online-server/tests/server.test.mjs
+          node online-server/tests/standalone.test.mjs
           node scripts/verify-online-client.mjs
+          node scripts/verify-admin-page.mjs
