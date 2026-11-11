@@ -19,6 +19,10 @@ jobs:
           node --check online.js
           node --check exam-teacher.js
           node --check exam-audio.js
+          node --check learning.js
+          node --check lesson-studio.js
+          node --check studio-player.js
+          node --check studio-audio.js
           node --check config.js
           node --check classroom3d.js
           node --check data.js
@@ -31,11 +35,15 @@ jobs:
           node scripts/verify-voices.cjs
           node scripts/verify-exam-teacher.cjs
           node scripts/verify-exam-playback.mjs
+          node scripts/verify-learning.cjs
+          node scripts/verify-studio-player.mjs
+          node scripts/verify-studio-content.cjs
       - name: Kiểm tra máy chủ và hai học sinh online
         run: |
           node online-server/build.mjs
           node online-server/tests/server.test.mjs
           node online-server/tests/daily.test.mjs
+          node online-server/tests/learning.test.mjs
           node online-server/tests/standalone.test.mjs
           node online-server/tests/cloudflare-onboarding.test.mjs
           node scripts/verify-online-client.mjs

@@ -122,3 +122,20 @@ Phòng thi đọc câu hỏi khi mở câu; đến nửa thời gian, máy chủ
 `exam-teacher.js` ghép câu hỏi từ các cụm đọc và số, cùng các lời nhắc thu sẵn bằng giọng nữ `vi-VN-HoaiMyNeural` (+4%, +10Hz). Bản đọc nằm trong `assets/audio/exam/`, không cần dịch vụ tạo giọng hoặc khóa API khi học. Nếu thiếu bản đọc do sửa ngân hàng câu hỏi, chỉ giọng nữ tiếng Việt đã được xác định/xác nhận mới được dùng làm dự phòng. Có nút nghe lại đề và bật/tắt cô đọc; trình duyệt có thể yêu cầu bấm nút để cho phép âm thanh sau khi tải lại trang. Mở trực tiếp file HTML dùng chuỗi phát MP3; phục vụ qua HTTPS/localhost dùng Web Audio để ghép mượt hơn.
 
 Khi sửa mẫu câu hỏi: chạy `node scripts/prepare-exam-audio.cjs`, cài `edge-tts` trong môi trường phát triển, rồi chạy `python scripts/generate-exam-audio.py`. Công cụ tạo các tệp âm thanh một lần; ứng dụng học không phụ thuộc vào máy đã tạo chúng. Chạy `node scripts/verify-exam-teacher.cjs` và `node scripts/verify-exam-playback.mjs` để kiểm tra độ phủ, giọng, tính toàn vẹn và ưu tiên lời nhắc.
+
+
+## Học theo sách giáo khoa, bài giảng từng bước và kế hoạch mỗi ngày
+
+Trang chủ hỏi học sinh bài, tập sách, trang/buổi đang học trên lớp và mức tự tin. Có tìm tên bài/số trang và thẻ bấm chọn nhanh. Lần đầu phải chọn bài và cảm nhận; ứng dụng không tự coi học sinh đã học đến bài 1. Khi đã xác nhận trong ngày, biểu mẫu thu gọn và có nút đổi bài.
+
+`learning.js` lập kế hoạch dựa trên tiến độ trên lớp và bằng chứng làm bài: nghe/đọc lý thuyết, học trang sách gốc, ba câu luyện và kiểm tra năm câu. Có thể thêm một hoạt động gỡ lỗi ngắn nếu bài vừa làm còn yếu; ôn lại chủ đề trước khi cần và nhắc ôn cách quãng theo các mốc 1/3/7 ngày. Kế hoạch không tự đẩy học sinh sang bài vượt tiến độ lớp. Mốc thời gian là gợi ý, không phải hạn hoàn thành bắt buộc.
+
+Tự nhận xét, hoạt động đã làm và kết quả câu hỏi được lưu riêng. Bấm “đã đọc” chỉ hoàn thành một hoạt động; không tăng mức nắm bài. Câu bỏ trống không được suy diễn là bằng chứng chưa hiểu. Mỗi chủ đề dùng tối đa 12 câu gần nhất; cần nhiều câu và ít nhất ba câu khác nhau để hiện “Làm khá chắc”. Các mức là gợi ý học tập, không phải chẩn đoán hay đánh giá chính thức của trường. Kết quả thi online được lấy theo tài khoản học sinh và chỉ dùng sau khi máy chủ cho phép hiện đúng/sai.
+
+Dữ liệu nằm trong `progress.learning`, được lưu riêng theo học sinh và đồng bộ bằng API tiến độ hiện có. Admin xem bài trên lớp, việc trong ngày và nhận xét chủ đề trong báo cáo học sinh. Bản sao JSON và bản sao máy chủ giữ cả thông tin này.
+
+`lesson-studio.js` mở rộng lý thuyết của 50 chủ đề thành 583 bước, khoảng 110 phút giọng nữ Hoài My, được dùng cho đủ 73 bài / 175 buổi. Mỗi chủ đề có giải thích ý nghĩa, cách làm, ví dụ mẫu, ví dụ thứ hai có lời giải, mẹo tránh nhầm và tự kiểm tra. Bài ôn tập được chia các chủ đề theo buổi. Toàn bộ trang sách gốc vẫn là căn cứ đối chiếu; lời giảng và ví dụ bổ sung được ghi rõ là bổ trợ.
+
+`studio-player.js` dùng thời gian của chính tệp MP3 và mốc câu đã kiểm chứng để chuyển bước và viết bảng. Tạm dừng dừng cả hai; có nghe chậm, bước trước/tiếp và minh họa chia phần ở ví dụ phân số. Bỏ qua bước không tự ghi nhận đã nghe trọn bài. Học sinh có thể xác nhận đã đọc riêng; mức hiểu vẫn dựa trên câu đã chấm.
+
+Khi sửa lời giảng: chạy `node scripts/prepare-studio.cjs`, sau đó `python scripts/generate-studio-audio.py` (cần `edge-tts` cho người phát triển). Công cụ tạo MP3 và mốc câu một lần; ứng dụng học không cần Codex, khóa AI hay máy đã tạo âm thanh. Chạy các kiểm tra `verify-learning.cjs`, `verify-studio-player.mjs`, `verify-studio-content.cjs` và `online-server/tests/learning.test.mjs` trước khi triển khai.
