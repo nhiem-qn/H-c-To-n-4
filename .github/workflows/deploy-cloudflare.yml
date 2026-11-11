@@ -46,6 +46,7 @@ jobs:
           node online-server/tests/daily.test.mjs
           node online-server/tests/contests.test.mjs
           node online-server/tests/learning.test.mjs
+          node online-server/tests/rewards.test.mjs
           node online-server/tests/standalone.test.mjs
           node online-server/tests/cloudflare-onboarding.test.mjs
           node scripts/verify-online-client.mjs
