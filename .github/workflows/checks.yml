@@ -21,6 +21,9 @@ jobs:
           node --check exam-teacher.js
           node --check exam-audio.js
           node --check learning.js
+          node --check advisor-core.js
+          node --check advisor.js
+          node --check admin-advisor.js
           node --check lesson-studio.js
           node --check studio-player.js
           node --check studio-audio.js
@@ -38,6 +41,7 @@ jobs:
           node scripts/verify-exam-teacher.cjs
           node scripts/verify-exam-playback.mjs
           node scripts/verify-learning.cjs
+          node scripts/verify-advisor.cjs
           node scripts/verify-studio-player.mjs
           node scripts/verify-studio-content.cjs
       - name: Kiểm tra máy chủ và hai học sinh online
@@ -49,6 +53,7 @@ jobs:
           node online-server/tests/learning.test.mjs
           node online-server/tests/rewards.test.mjs
           node online-server/tests/student-terms.test.mjs
+          node online-server/tests/advisor.test.mjs
           node online-server/tests/standalone.test.mjs
           node online-server/tests/cloudflare-onboarding.test.mjs
           node scripts/verify-online-client.mjs

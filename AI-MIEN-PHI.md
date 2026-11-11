@@ -1,3 +1,5 @@
+> Đã bổ sung kết nối Cloudflare Workers AI cho lời giảng mở rộng và cố vấn dựa trên bằng chứng. Xem [cách hoạt động, riêng tư và hạn mức](CO-VAN-AI-MIA.md). Các lựa chọn bên dưới là phần đối chiếu ban đầu.
+
 # Các lựa chọn AI có gói miễn phí cho Học Toán cùng MIA
 
 Đối chiếu tài liệu chính thức ngày 11/11/2026. Bản cập nhật giao diện và phòng thi không tự bật dịch vụ AI ngoài; cô giảng, chấm điểm và gợi ý học hiện có vẫn chạy theo nội dung và quy tắc đã kiểm tra.
