@@ -39,6 +39,7 @@ jobs:
           node online-server/build.mjs
           node online-server/tests/server.test.mjs
           node online-server/tests/standalone.test.mjs
+          node online-server/tests/cloudflare-onboarding.test.mjs
           node scripts/verify-online-client.mjs
           node scripts/verify-admin-page.mjs
       - name: Cài công cụ Cloudflare theo lockfile

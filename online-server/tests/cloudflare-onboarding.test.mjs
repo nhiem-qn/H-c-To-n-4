@@ -1,0 +1,6 @@
+import assert from 'node:assert/strict';
+import {ensureWorkersSubdomain} from '../scripts/cloudflare-onboarding.mjs';
+let calls=[];let current=await ensureWorkersSubdomain(async(...args)=>{calls.push(args);return{subdomain:'existing-owner'}},'new-mia');assert.equal(current.subdomain,'existing-owner');assert.equal(calls.length,1,'never rename an existing namespace');
+calls=[];let created=await ensureWorkersSubdomain(async(...args)=>{calls.push(args);if(calls.length===1)throw Object.assign(Error('absent'),{status:404,codes:[10007]});assert.equal(args[1],'PUT');assert.deepEqual(args[2],{subdomain:'mia-test-owner'});return{subdomain:'mia-test-owner'}},'mia-test-owner');assert.equal(created.subdomain,'mia-test-owner');assert.equal(calls.length,2);
+for(let problem of [{status:403,codes:[10000]},{status:404,codes:[99999]}]){let n=0;await assert.rejects(ensureWorkersSubdomain(async()=>{n++;throw Object.assign(Error('authorization or other failure'),problem)},'new-mia'));assert.equal(n,1,'do not create resources after an unrelated failure')}
+console.log('PASS: new Cloudflare account is initialized on 404/10007, existing subdomain is preserved, and authorization failures do not create resources.');

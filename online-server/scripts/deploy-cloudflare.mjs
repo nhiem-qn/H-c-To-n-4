@@ -2,6 +2,7 @@ import {spawnSync} from 'node:child_process';
 import {readFileSync,writeFileSync,appendFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {randomBytes,pbkdf2Sync} from 'node:crypto';
+import {ensureWorkersSubdomain} from './cloudflare-onboarding.mjs';
 process.chdir(fileURLToPath(new URL('..',import.meta.url)));
 const token=process.env.CLOUDFLARE_API_TOKEN,account=process.env.CLOUDFLARE_ACCOUNT_ID,password=process.env.MIA_ADMIN_PASSWORD;
 const workerName=process.env.MIA_WORKER_NAME||'mia-online',username=process.env.MIA_ADMIN_USERNAME||'admin';
@@ -16,7 +17,7 @@ function check(){
  if(username.trim().length<2||username.length>40)throw Error('MIA_ADMIN_USERNAME cần có 2–40 kí tự.');
  if(new URL(appUrl).protocol!=='https:'||new URL(appUrl).search||new URL(appUrl).hash)throw Error('MIA_APP_URL phải dùng HTTPS và không chứa dấu ? hoặc #.');
 }
-async function cf(path,method='GET',data){const r=await fetch('https://api.cloudflare.com/client/v4/accounts/'+account+path,{method,headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:data?JSON.stringify(data):undefined});let d=await r.json();if(!r.ok||!d.success){let codes=(d.errors||[]).map(e=>e.code).join(',');throw Error(`Cloudflare ${method} ${path}: HTTP ${r.status} (${codes}). Kiểm tra quyền API token và Account ID.`)}return d.result}
+async function cf(path,method='GET',data){const r=await fetch('https://api.cloudflare.com/client/v4/accounts/'+account+path,{method,headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:data?JSON.stringify(data):undefined});let d=await r.json();if(!r.ok||!d.success){let codes=(d.errors||[]).map(e=>Number(e.code)),detail=(d.errors||[]).map(e=>String(e.message||'')).join('; ');for(let value of [token,password,account])if(value)detail=detail.replaceAll(value,'[redacted]');let error=Error(`Cloudflare ${method} ${path}: HTTP ${r.status} (${codes.join(',')}). ${detail}`);error.status=r.status;error.codes=codes;throw error}return d.result}
 const wrangler=fileURLToPath(new URL('../node_modules/wrangler/bin/wrangler.js',import.meta.url));
 function run(args,input){let childEnv={...process.env,WRANGLER_SEND_METRICS:'false',CI:'true'};delete childEnv.MIA_ADMIN_PASSWORD;const r=spawnSync(process.execPath,[wrangler,...args],{encoding:'utf8',input,env:childEnv,maxBuffer:20*1024*1024});if(r.stdout)process.stdout.write(r.stdout);if(r.stderr)process.stderr.write(r.stderr);if(r.status!==0)throw Error('Wrangler không hoàn tất. Xem thông báo của bước vừa chạy.')}
 async function smoke(apiUrl){
@@ -27,7 +28,8 @@ async function smoke(apiUrl){
  }
 }
 check();console.log('Đang chuẩn bị Cloudflare Worker và D1 thuộc tài khoản của bạn...');
-let subdomain=await cf('/workers/subdomain');if(!subdomain?.subdomain)throw Error('Hãy mở Cloudflare → Workers & Pages để kích hoạt subdomain workers.dev, rồi chạy lại.');
+let candidate='mia-'+repoParts[0].toLowerCase().replace(/[^a-z0-9-]/g,'-').slice(0,20)+'-'+randomBytes(3).toString('hex');
+let subdomain=await ensureWorkersSubdomain(cf,candidate);
 let dbName=workerName+'-db',database=null;
 for(let page=1;page<=100;page++){let rows=await cf('/d1/database?per_page=100&page='+page);database=rows.find(d=>d.name===dbName);if(database||rows.length<100)break}
 if(!database)database=await cf('/d1/database','POST',{name:dbName});

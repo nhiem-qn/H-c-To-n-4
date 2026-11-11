@@ -15,7 +15,7 @@ Nếu chưa nhập học sinh ở bản cũ thì bỏ qua bước sao lưu.
 ## 1. Chuẩn bị Cloudflare một lần
 
 1. Đăng nhập/tạo tài khoản tại https://dash.cloudflare.com/.
-2. Mở **Workers & Pages** và hoàn tất kích hoạt tên miền con `workers.dev` nếu tài khoản mới yêu cầu.
+2. Mở **Workers & Pages** để tài khoản sẵn sàng dùng Workers. Nếu chưa có tên miền con `workers.dev`, workflow sẽ tự tạo một tên dành cho MIA; tên đã có sẽ được giữ nguyên.
 3. Sao chép **Account ID** của đúng tài khoản Cloudflare định dùng.
 4. Vào **My Profile → API Tokens → Create Token → Custom token**. Chỉ cấp cho đúng tài khoản, với các quyền:
 
