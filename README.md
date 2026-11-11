@@ -1,6 +1,14 @@
-# Vườn Toán 4 — Học cùng cô Mai
+# Học Toán cùng MIA — Học cùng cô Mi A
 
-Ứng dụng HTML/CSS/JavaScript tĩnh học Toán lớp 4 theo hai tập sách Kết nối tri thức do chủ dự án cung cấp. Có trang sách gốc, lời giảng bổ trợ, bài tập, kiểm tra và lưu tiến độ trong trình duyệt.
+Ứng dụng HTML/CSS/JavaScript học Toán lớp 4 theo hai tập sách Kết nối tri thức do chủ dự án cung cấp. Có trang sách gốc, lời giảng bổ trợ, kiểm tra tự học và phòng thi nhiều người. Tự học ngoại tuyến lưu tiến độ trong trình duyệt; học sinh đã đăng nhập dùng thêm máy chủ để đồng bộ và thi online.
+
+## Các đường dẫn đang dùng
+
+- Ứng dụng: https://nhiem-qn.github.io/H-c-To-n-4/
+- Vào lớp / thi online: https://nhiem-qn.github.io/H-c-To-n-4/#online
+- Trang admin: https://hoc-toan-cung-mia-online.glovedbetta.chatgpt.site/admin
+
+Admin đăng nhập qua ChatGPT bằng tài khoản chủ ứng dụng. Máy chủ xác thực và cấp quyền theo danh tính do nền tảng cung cấp, không dựa vào việc ẩn nút trên giao diện. Học sinh chỉ cần tên và mã riêng do admin cấp; mã được băm trên máy chủ, chỉ hiển thị một lần khi cấp hoặc đặt lại.
 
 ## Chạy ứng dụng
 
@@ -13,6 +21,19 @@ python CHAY-TREN-MAY.py
 ```
 
 Trên macOS/Linux có thể dùng `python3`. Mở địa chỉ được in ra trong cửa sổ lệnh. Nhận dạng tiếng nói có thể cần Internet; giọng đọc phụ thuộc thiết bị.
+
+## Tạo lớp và mở thi online
+
+1. Mở trang admin, đăng nhập đúng tài khoản ChatGPT chủ ứng dụng.
+2. Thêm từng tên học sinh. Sao chép mã riêng vừa hiện và gửi riêng cho học sinh.
+3. Chọn ngày học/phạm vi, số giây mỗi câu và tạo phòng.
+4. Sao chép liên kết phòng để gửi cho các bạn. Mỗi học sinh đăng nhập bằng tên và mã riêng rồi vào chỗ.
+5. Khi cả lớp sẵn sàng, admin bấm **Bắt đầu thi**. Học sinh chọn một đáp án trong thời gian cho phép.
+6. Đúng/sai chỉ hiện sau khi hết giờ; admin bấm **Câu tiếp theo** hoặc **Chốt kết quả**.
+
+Phòng có tối đa 40 thí sinh. Đồng bộ qua máy chủ khoảng 2 giây/lần. Nhân vật Three.js mang tên học sinh, đi vào ghế khi tham gia và đi ra khi rời phòng. Nếu mất kết nối/đóng tab mà không gửi được thông báo rời, nhân vật ra sau khoảng 22 giây không có tín hiệu. Khi WebGL không khả dụng, ứng dụng dùng danh sách ghế dự phòng và vẫn thi bình thường.
+
+Học sinh đăng nhập có thể quay lại học hằng ngày; tiến độ được lưu theo tài khoản riêng trên máy chủ. Admin xem tiến độ và kết quả online trong **Kết quả** ở danh sách học sinh. Cấp lại mã hoặc khóa tài khoản sẽ đăng xuất các phiên cũ.
 
 ## Cùng sửa và nâng cấp
 
@@ -33,6 +54,9 @@ Trên macOS/Linux có thể dùng `python3`. Mở địa chỉ được in ra tr
 | `app.js` | Điều hướng, bài học, chấm điểm, tiến độ, giọng đọc, hội thoại |
 | `data.js` | Danh mục 73 bài, lịch 175 ngày gợi ý, dữ liệu thư viện |
 | `guides.js` | Lời giảng, ví dụ, lỗi thường gặp |
+| `online.js` | Đăng nhập học sinh, đồng bộ tiến độ và phòng thi |
+| `classroom3d.js` | Phòng ghế/nhân vật Three.js và chuyển động vào/ra |
+| `online-server/` | Worker API, cơ sở dữ liệu D1, trang admin, migrations và kiểm tra nhiều người |
 | `voices.js` | Chọn giọng nữ cho hội thoại; loại giọng nam và yêu cầu xác nhận giọng chưa rõ |
 | `assets/audio/` | 73 bản đọc bài giảng bằng giọng nữ Hoài My và tệp thông tin đối chiếu |
 | `questions.js` | Bộ sinh câu hỏi, câu nguồn, quy tắc tạo đề và chấm đáp án |
@@ -45,7 +69,7 @@ Các tệp dữ liệu khai báo biến JavaScript toàn cục; hiện chưa dù
 
 ## Kiểm tra trước khi gửi PR
 
-Cần Node.js 20 trở lên, không cài thêm gói:
+Cần Node.js 24 trở lên, không cài thêm gói:
 
 ```sh
 node --check app.js
@@ -55,6 +79,9 @@ node --check guides.js
 node --check questions.js
 node scripts/verify-content.cjs
 node scripts/verify-voices.cjs
+node online-server/build.mjs
+node online-server/tests/server.test.mjs
+node scripts/verify-online-client.mjs
 ```
 
 Kiểm tra tự động chưa thay cho chạy thử trình duyệt, nghe giọng, thử micro hoặc thẩm định nội dung sư phạm.
@@ -73,10 +100,18 @@ Sách, ảnh sách và đề Word có nguồn riêng do chủ dự án cung cấ
 
 Không đưa tiến độ cá nhân, bản sao câu trả lời của trẻ, mật khẩu, khóa API hoặc token vào Git.
 
-## Giọng cô Mai
+## Giọng cô Mi A
 
-Nút **Nghe cô giảng** phát tệp MP3 giọng nữ tổng hợp `vi-VN-HoaiMyNeural` kèm sẵn cho từng bài. Vì vậy Chrome có giọng mặc định là nam vẫn phát giọng nữ cho bài giảng. Mở **Dành cho phụ huynh → Nghe giọng nữ cô Mai** để nghe mẫu.
+Nút **Nghe cô giảng** phát tệp MP3 giọng nữ tổng hợp `vi-VN-HoaiMyNeural` kèm sẵn cho từng bài. Vì vậy Chrome có giọng mặc định là nam vẫn phát giọng nữ cho bài giảng. Mở **Dành cho phụ huynh → Nghe giọng nữ cô Mi A** để nghe mẫu.
 
 Phần đọc hội thoại dùng giọng nữ tiếng Việt được nhận diện rõ trên thiết bị. Không tự dùng giọng nam; giọng chưa rõ giới tính cần phụ huynh nghe thử xong và xác nhận. Web Speech không có trường giới tính hoặc tuổi chuẩn, nên không thể tự xác minh âm sắc trẻ theo tuổi. Đổi cao độ không được dùng để giả lập giới tính.
 
 Khi sửa lời giảng, cập nhật âm thanh tương ứng. Công cụ dành cho người bảo trì: cài `edge-tts` trong môi trường Python riêng và chạy `python scripts/generate-lesson-audio.py` từ gốc kho. Công cụ cần Internet, Node.js và truy cập dịch vụ giọng nói; ứng dụng chạy bình thường không cần cài các phụ thuộc tạo âm thanh. Giữ xác minh chứng chỉ TLS. Bộ kiểm tra giọng đối chiếu nội dung gốc và mã kiểm tra của các MP3.
+
+## Nâng cấp phần máy chủ
+
+Phần tự học và giao diện được cập nhật bằng GitHub Pages. Phần `online-server/` chạy trên Sites/Cloudflare Worker và D1; đẩy lên GitHub **không tự triển khai lại API**. Người có quyền Sites cần build, đồng bộ nguồn và publish máy chủ qua quy trình Sites khi đổi phần này. Trường `d1` trong manifest là tên binding `DB`. Không sửa migration đã áp dụng; thêm migration mới nếu cần đổi schema.
+
+Biến runtime `ADMIN_EMAIL` chỉ dùng để cấp quyền lần đầu cho đúng chủ ứng dụng. Sau lần đầu, ID đăng nhập ổn định được lưu trong bảng `admins`. Giá trị này là cấu hình riêng ở máy chủ, không được đưa vào Git hoặc JavaScript trình duyệt. Máy chủ dùng đường đăng nhập do Sites quản lý; không tự viết OAuth.
+
+Giọng Mi A dùng Hoài My với tốc độ +4%, cao độ +10 Hz để sáng và nhanh nhẹn hơn. Đây là điều chỉnh âm sắc của giọng nữ tổng hợp, không phải xác minh tuổi người nói. Các tệp MP3 đã mang lời giới thiệu “Cô là Mi A”.

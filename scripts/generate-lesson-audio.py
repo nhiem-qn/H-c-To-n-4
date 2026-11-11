@@ -20,13 +20,13 @@ def spoken(text):
 
 async def record(l):
  async with semaphore:
-  g=l['guide'];text=f"Chào em! Cô là Mai. Hôm nay mình cùng học bài {l['id']}: {l['title']}. Điều em cần nhớ là: {g['rule']} "
+  g=l['guide'];text=f"Chào em! Cô là Mi A. Hôm nay mình cùng học bài {l['id']}: {l['title']}. Điều em cần nhớ là: {g['rule']} "
   text+=' '.join(f"Bước {i+1}. {s}" for i,s in enumerate(g['steps']))
   text+=f" Cùng quan sát ví dụ với cô nhé. {g['example']} Cô nhắc em một mẹo: {g['mistake']} Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
   text=spoken(text);path=OUT/f"bai-{l['id']}.mp3";temporary=path.with_suffix(".tmp.mp3")
   for attempt in range(3):
    try:
-    await asyncio.wait_for(edge_tts.Communicate(text,voice='vi-VN-HoaiMyNeural',rate='-3%',proxy=os.environ.get('HTTPS_PROXY')).save(str(temporary)),timeout=90)
+    await asyncio.wait_for(edge_tts.Communicate(text,voice='vi-VN-HoaiMyNeural',rate='+4%',pitch='+10Hz',proxy=os.environ.get('HTTPS_PROXY')).save(str(temporary)),timeout=90)
     if temporary.stat().st_size<1000:raise ValueError('Empty recording')
     temporary.replace(path)
     print(f"Recorded {l['id']}/73: {path.stat().st_size} bytes",flush=True)
@@ -36,6 +36,6 @@ async def record(l):
     await asyncio.sleep(2*(attempt+1))
 async def main():
  rows=await asyncio.gather(*(record(l) for l in lessons))
- (OUT/'manifest.json').write_text(json.dumps({'voice':'vi-VN-HoaiMyNeural','gender':'female','rate':'-3%','lessons':rows},ensure_ascii=False,indent=2))
+ (OUT/'manifest.json').write_text(json.dumps({'voice':'vi-VN-HoaiMyNeural','gender':'female','rate':'+4%','pitch':'+10Hz','lessons':rows},ensure_ascii=False,indent=2))
  print(f"DONE: {len(rows)} female recordings, {sum((OUT/r['file']).stat().st_size for r in rows)/1024/1024:.1f} MiB",flush=True)
 asyncio.run(main())

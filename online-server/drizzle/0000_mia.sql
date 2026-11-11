@@ -1,0 +1,10 @@
+CREATE TABLE admins (user_id TEXT PRIMARY KEY, created_at INTEGER NOT NULL);
+CREATE TABLE students (id TEXT PRIMARY KEY, name TEXT NOT NULL, normalized TEXT NOT NULL UNIQUE, pin_hash TEXT NOT NULL, pin_salt TEXT NOT NULL, active INTEGER NOT NULL DEFAULT 1, created_at INTEGER NOT NULL);
+CREATE TABLE sessions (token_hash TEXT PRIMARY KEY, student_id TEXT NOT NULL REFERENCES students(id), expires_at INTEGER NOT NULL);
+CREATE TABLE progress (student_id TEXT PRIMARY KEY REFERENCES students(id), payload TEXT NOT NULL, updated_at INTEGER NOT NULL);
+CREATE TABLE rooms (code TEXT PRIMARY KEY, title TEXT NOT NULL, questions TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'waiting', question_index INTEGER NOT NULL DEFAULT 0, started_at INTEGER, deadline INTEGER, seconds INTEGER NOT NULL DEFAULT 30, created_at INTEGER NOT NULL, ended_at INTEGER);
+CREATE TABLE participants (room_code TEXT NOT NULL REFERENCES rooms(code), student_id TEXT NOT NULL REFERENCES students(id), seat INTEGER NOT NULL, joined_at INTEGER NOT NULL, last_seen INTEGER NOT NULL, present INTEGER NOT NULL DEFAULT 1, blocked INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(room_code,student_id), UNIQUE(room_code,seat));
+CREATE TABLE answers (room_code TEXT NOT NULL REFERENCES rooms(code), student_id TEXT NOT NULL REFERENCES students(id), question_index INTEGER NOT NULL, value TEXT NOT NULL, correct INTEGER NOT NULL, submitted_at INTEGER NOT NULL, PRIMARY KEY(room_code,student_id,question_index));
+CREATE TABLE rate_limits (key TEXT PRIMARY KEY, attempts INTEGER NOT NULL DEFAULT 0, expires_at INTEGER NOT NULL);
+CREATE INDEX sessions_student ON sessions(student_id);
+CREATE INDEX answers_room ON answers(room_code);

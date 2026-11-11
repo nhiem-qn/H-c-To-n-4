@@ -1,4 +1,4 @@
-VƯỜN TOÁN 4 — KIỂM TRA BẢN PHÁT HÀNH
+HỌC TOÁN CÙNG MIA — KIỂM TRA BẢN PHÁT HÀNH
 Ngày: 11/11/2026
 
 ĐẠT
@@ -38,3 +38,18 @@ CẬP NHẬT GIỌNG CÔ MAI — 11/11/2026
 - Đã thử phát/giải mã MP3 và dừng bài giảng thực tế trong Chromium.
 - Chưa nghe và kiểm tra micro trên thiết bị gia đình; tuổi/âm sắc giọng không
   được xác định tự động bằng API của trình duyệt.
+
+CẬP NHẬT MIA VÀ THI ONLINE — 11/11/2026
+- Đổi tên ứng dụng Học Toán cùng MIA, cô Mi A; làm lại 73 bản đọc và mẫu
+  với âm sắc sáng hơn (+10 Hz), tốc độ +4%. 74 MP3 hợp lệ, khoảng 77,9 phút.
+- Có máy chủ Worker + D1, quyền admin theo đăng nhập ChatGPT của chủ ứng dụng.
+- Học sinh dùng tên + mã riêng. Phiên và tiến độ được tách theo học sinh.
+- Phòng thi: bảng xanh khoảng 2/3 vùng chính; ghế/nhân vật Three.js phía dưới;
+  danh sách thí sinh và kết quả bên phải; cập nhật khoảng 2 giây/lần.
+- Máy chủ chấm đáp án, khóa nộp lại/nộp muộn, không gửi đáp án trước hết giờ.
+- Đã kiểm tra máy chủ bằng SQLite và hai client frontend riêng dùng cùng API.
+- Đã kiểm tra API production: health 200, preflight CORS 204, admin không
+  đăng nhập 401, mã học sinh không hợp lệ 401.
+- Chưa kiểm tra trực quan phòng 3D trên trình duyệt thật ở bản cập nhật này:
+  công cụ cua_repl.js theo quy trình preview Sites không có trong phiên.
+  Có giao diện ghế dự phòng khi WebGL không hoạt động.

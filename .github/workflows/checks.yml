@@ -11,11 +11,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
       - name: Kiểm tra cú pháp JavaScript
         run: |
           node --check app.js
           node --check voices.js
+          node --check online.js
+          node --check classroom3d.js
           node --check data.js
           node --check guides.js
           node --check questions.js
@@ -23,3 +25,8 @@ jobs:
         run: node scripts/verify-content.cjs
       - name: Kiểm tra giọng nữ và âm thanh bài giảng
         run: node scripts/verify-voices.cjs
+      - name: Kiểm tra máy chủ và hai học sinh online
+        run: |
+          node online-server/build.mjs
+          node online-server/tests/server.test.mjs
+          node scripts/verify-online-client.mjs

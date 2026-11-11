@@ -1,4 +1,14 @@
-# Vườn Toán 4 — Học cùng cô Mai
+# Học Toán cùng MIA — Cô Mi A
+
+## Đăng nhập học sinh và thi cùng bạn bè
+
+Mở https://nhiem-qn.github.io/H-c-To-n-4/#online. Học sinh nhập tên và mã riêng do admin cấp. Nếu được gửi liên kết phòng, mã phòng sẽ được điền sẵn. Bấm vào phòng để nhân vật mang tên mình đi đến ghế.
+
+Bảng xanh ở phía trên hiển thị câu hỏi, các phương án và đồng hồ. Dãy ghế và nhân vật 3D nằm bên dưới. Danh sách bên phải cho biết các bạn trong phòng và số câu đúng. Câu trả lời chỉ được chốt khi máy chủ nhận; đúng/sai hiện sau khi hết giờ. Mỗi câu chỉ trả lời một lần.
+
+Admin mở https://hoc-toan-cung-mia-online.glovedbetta.chatgpt.site/admin và đăng nhập bằng tài khoản ChatGPT chủ ứng dụng. Admin thêm tên, cấp mã, xem báo cáo, tạo phòng và điều khiển câu hỏi. Hãy lưu mã khi vừa cấp; nếu quên, dùng Cấp lại mã. Khi cấp lại, các phiên cũ của học sinh bị đăng xuất.
+
+Phần online cần Internet và máy chủ; GitHub Pages chỉ phục vụ giao diện. Tiến độ của mỗi học sinh đăng nhập được lưu riêng trên máy chủ. Học ngoại tuyến không đăng nhập vẫn dùng vùng lưu cục bộ ban đầu. Khóa tài khoản chỉ do admin thực hiện ở máy chủ.
 
 ## Mở ứng dụng
 
@@ -70,7 +80,7 @@ Phần “Em đã hiểu” đánh dấu đã học để mở nút kiểm tra n
 
 ## Giọng cô và hội thoại hai chiều
 
-Cô Mai là nhân vật nữ vui vẻ, có hình minh họa. Phần đối đáp hoạt động theo kịch bản và chủ đề bài hiện tại, **chưa phải AI hội thoại tự do**.
+Cô Mi A là nhân vật nữ vui vẻ, có hình minh họa. Phần đối đáp hoạt động theo kịch bản và chủ đề bài hiện tại, **chưa phải AI hội thoại tự do**.
 
 Con có thể nói/gõ:
 
@@ -89,7 +99,7 @@ Micro có bước đồng ý của phụ huynh trước khi nhận dạng. Dịc
 
 ## Giữ tiến độ
 
-Dữ liệu lưu bằng localStorage trong trình duyệt hiện tại. Không có đăng nhập hoặc đồng bộ nhiều máy. Xóa dữ liệu trình duyệt có thể làm mất tiến độ.
+Khi chưa đăng nhập học sinh, dữ liệu lưu bằng localStorage trong trình duyệt hiện tại. Khi đăng nhập bằng tên và mã riêng, ứng dụng đồng bộ tiến độ lên máy chủ theo học sinh; vùng lưu trên máy cũng được tách theo tài khoản. Nên xuất bản sao trước khi xóa dữ liệu trình duyệt.
 
 - **Xuất tiến độ JSON** để sao lưu tên, lịch và lịch sử câu trả lời.
 - **Nhập bản sao** để khôi phục hoặc chuyển sang máy khác; sẽ thay dữ liệu hiện tại sau xác nhận.
@@ -121,3 +131,9 @@ GitHub Pages công khai nội dung được đưa lên. Gói này chứa sách v
 Cập nhật giọng nữ: 73 bài có MP3 Hoài My kèm sẵn. Đã kiểm tra giao diện và luồng chọn giọng bằng Chromium với danh sách giọng giả lập; kiểm tra phát MP3 riêng được ghi trong kết quả của lần cập nhật. Chưa kiểm thử trên máy thực tế của gia đình.
 
 Các tệp chính để chỉnh sửa: `data.js` (bài/ngày/tài liệu), `guides.js` (lời giảng), `questions.js` (ngân hàng câu hỏi), `app.js` (chức năng), `style.css` (giao diện).
+
+## Âm sắc Mi A ở bản mới
+
+Bản đọc bài đã được tạo lại với lời giới thiệu “Cô là Mi A”, giọng nữ Hoài My sáng hơn, tốc độ +4% và cao độ +10 Hz. Vào Dành cho phụ huynh → Nghe giọng nữ cô Mi A để nghe thử. Tốc độ phát vẫn có thể điều chỉnh theo khả năng tiếp thu của con.
+
+Các kiểm tra mới: quyền admin, mã học sinh, tách tiến độ, hai học sinh tham gia cùng phòng, chấm trên máy chủ, không lộ đáp án trước giờ, từ chối đáp án lặp/muộn, rời phòng, mất tín hiệu, mời ra, khóa tài khoản và cấp lại mã. Kiểm tra máy chủ dùng SQLite tương thích D1 và hai client frontend riêng. Chưa kiểm tra trực quan mô hình 3D trên thiết bị gia đình; khi WebGL không chạy, danh sách ghế dự phòng được dùng.

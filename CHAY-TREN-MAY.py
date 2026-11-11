@@ -1,4 +1,4 @@
-"""Phục vụ Vườn Toán 4 trên localhost; không cần cài thêm thư viện."""
+"""Phục vụ Học Toán cùng MIA trên localhost; không cần cài thêm thư viện."""
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from functools import partial
 from pathlib import Path

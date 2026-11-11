@@ -25,7 +25,7 @@ for(let id=1;id<=73;id++){
  assert.equal(entry.file,`bai-${id}.mp3`);assert.equal(entry.voice,manifest.voice);
  const audio=fs.readFileSync(`assets/audio/${entry.file}`);assert(audio.length>1000);
  assert.equal(crypto.createHash('sha256').update(audio).digest('hex'),entry.sha256,`audio mismatch for lesson ${id}`);
- assert(entry.text.includes('Cô là Mai'));assert(!entry.text.includes('undefined'));
+ assert(entry.text.includes('Cô là Mi A'));assert(!entry.text.includes('undefined'));
 }
 assert(fs.statSync('assets/audio/chao-em.mp3').size>1000);
 console.log('PASS: female-only voice policy, legacy preferences, adult confirmation, language filter and all 73 verified female lecture recordings.');
