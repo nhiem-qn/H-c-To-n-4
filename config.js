@@ -1,6 +1,7 @@
-// Public deployment settings. GitHub Actions updates this after a successful standalone deployment.
-// Do not put passwords, API tokens or other secrets in this file.
+// Public settings only. Passwords and API tokens are stored as server/GitHub secrets.
 window.MIA_SERVER_CONFIG = {
-  apiUrl: 'https://hoc-toan-cung-mia-online.glovedbetta.chatgpt.site',
-  mode: 'legacy'
+  "apiUrl": "https://mia-online.mia-nhiem-qn-13c091.workers.dev",
+  "mode": "standalone",
+  "appUrl": "https://nhiem-qn.github.io/H-c-To-n-4/",
+  "adminUsername": "admin"
 };
