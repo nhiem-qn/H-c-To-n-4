@@ -81,7 +81,9 @@ Con có thể nói/gõ:
 
 Ứng dụng nhận đáp án số, chữ và phân số. Có xử lí các số nói bằng tiếng Việt thông dụng; nhận dạng thực tế có thể sai. Với phân số, gõ `3/4` là cách chắc chắn nhất.
 
-Giọng đọc dùng Web Speech của hệ điều hành/trình duyệt, ưu tiên tiếng Việt; không kèm tệp thu âm của giáo viên. Cần chọn một giọng nữ tiếng Việt nếu thiết bị có hỗ trợ. Không thể bảo đảm giọng nữ trẻ trên mọi máy. Một số giọng cần Internet; giọng được hệ thống đánh dấu “trên máy” có thể hoạt động ngoại tuyến sau khi đã cài.
+Nút “Nghe cô giảng” dùng các tệp MP3 giọng nữ tổng hợp Hoài My kèm sẵn cho cả 73 bài, không lấy giọng mặc định của Chrome. Đây là giọng tổng hợp, không phải bản thu của một giáo viên thật. Khi tải đủ thư mục âm thanh về máy, bài giảng dùng được ngoại tuyến.
+
+Phần đọc hội thoại dùng Web Speech, chỉ tự chọn giọng nữ tiếng Việt được nhận diện rõ. Nếu chưa rõ giới tính, phụ huynh vào Dành cho phụ huynh, chọn giọng, nghe thử hết rồi xác nhận nếu đúng là nữ. Giọng nam đã biết bị loại khỏi danh sách. Nếu không có giọng nữ phù hợp, phần đọc hội thoại báo thiếu giọng, không tự đổi sang nam. Một số giọng cần Internet. Không thể tự xác minh tuổi của giọng; hãy nghe mẫu để đánh giá âm sắc phù hợp.
 
 Micro có bước đồng ý của phụ huynh trước khi nhận dạng. Dịch vụ nhận dạng của trình duyệt có thể truyền âm thanh lên hệ thống của nhà cung cấp. Ứng dụng không có máy chủ riêng để lưu âm thanh.
 
@@ -114,6 +116,8 @@ GitHub Pages công khai nội dung được đưa lên. Gói này chứa sách v
 - Sinh và kiểm tra dữ liệu 7 300 câu mẫu, đủ số câu của 175 đề ngày và 54 tổ hợp kiểm tra định kì.
 - Kiểm tra chấm phân số tương đương, số có phân cách hàng nghìn và mẫu số 0.
 - Kiểm tra dựng nội dung các màn hình, 24 phần bài học mẫu, chọn chặng kiểm tra, kết quả và hội thoại bằng mô phỏng DOM.
-- Chưa kiểm tra trực quan trong trình duyệt, phát giọng thực tế hoặc micro trên thiết bị gia đình. Môi trường làm việc không cung cấp công cụ `cua_repl.js` theo quy trình preview được hỗ trợ.
+- Ở bản cập nhật giọng nữ: đã thử giao diện trên Chromium, chính sách chọn giọng bằng dữ liệu giọng giả lập và phát MP3 thực tế. Chưa nghe thử trên thiết bị gia đình hoặc thử micro của gia đình.
+
+Cập nhật giọng nữ: 73 bài có MP3 Hoài My kèm sẵn. Đã kiểm tra giao diện và luồng chọn giọng bằng Chromium với danh sách giọng giả lập; kiểm tra phát MP3 riêng được ghi trong kết quả của lần cập nhật. Chưa kiểm thử trên máy thực tế của gia đình.
 
 Các tệp chính để chỉnh sửa: `data.js` (bài/ngày/tài liệu), `guides.js` (lời giảng), `questions.js` (ngân hàng câu hỏi), `app.js` (chức năng), `style.css` (giao diện).

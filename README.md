@@ -33,6 +33,8 @@ Trên macOS/Linux có thể dùng `python3`. Mở địa chỉ được in ra tr
 | `app.js` | Điều hướng, bài học, chấm điểm, tiến độ, giọng đọc, hội thoại |
 | `data.js` | Danh mục 73 bài, lịch 175 ngày gợi ý, dữ liệu thư viện |
 | `guides.js` | Lời giảng, ví dụ, lỗi thường gặp |
+| `voices.js` | Chọn giọng nữ cho hội thoại; loại giọng nam và yêu cầu xác nhận giọng chưa rõ |
+| `assets/audio/` | 73 bản đọc bài giảng bằng giọng nữ Hoài My và tệp thông tin đối chiếu |
 | `questions.js` | Bộ sinh câu hỏi, câu nguồn, quy tắc tạo đề và chấm đáp án |
 | `assets/` | Ảnh trang sách được dùng trong từng bài |
 | `tai-lieu/` | Hai PDF và 27 tệp Word gốc |
@@ -47,10 +49,12 @@ Cần Node.js 20 trở lên, không cài thêm gói:
 
 ```sh
 node --check app.js
+node --check voices.js
 node --check data.js
 node --check guides.js
 node --check questions.js
 node scripts/verify-content.cjs
+node scripts/verify-voices.cjs
 ```
 
 Kiểm tra tự động chưa thay cho chạy thử trình duyệt, nghe giọng, thử micro hoặc thẩm định nội dung sư phạm.
@@ -68,3 +72,11 @@ Lịch 175 ngày là đề xuất; lời giảng và câu bổ sung chưa đư�
 Sách, ảnh sách và đề Word có nguồn riêng do chủ dự án cung cấp. Không gán giấy phép mã nguồn cho các tài liệu này. Chưa thêm giấy phép phát hành mã nguồn; chủ dự án có thể chọn giấy phép riêng cho phần mã do dự án biên soạn khi xác định cách chia sẻ.
 
 Không đưa tiến độ cá nhân, bản sao câu trả lời của trẻ, mật khẩu, khóa API hoặc token vào Git.
+
+## Giọng cô Mai
+
+Nút **Nghe cô giảng** phát tệp MP3 giọng nữ tổng hợp `vi-VN-HoaiMyNeural` kèm sẵn cho từng bài. Vì vậy Chrome có giọng mặc định là nam vẫn phát giọng nữ cho bài giảng. Mở **Dành cho phụ huynh → Nghe giọng nữ cô Mai** để nghe mẫu.
+
+Phần đọc hội thoại dùng giọng nữ tiếng Việt được nhận diện rõ trên thiết bị. Không tự dùng giọng nam; giọng chưa rõ giới tính cần phụ huynh nghe thử xong và xác nhận. Web Speech không có trường giới tính hoặc tuổi chuẩn, nên không thể tự xác minh âm sắc trẻ theo tuổi. Đổi cao độ không được dùng để giả lập giới tính.
+
+Khi sửa lời giảng, cập nhật âm thanh tương ứng. Công cụ dành cho người bảo trì: cài `edge-tts` trong môi trường Python riêng và chạy `python scripts/generate-lesson-audio.py` từ gốc kho. Công cụ cần Internet, Node.js và truy cập dịch vụ giọng nói; ứng dụng chạy bình thường không cần cài các phụ thuộc tạo âm thanh. Giữ xác minh chứng chỉ TLS. Bộ kiểm tra giọng đối chiếu nội dung gốc và mã kiểm tra của các MP3.

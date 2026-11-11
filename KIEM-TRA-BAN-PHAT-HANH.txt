@@ -28,3 +28,13 @@ PHẠM VI
 - Tài liệu thuộc bộ Cánh Diều và Chân trời sáng tạo chưa nhập.
 - Gia sư phản hồi theo kịch bản; không phải AI hội thoại mở.
 - Lịch 175 ngày là lịch đề xuất, không phải phân phối chương trình chính thức.
+
+CẬP NHẬT GIỌNG CÔ MAI — 11/11/2026
+- Bổ sung MP3 giọng nữ Hoài My cho toàn bộ 73 bài, có văn bản và SHA-256 đối chiếu.
+- Bỏ nhánh tự chọn giọng tiếng Việt bất kì; giọng nam đã biết bị loại.
+- Giọng hội thoại chưa rõ giới tính phải nghe thử và được phụ huynh xác nhận.
+- Đã thử giao diện trên Chromium với các trường hợp máy chỉ có giọng nam,
+  lựa chọn giọng nam lưu từ bản cũ, giọng nữ sẵn có, và giọng chưa xác định.
+- Đã thử phát/giải mã MP3 và dừng bài giảng thực tế trong Chromium.
+- Chưa nghe và kiểm tra micro trên thiết bị gia đình; tuổi/âm sắc giọng không
+  được xác định tự động bằng API của trình duyệt.

@@ -1,0 +1,31 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),crypto=require('node:crypto');
+const context=vm.createContext({});vm.runInContext(fs.readFileSync('voices.js','utf8'),context);const policy=vm.runInContext('TeacherVoice',context);
+const male={name:'Microsoft An - Vietnamese (Vietnam)',voiceURI:'an',lang:'vi-VN'};
+const otherMale={name:'Microsoft NamMinh Online (Natural)',voiceURI:'namminh',lang:'vi-VN'};
+const female={name:'Microsoft HoaiMy Online (Natural)',voiceURI:'hoaimy',lang:'vi-VN'};
+const unknown={name:'Google tiếng Việt',voiceURI:'google-vi',lang:'vi-VN'};
+const english={name:'English Female',voiceURI:'english',lang:'en-US'};
+assert.equal(policy.choose([male,otherMale]),null,'never auto-select a male-only voice');
+assert.equal(policy.choose([male,female],male.voiceURI),female,'ignore old male preference');
+assert.equal(policy.choose([male,female],male.voiceURI,male.voiceURI),female,'confirmation cannot override a known male identity');
+assert.equal(policy.choose([unknown]),null,'unknown gender is never automatic');
+assert.equal(policy.choose([unknown],unknown.voiceURI),null,'a saved URI alone is not confirmation');
+assert.equal(policy.choose([unknown],unknown.voiceURI,unknown.voiceURI),unknown,'explicit adult confirmation enables an unknown voice');
+assert.equal(policy.choose([english],english.voiceURI,english.voiceURI),null,'require Vietnamese even after confirmation');
+assert.equal(policy.choose([]),null);
+assert.equal(policy.choose([female],unknown.voiceURI,unknown.voiceURI),female,'a missing preferred voice may only fall back to known female');
+for(const file of ['data.js','guides.js'])vm.runInContext(fs.readFileSync(file,'utf8'),context);
+const lessons=vm.runInContext('LESSONS.map(l=>({...l,guide:G[l.key]}))',context);
+const manifest=JSON.parse(fs.readFileSync('assets/audio/manifest.json','utf8'));
+assert.equal(manifest.voice,'vi-VN-HoaiMyNeural');assert.equal(manifest.lessons.length,73);
+assert.equal(new Set(manifest.lessons.map(r=>r.lesson)).size,73);
+for(let id=1;id<=73;id++){
+ const entry=manifest.lessons.find(r=>r.lesson===id);assert(entry,`missing lesson ${id}`);
+ const lesson=lessons.find(l=>l.id===id);assert.equal(entry.title,lesson.title);assert.equal(JSON.stringify(entry.guide),JSON.stringify(lesson.guide),'recording needs regeneration after guide edits');
+ assert.equal(entry.file,`bai-${id}.mp3`);assert.equal(entry.voice,manifest.voice);
+ const audio=fs.readFileSync(`assets/audio/${entry.file}`);assert(audio.length>1000);
+ assert.equal(crypto.createHash('sha256').update(audio).digest('hex'),entry.sha256,`audio mismatch for lesson ${id}`);
+ assert(entry.text.includes('Cô là Mai'));assert(!entry.text.includes('undefined'));
+}
+assert(fs.statSync('assets/audio/chao-em.mp3').size>1000);
+console.log('PASS: female-only voice policy, legacy preferences, adult confirmation, language filter and all 73 verified female lecture recordings.');

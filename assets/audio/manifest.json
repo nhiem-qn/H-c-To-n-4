@@ -1,0 +1,1374 @@
+{
+  "voice": "vi-VN-HoaiMyNeural",
+  "gender": "female",
+  "rate": "-3%",
+  "lessons": [
+    {
+      "lesson": 1,
+      "title": "Ôn tập các số đến 100 000",
+      "guide": {
+        "rule": "Mỗi chữ số có giá trị tùy theo hàng của nó. Đọc số từ trái sang phải; viết đúng từng hàng.",
+        "steps": [
+          "Tách các hàng: chục nghìn, nghìn, trăm, chục, đơn vị.",
+          "So sánh số chữ số trước, rồi so sánh từng hàng từ trái sang phải.",
+          "Số liền trước bớt 1; số liền sau thêm 1."
+        ],
+        "example": "42 530 = 40 000 + 2 000 + 500 + 30. Số liền sau là 42 531.",
+        "mistake": "Đừng bỏ mất chữ số 0 ở hàng không có đơn vị."
+      },
+      "file": "bai-1.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "b1f27d1bdf52eb1eb463622e7b2ec06389950bf67b7cd1883390d5f111681925",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 1: Ôn tập các số đến 100000. Điều em cần nhớ là: Mỗi chữ số có giá trị tùy theo hàng của nó. Đọc số từ trái sang phải; viết đúng từng hàng. Bước 1. Tách các hàng: chục nghìn, nghìn, trăm, chục, đơn vị. Bước 2. So sánh số chữ số trước, rồi so sánh từng hàng từ trái sang phải. Bước 3. Số liền trước bớt 1; số liền sau thêm 1. Cùng quan sát ví dụ với cô nhé. 42530  bằng  40000  cộng  2000  cộng  500  cộng  30. Số liền sau là 42531. Cô nhắc em một mẹo: Đừng bỏ mất chữ số 0 ở hàng không có đơn vị. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 2,
+      "title": "Ôn tập các phép tính trong phạm vi 100 000",
+      "guide": {
+        "rule": "Đặt thẳng các hàng khi cộng, trừ. Trong biểu thức, làm trong ngoặc trước, nhân chia trước, cộng trừ sau.",
+        "steps": [
+          "Cộng, trừ và nhân theo cột từ phải sang trái; nhớ hoặc mượn khi cần.",
+          "Chia từ trái sang phải; số dư luôn nhỏ hơn số chia.",
+          "Đọc lại phép tính và thử lại bằng phép tính ngược."
+        ],
+        "example": "24 315 + 12 420 = 36 735. Với 20 + 5 × 3, tính 5 × 3 = 15 trước, rồi 20 + 15 = 35.",
+        "mistake": "Đừng tính mọi biểu thức từ trái sang phải nếu còn phép nhân hoặc phép chia."
+      },
+      "file": "bai-2.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "b1424644acc4d4efe4db851b3695b6cb95d42057540d7565e749d3e8949f54c8",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 2: Ôn tập các phép tính trong phạm vi 100000. Điều em cần nhớ là: Đặt thẳng các hàng khi cộng, trừ. Trong biểu thức, làm trong ngoặc trước, nhân chia trước, cộng trừ sau. Bước 1. Cộng, trừ và nhân theo cột từ phải sang trái; nhớ hoặc mượn khi cần. Bước 2. Chia từ trái sang phải; số dư luôn nhỏ hơn số chia. Bước 3. Đọc lại phép tính và thử lại bằng phép tính ngược. Cùng quan sát ví dụ với cô nhé. 24315  cộng  12420  bằng  36735. Với 20  cộng  5  nhân  3, tính 5  nhân  3  bằng  15 trước, rồi 20  cộng  15  bằng  35. Cô nhắc em một mẹo: Đừng tính mọi biểu thức từ trái sang phải nếu còn phép nhân hoặc phép chia. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 3,
+      "title": "Số chẵn, số lẻ",
+      "guide": {
+        "rule": "Số chẵn có chữ số tận cùng là 0, 2, 4, 6, 8. Số lẻ có chữ số tận cùng là 1, 3, 5, 7, 9.",
+        "steps": [
+          "Quan sát chữ số ở hàng đơn vị.",
+          "Đối chiếu với nhóm chữ số tận cùng của số chẵn hoặc số lẻ.",
+          "Hai số chẵn liên tiếp hơn kém nhau 2; số lẻ cũng vậy."
+        ],
+        "example": "4 328 là số chẵn vì tận cùng là 8. 7 135 là số lẻ vì tận cùng là 5.",
+        "mistake": "Chỉ nhìn chữ số cuối, không nhìn chữ số đầu. Số 0 là số chẵn."
+      },
+      "file": "bai-3.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "e6d12b071e7296021a7b95a16efeac74f5850b97b7a271727d2eabfacbec8866",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 3: Số chẵn, số lẻ. Điều em cần nhớ là: Số chẵn có chữ số tận cùng là 0, 2, 4, 6, 8. Số lẻ có chữ số tận cùng là 1, 3, 5, 7, 9. Bước 1. Quan sát chữ số ở hàng đơn vị. Bước 2. Đối chiếu với nhóm chữ số tận cùng của số chẵn hoặc số lẻ. Bước 3. Hai số chẵn liên tiếp hơn kém nhau 2; số lẻ cũng vậy. Cùng quan sát ví dụ với cô nhé. 4328 là số chẵn vì tận cùng là 8. 7135 là số lẻ vì tận cùng là 5. Cô nhắc em một mẹo: Chỉ nhìn chữ số cuối, không nhìn chữ số đầu. Số 0 là số chẵn. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 4,
+      "title": "Biểu thức chứa chữ",
+      "guide": {
+        "rule": "Biểu thức chứa chữ dùng chữ thay cho một số. Khi biết giá trị của chữ, thay số vào rồi tính.",
+        "steps": [
+          "Viết lại biểu thức.",
+          "Thay mọi chữ bằng giá trị đã cho.",
+          "Tính theo đúng thứ tự thực hiện các phép tính."
+        ],
+        "example": "Với a = 4: 35 + 5 × a = 35 + 5 × 4 = 35 + 20 = 55.",
+        "mistake": "Thay chữ xong vẫn phải nhân, chia trước cộng, trừ."
+      },
+      "file": "bai-4.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "f69e748de7216922a79abeeffdfc67939cc21d27b37830c4515abfa8766b094e",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 4: Biểu thức chứa chữ. Điều em cần nhớ là: Biểu thức chứa chữ dùng chữ thay cho một số. Khi biết giá trị của chữ, thay số vào rồi tính. Bước 1. Viết lại biểu thức. Bước 2. Thay mọi chữ bằng giá trị đã cho. Bước 3. Tính theo đúng thứ tự thực hiện các phép tính. Cùng quan sát ví dụ với cô nhé. Với a  bằng  4 chia 35  cộng  5  nhân  a  bằng  35  cộng  5  nhân  4  bằng  35  cộng  20  bằng  55. Cô nhắc em một mẹo: Thay chữ xong vẫn phải nhân, chia trước cộng, trừ. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 5,
+      "title": "Giải bài toán có ba bước tính",
+      "guide": {
+        "rule": "Bài toán có ba bước tính cần tìm các kết quả trung gian trước khi trả lời câu hỏi cuối.",
+        "steps": [
+          "Gạch dưới điều đã biết và điều cần tìm.",
+          "Tự hỏi: muốn tìm kết quả cuối, cần biết gì trước?",
+          "Viết ba câu lời giải, phép tính, đơn vị và đáp số."
+        ],
+        "example": "Ngày đầu bán 120 quyển, ngày hai ít hơn 20 quyển, ngày ba bằng tổng hai ngày đầu. Ngày hai: 120 − 20 = 100. Ngày ba: 120 + 100 = 220. Cả ba ngày: 120 + 100 + 220 = 440 quyển.",
+        "mistake": "Không cộng ngay mọi số trong đề; hãy tìm mối quan hệ giữa các dữ kiện."
+      },
+      "file": "bai-5.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "248c5b23dbca30d6f2a9e7913e7f43c42e30e2c128599ec09dffa1970baeddaa",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 5: Giải bài toán có ba bước tính. Điều em cần nhớ là: Bài toán có ba bước tính cần tìm các kết quả trung gian trước khi trả lời câu hỏi cuối. Bước 1. Gạch dưới điều đã biết và điều cần tìm. Bước 2. Tự hỏi: muốn tìm kết quả cuối, cần biết gì trước? Bước 3. Viết ba câu lời giải, phép tính, đơn vị và đáp số. Cùng quan sát ví dụ với cô nhé. Ngày đầu bán 120 quyển, ngày hai ít hơn 20 quyển, ngày ba bằng tổng hai ngày đầu. Ngày hai: 120  trừ  20  bằng  100. Ngày ba: 120  cộng  100  bằng  220. Cả ba ngày: 120  cộng  100  cộng  220  bằng  440 quyển. Cô nhắc em một mẹo: Không cộng ngay mọi số trong đề; hãy tìm mối quan hệ giữa các dữ kiện. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 6,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Mỗi chữ số có giá trị tùy theo hàng của nó. Đọc số từ trái sang phải; viết đúng từng hàng.",
+          "Đặt thẳng các hàng khi cộng, trừ. Trong biểu thức, làm trong ngoặc trước, nhân chia trước, cộng trừ sau.",
+          "Số chẵn có chữ số tận cùng là 0, 2, 4, 6, 8. Số lẻ có chữ số tận cùng là 1, 3, 5, 7, 9.",
+          "Biểu thức chứa chữ dùng chữ thay cho một số. Khi biết giá trị của chữ, thay số vào rồi tính.",
+          "Bài toán có ba bước tính cần tìm các kết quả trung gian trước khi trả lời câu hỏi cuối."
+        ],
+        "example": "42 530 = 40 000 + 2 000 + 500 + 30. Số liền sau là 42 531.\n\n24 315 + 12 420 = 36 735. Với 20 + 5 × 3, tính 5 × 3 = 15 trước, rồi 20 + 15 = 35.\n\n4 328 là số chẵn vì tận cùng là 8. 7 135 là số lẻ vì tận cùng là 5.\n\nVới a = 4: 35 + 5 × a = 35 + 5 × 4 = 35 + 20 = 55.\n\nNgày đầu bán 120 quyển, ngày hai ít hơn 20 quyển, ngày ba bằng tổng hai ngày đầu. Ngày hai: 120 − 20 = 100. Ngày ba: 120 + 100 = 220. Cả ba ngày: 120 + 100 + 220 = 440 quyển.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-6.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "ce4b2075c8d73f7fd95974470811b4e829cd019e9f0fa6166fbc41260e0d0e63",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 6: Luyện tập chung. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Mỗi chữ số có giá trị tùy theo hàng của nó. Đọc số từ trái sang phải; viết đúng từng hàng. Bước 2. Đặt thẳng các hàng khi cộng, trừ. Trong biểu thức, làm trong ngoặc trước, nhân chia trước, cộng trừ sau. Bước 3. Số chẵn có chữ số tận cùng là 0, 2, 4, 6, 8. Số lẻ có chữ số tận cùng là 1, 3, 5, 7, 9. Bước 4. Biểu thức chứa chữ dùng chữ thay cho một số. Khi biết giá trị của chữ, thay số vào rồi tính. Bước 5. Bài toán có ba bước tính cần tìm các kết quả trung gian trước khi trả lời câu hỏi cuối. Cùng quan sát ví dụ với cô nhé. 42530  bằng  40000  cộng  2000  cộng  500  cộng  30. Số liền sau là 42531.\n\n24315  cộng  12420  bằng  36735. Với 20  cộng  5  nhân  3, tính 5  nhân  3  bằng  15 trước, rồi 20  cộng  15  bằng  35.\n\n4328 là số chẵn vì tận cùng là 8. 7135 là số lẻ vì tận cùng là 5.\n\nVới a  bằng  4 chia 35  cộng  5  nhân  a  bằng  35  cộng  5  nhân  4  bằng  35  cộng  20  bằng  55.\n\nNgày đầu bán 120 quyển, ngày hai ít hơn 20 quyển, ngày ba bằng tổng hai ngày đầu. Ngày hai: 120  trừ  20  bằng  100. Ngày ba: 120  cộng  100  bằng  220. Cả ba ngày: 120  cộng  100  cộng  220  bằng  440 quyển. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 7,
+      "title": "Đo góc, đơn vị đo góc",
+      "guide": {
+        "rule": "Đơn vị đo góc là độ, kí hiệu °. Dùng thước đo góc để đọc số đo.",
+        "steps": [
+          "Đặt tâm thước trùng với đỉnh góc.",
+          "Đặt vạch 0° trùng với một cạnh của góc.",
+          "Đọc số nơi cạnh kia đi qua, theo đúng thang bắt đầu từ 0°."
+        ],
+        "example": "Góc vuông có số đo 90°. Nếu cạnh thứ hai đi qua vạch 60° trên thang đúng thì góc đó bằng 60°.",
+        "mistake": "Thước có hai thang số: đọc từ vạch 0° của cạnh đã đặt, tránh đọc nhầm thành 120°."
+      },
+      "file": "bai-7.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "1a49767e7519cb5d2ffff55e53af1f3321e59daeb02408c00fa04a596c045e67",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 7: Đo góc, đơn vị đo góc. Điều em cần nhớ là: Đơn vị đo góc là độ, kí hiệu  độ . Dùng thước đo góc để đọc số đo. Bước 1. Đặt tâm thước trùng với đỉnh góc. Bước 2. Đặt vạch 0 độ  trùng với một cạnh của góc. Bước 3. Đọc số nơi cạnh kia đi qua, theo đúng thang bắt đầu từ 0 độ . Cùng quan sát ví dụ với cô nhé. Góc vuông có số đo 90 độ . Nếu cạnh thứ hai đi qua vạch 60 độ  trên thang đúng thì góc đó bằng 60 độ . Cô nhắc em một mẹo: Thước có hai thang số: đọc từ vạch 0 độ  của cạnh đã đặt, tránh đọc nhầm thành 120 độ . Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 8,
+      "title": "Góc nhọn, góc tù, góc bẹt",
+      "guide": {
+        "rule": "Góc nhọn nhỏ hơn góc vuông; góc tù lớn hơn góc vuông và nhỏ hơn góc bẹt; góc bẹt bằng hai góc vuông.",
+        "steps": [
+          "Góc nhọn: lớn hơn 0° và nhỏ hơn 90°.",
+          "Góc vuông: 90°. Góc tù: lớn hơn 90° và nhỏ hơn 180°.",
+          "Góc bẹt: 180°. Dùng ê ke hoặc thước để kiểm tra."
+        ],
+        "example": "60° là góc nhọn, 90° là góc vuông, 120° là góc tù, 180° là góc bẹt.",
+        "mistake": "Góc 90° không phải góc nhọn hoặc góc tù."
+      },
+      "file": "bai-8.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "e7fd48370bd96a8baff44e93f3a5ceffbd9d1d76678625e7844bd993bfa94fed",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 8: Góc nhọn, góc tù, góc bẹt. Điều em cần nhớ là: Góc nhọn nhỏ hơn góc vuông; góc tù lớn hơn góc vuông và nhỏ hơn góc bẹt; góc bẹt bằng hai góc vuông. Bước 1. Góc nhọn: lớn hơn 0 độ  và nhỏ hơn 90 độ . Bước 2. Góc vuông: 90 độ . Góc tù: lớn hơn 90 độ  và nhỏ hơn 180 độ . Bước 3. Góc bẹt: 180 độ . Dùng ê ke hoặc thước để kiểm tra. Cùng quan sát ví dụ với cô nhé. 60 độ  là góc nhọn, 90 độ  là góc vuông, 120 độ  là góc tù, 180 độ  là góc bẹt. Cô nhắc em một mẹo: Góc 90 độ  không phải góc nhọn hoặc góc tù. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 9,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Góc nhọn nhỏ hơn góc vuông; góc tù lớn hơn góc vuông và nhỏ hơn góc bẹt; góc bẹt bằng hai góc vuông.",
+        "steps": [
+          "Góc nhọn: lớn hơn 0° và nhỏ hơn 90°.",
+          "Góc vuông: 90°. Góc tù: lớn hơn 90° và nhỏ hơn 180°.",
+          "Góc bẹt: 180°. Dùng ê ke hoặc thước để kiểm tra."
+        ],
+        "example": "60° là góc nhọn, 90° là góc vuông, 120° là góc tù, 180° là góc bẹt.",
+        "mistake": "Góc 90° không phải góc nhọn hoặc góc tù."
+      },
+      "file": "bai-9.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "03300d760a95e5b73deb325484deb765daa5ad809b3041dc254205d661521775",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 9: Luyện tập chung. Điều em cần nhớ là: Góc nhọn nhỏ hơn góc vuông; góc tù lớn hơn góc vuông và nhỏ hơn góc bẹt; góc bẹt bằng hai góc vuông. Bước 1. Góc nhọn: lớn hơn 0 độ  và nhỏ hơn 90 độ . Bước 2. Góc vuông: 90 độ . Góc tù: lớn hơn 90 độ  và nhỏ hơn 180 độ . Bước 3. Góc bẹt: 180 độ . Dùng ê ke hoặc thước để kiểm tra. Cùng quan sát ví dụ với cô nhé. 60 độ  là góc nhọn, 90 độ  là góc vuông, 120 độ  là góc tù, 180 độ  là góc bẹt. Cô nhắc em một mẹo: Góc 90 độ  không phải góc nhọn hoặc góc tù. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 10,
+      "title": "Số có sáu chữ số. Số 1 000 000",
+      "guide": {
+        "rule": "Mười trăm nghìn là một triệu. Số 1 000 000 có bảy chữ số.",
+        "steps": [
+          "Số có sáu chữ số gồm các hàng từ trăm nghìn đến đơn vị.",
+          "Đọc lần lượt phần nghìn rồi phần còn lại.",
+          "Khi thêm 1 vào 999 999 ta được 1 000 000."
+        ],
+        "example": "305 214 đọc là ba trăm linh năm nghìn hai trăm mười bốn.",
+        "mistake": "Số bé nhất có sáu chữ số là 100 000, không phải 1 000 000."
+      },
+      "file": "bai-10.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "99e34a1af10f3d0db3107fffe29dcc27b890c59e99166a0b5cbc6dcc315501ff",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 10: Số có sáu chữ số. Số 1000000. Điều em cần nhớ là: Mười trăm nghìn là một triệu. Số 1000000 có bảy chữ số. Bước 1. Số có sáu chữ số gồm các hàng từ trăm nghìn đến đơn vị. Bước 2. Đọc lần lượt phần nghìn rồi phần còn lại. Bước 3. Khi thêm 1 vào 999999 ta được 1000000. Cùng quan sát ví dụ với cô nhé. 305214 đọc là ba trăm linh năm nghìn hai trăm mười bốn. Cô nhắc em một mẹo: Số bé nhất có sáu chữ số là 100000, không phải 1000000. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 11,
+      "title": "Hàng và lớp",
+      "guide": {
+        "rule": "Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu.",
+        "steps": [
+          "Tách số từ phải sang trái thành từng nhóm ba chữ số.",
+          "Đọc từng lớp từ trái sang phải, kèm tên lớp.",
+          "Giá trị chữ số bằng chữ số nhân với giá trị một đơn vị của hàng đó."
+        ],
+        "example": "12 345 678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300 000.",
+        "mistake": "Hàng và lớp khác nhau: hàng trăm nghìn thuộc lớp nghìn."
+      },
+      "file": "bai-11.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "d4108ea95890335115302e62d49e49b4603048de00e946676bb9fdb188944c87",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 11: Hàng và lớp. Điều em cần nhớ là: Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu. Bước 1. Tách số từ phải sang trái thành từng nhóm ba chữ số. Bước 2. Đọc từng lớp từ trái sang phải, kèm tên lớp. Bước 3. Giá trị chữ số bằng chữ số nhân với giá trị một đơn vị của hàng đó. Cùng quan sát ví dụ với cô nhé. 12345678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300000. Cô nhắc em một mẹo: Hàng và lớp khác nhau: hàng trăm nghìn thuộc lớp nghìn. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 12,
+      "title": "Các số trong phạm vi lớp triệu",
+      "guide": {
+        "rule": "Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu.",
+        "steps": [
+          "Tách số từ phải sang trái thành từng nhóm ba chữ số.",
+          "Đọc từng lớp từ trái sang phải, kèm tên lớp.",
+          "Giá trị chữ số bằng chữ số nhân với giá trị một đơn vị của hàng đó."
+        ],
+        "example": "12 345 678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300 000.",
+        "mistake": "Hàng và lớp khác nhau: hàng trăm nghìn thuộc lớp nghìn."
+      },
+      "file": "bai-12.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "dd9d2f20411f611f4d3e05ff77925ad1d8210d0d2c462b968f14959383705bc5",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 12: Các số trong phạm vi lớp triệu. Điều em cần nhớ là: Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu. Bước 1. Tách số từ phải sang trái thành từng nhóm ba chữ số. Bước 2. Đọc từng lớp từ trái sang phải, kèm tên lớp. Bước 3. Giá trị chữ số bằng chữ số nhân với giá trị một đơn vị của hàng đó. Cùng quan sát ví dụ với cô nhé. 12345678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300000. Cô nhắc em một mẹo: Hàng và lớp khác nhau: hàng trăm nghìn thuộc lớp nghìn. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 13,
+      "title": "Làm tròn số đến hàng trăm nghìn",
+      "guide": {
+        "rule": "Làm tròn đến hàng trăm nghìn: nhìn chữ số hàng chục nghìn.",
+        "steps": [
+          "Xác định chữ số ở hàng cần làm tròn.",
+          "Chữ số bên phải nhỏ hơn 5 thì giữ nguyên; từ 5 trở lên thì tăng 1.",
+          "Thay tất cả chữ số bên phải hàng làm tròn bằng 0."
+        ],
+        "example": "3 462 000 làm tròn đến hàng trăm nghìn được 3 500 000 vì chữ số hàng chục nghìn là 6.",
+        "mistake": "Chỉ nhìn chữ số ngay bên phải hàng cần làm tròn, không nhìn chữ số cuối."
+      },
+      "file": "bai-13.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "1173d16503e550111ba782bac2cbac3ed17c0de5eaaa50f473224a4f1a1d8829",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 13: Làm tròn số đến hàng trăm nghìn. Điều em cần nhớ là: Làm tròn đến hàng trăm nghìn: nhìn chữ số hàng chục nghìn. Bước 1. Xác định chữ số ở hàng cần làm tròn. Bước 2. Chữ số bên phải nhỏ hơn 5 thì giữ nguyên; từ 5 trở lên thì tăng 1. Bước 3. Thay tất cả chữ số bên phải hàng làm tròn bằng 0. Cùng quan sát ví dụ với cô nhé. 3462000 làm tròn đến hàng trăm nghìn được 3500000 vì chữ số hàng chục nghìn là 6. Cô nhắc em một mẹo: Chỉ nhìn chữ số ngay bên phải hàng cần làm tròn, không nhìn chữ số cuối. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 14,
+      "title": "So sánh các số có nhiều chữ số",
+      "guide": {
+        "rule": "Số có nhiều chữ số hơn thì lớn hơn. Nếu cùng số chữ số, so từng hàng từ trái sang phải.",
+        "steps": [
+          "Đếm số chữ số.",
+          "Tìm cặp chữ số đầu tiên khác nhau ở cùng hàng.",
+          "Điền >, < hoặc =; đọc lại kết luận."
+        ],
+        "example": "2 315 000 < 2 351 000 vì ở hàng chục nghìn, 1 < 5.",
+        "mistake": "Đừng so tổng các chữ số; so theo giá trị của từng hàng."
+      },
+      "file": "bai-14.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "5fcece9e09123529584185c696f2b62c7a464fffb9e3c3bf70ae15dd1f91df50",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 14: So sánh các số có nhiều chữ số. Điều em cần nhớ là: Số có nhiều chữ số hơn thì lớn hơn. Nếu cùng số chữ số, so từng hàng từ trái sang phải. Bước 1. Đếm số chữ số. Bước 2. Tìm cặp chữ số đầu tiên khác nhau ở cùng hàng. Bước 3. Điền  lớn hơn ,  nhỏ hơn  hoặc  bằng ; đọc lại kết luận. Cùng quan sát ví dụ với cô nhé. 2315000  nhỏ hơn  2351000 vì ở hàng chục nghìn, 1  nhỏ hơn  5. Cô nhắc em một mẹo: Đừng so tổng các chữ số; so theo giá trị của từng hàng. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 15,
+      "title": "Làm quen với dãy số tự nhiên",
+      "guide": {
+        "rule": "Các số 0, 1, 2, 3,... là các số tự nhiên, xếp theo thứ tự từ bé đến lớn thành dãy số tự nhiên.",
+        "steps": [
+          "Số tự nhiên bé nhất là 0.",
+          "Hai số tự nhiên liên tiếp hơn kém nhau 1.",
+          "Không có số tự nhiên lớn nhất vì luôn thêm được 1."
+        ],
+        "example": "Sau 999 là 1 000; trước 1 000 là 999. Số 0 không có số tự nhiên liền trước.",
+        "mistake": "Đừng nhầm số tự nhiên bé nhất với số tự nhiên khác 0 bé nhất."
+      },
+      "file": "bai-15.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "15dc77cfca32a7f26f77533ea12ff334d8e6c665177256cce3d8a64eb2a123bb",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 15: Làm quen với dãy số tự nhiên. Điều em cần nhớ là: Các số 0, 1, 2, 3,... là các số tự nhiên, xếp theo thứ tự từ bé đến lớn thành dãy số tự nhiên. Bước 1. Số tự nhiên bé nhất là 0. Bước 2. Hai số tự nhiên liên tiếp hơn kém nhau 1. Bước 3. Không có số tự nhiên lớn nhất vì luôn thêm được 1. Cùng quan sát ví dụ với cô nhé. Sau 999 là 1000; trước 1000 là 999. Số 0 không có số tự nhiên liền trước. Cô nhắc em một mẹo: Đừng nhầm số tự nhiên bé nhất với số tự nhiên khác 0 bé nhất. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 16,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Mười trăm nghìn là một triệu. Số 1 000 000 có bảy chữ số.",
+          "Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu.",
+          "Làm tròn đến hàng trăm nghìn: nhìn chữ số hàng chục nghìn.",
+          "Số có nhiều chữ số hơn thì lớn hơn. Nếu cùng số chữ số, so từng hàng từ trái sang phải.",
+          "Các số 0, 1, 2, 3,... là các số tự nhiên, xếp theo thứ tự từ bé đến lớn thành dãy số tự nhiên."
+        ],
+        "example": "305 214 đọc là ba trăm linh năm nghìn hai trăm mười bốn.\n\n12 345 678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300 000.\n\n3 462 000 làm tròn đến hàng trăm nghìn được 3 500 000 vì chữ số hàng chục nghìn là 6.\n\n2 315 000 < 2 351 000 vì ở hàng chục nghìn, 1 < 5.\n\nSau 999 là 1 000; trước 1 000 là 999. Số 0 không có số tự nhiên liền trước.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-16.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "e428ce4acc2e5ab815abe1599c9205e946808d8876ffe57e2bae43630b672f53",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 16: Luyện tập chung. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Mười trăm nghìn là một triệu. Số 1000000 có bảy chữ số. Bước 2. Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu. Bước 3. Làm tròn đến hàng trăm nghìn: nhìn chữ số hàng chục nghìn. Bước 4. Số có nhiều chữ số hơn thì lớn hơn. Nếu cùng số chữ số, so từng hàng từ trái sang phải. Bước 5. Các số 0, 1, 2, 3,... là các số tự nhiên, xếp theo thứ tự từ bé đến lớn thành dãy số tự nhiên. Cùng quan sát ví dụ với cô nhé. 305214 đọc là ba trăm linh năm nghìn hai trăm mười bốn.\n\n12345678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300000.\n\n3462000 làm tròn đến hàng trăm nghìn được 3500000 vì chữ số hàng chục nghìn là 6.\n\n2315000  nhỏ hơn  2351000 vì ở hàng chục nghìn, 1  nhỏ hơn  5.\n\nSau 999 là 1000; trước 1000 là 999. Số 0 không có số tự nhiên liền trước. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 17,
+      "title": "Yến, tạ, tấn",
+      "guide": {
+        "rule": "1 yến = 10 kg; 1 tạ = 100 kg = 10 yến; 1 tấn = 1 000 kg = 10 tạ.",
+        "steps": [
+          "Xác định đơn vị đang có và đơn vị cần đổi.",
+          "Đổi về đơn vị nhỏ hơn thì nhân; đổi về đơn vị lớn hơn thì chia.",
+          "Đổi cùng đơn vị trước khi so sánh hoặc cộng, trừ."
+        ],
+        "example": "3 tấn 5 tạ = 3 000 kg + 500 kg = 3 500 kg.",
+        "mistake": "Mỗi bậc tấn → tạ → yến → kg gấp 10 lần, không phải 100 lần."
+      },
+      "file": "bai-17.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "65d16611a767b05024e4f7e9f6b7c7e7e233669901d782d077c2511b0ee00404",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 17: Yến, tạ, tấn. Điều em cần nhớ là: 1 yến  bằng  10 kg; 1 tạ  bằng  100 kg  bằng  10 yến; 1 tấn  bằng  1000 kg  bằng  10 tạ. Bước 1. Xác định đơn vị đang có và đơn vị cần đổi. Bước 2. Đổi về đơn vị nhỏ hơn thì nhân; đổi về đơn vị lớn hơn thì chia. Bước 3. Đổi cùng đơn vị trước khi so sánh hoặc cộng, trừ. Cùng quan sát ví dụ với cô nhé. 3 tấn 5 tạ  bằng  3000 kg  cộng  500 kg  bằng  3500 kg. Cô nhắc em một mẹo: Mỗi bậc tấn → tạ → yến → kg gấp 10 lần, không phải 100 lần. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 18,
+      "title": "Đề-xi-mét vuông, mét vuông, mi-li-mét vuông",
+      "guide": {
+        "rule": "1 m² = 100 dm²; 1 dm² = 100 cm²; 1 cm² = 100 mm².",
+        "steps": [
+          "Một mét bằng 10 đề-xi-mét nên một mét vuông gồm 10 × 10 = 100 đề-xi-mét vuông.",
+          "Đếm số bậc đổi và nhân hoặc chia cho 100 ở mỗi bậc.",
+          "Với số đo hỗn hợp, đổi từng phần rồi cộng."
+        ],
+        "example": "2 m² 35 dm² = 200 dm² + 35 dm² = 235 dm².",
+        "mistake": "Đơn vị diện tích liền nhau gấp 100 lần, khác đơn vị độ dài gấp 10 lần."
+      },
+      "file": "bai-18.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "898ccd0ef0b4e50613694bfeae72171055a43fc99e6d1b49bac2d572cec322aa",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 18: Đề-xi-mét vuông, mét vuông, mi-li-mét vuông. Điều em cần nhớ là: 1  mét vuông   bằng  100  đề xi mét vuông ; 1  đề xi mét vuông   bằng  100  xăng ti mét vuông ; 1  xăng ti mét vuông   bằng  100  mi li mét vuông . Bước 1. Một mét bằng 10 đề-xi-mét nên một mét vuông gồm 10  nhân  10  bằng  100 đề-xi-mét vuông. Bước 2. Đếm số bậc đổi và nhân hoặc chia cho 100 ở mỗi bậc. Bước 3. Với số đo hỗn hợp, đổi từng phần rồi cộng. Cùng quan sát ví dụ với cô nhé. 2  mét vuông  35  đề xi mét vuông   bằng  200  đề xi mét vuông   cộng  35  đề xi mét vuông   bằng  235  đề xi mét vuông . Cô nhắc em một mẹo: Đơn vị diện tích liền nhau gấp 100 lần, khác đơn vị độ dài gấp 10 lần. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 19,
+      "title": "Giây, thế kỉ",
+      "guide": {
+        "rule": "1 phút = 60 giây; 1 giờ = 60 phút; 1 thế kỉ = 100 năm.",
+        "steps": [
+          "Đổi đơn vị thời gian theo đúng quan hệ.",
+          "Thế kỉ I từ năm 1 đến 100; thế kỉ II từ 101 đến 200.",
+          "Năm tròn trăm thuộc thế kỉ kết thúc ở năm đó."
+        ],
+        "example": "2 phút 12 giây = 132 giây. Năm 2000 thuộc thế kỉ XX; năm 2001 thuộc thế kỉ XXI.",
+        "mistake": "Không đổi 1 phút thành 100 giây."
+      },
+      "file": "bai-19.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "a24eb2c4806d8fb00d98893929546de21d851cfca30b5b9d736fd2f331348b07",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 19: Giây, thế kỉ. Điều em cần nhớ là: 1 phút  bằng  60 giây; 1 giờ  bằng  60 phút; 1 thế kỉ  bằng  100 năm. Bước 1. Đổi đơn vị thời gian theo đúng quan hệ. Bước 2. Thế kỉ I từ năm 1 đến 100; thế kỉ II từ 101 đến 200. Bước 3. Năm tròn trăm thuộc thế kỉ kết thúc ở năm đó. Cùng quan sát ví dụ với cô nhé. 2 phút 12 giây  bằng  132 giây. Năm 2000 thuộc thế kỉ XX; năm 2001 thuộc thế kỉ XXI. Cô nhắc em một mẹo: Không đổi 1 phút thành 100 giây. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 20,
+      "title": "Thực hành và trải nghiệm sử dụng một số đơn vị đo đại lượng",
+      "guide": {
+        "rule": "Chọn đơn vị đo phù hợp: khối lượng, diện tích hay thời gian.",
+        "steps": [
+          "Đọc tên đại lượng và đơn vị.",
+          "Nhớ quan hệ đổi: khối lượng thường theo 10; diện tích theo 100; phút, giây theo 60.",
+          "Ước lượng rồi đo hoặc tính và kiểm tra tính hợp lí."
+        ],
+        "example": "Một bao gạo có thể nặng 10 kg; diện tích mặt bàn có thể đo bằng dm²; một tiết học có thể tính bằng phút.",
+        "mistake": "Không cộng các số đo khác đơn vị khi chưa đổi."
+      },
+      "file": "bai-20.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "27bfe05dbcf809e724fce756d38fe1acc6a9846d5636d28036ac377fc413bd92",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 20: Thực hành và trải nghiệm sử dụng một số đơn vị đo đại lượng. Điều em cần nhớ là: Chọn đơn vị đo phù hợp: khối lượng, diện tích hay thời gian. Bước 1. Đọc tên đại lượng và đơn vị. Bước 2. Nhớ quan hệ đổi: khối lượng thường theo 10; diện tích theo 100; phút, giây theo 60. Bước 3. Ước lượng rồi đo hoặc tính và kiểm tra tính hợp lí. Cùng quan sát ví dụ với cô nhé. Một bao gạo có thể nặng 10 kg; diện tích mặt bàn có thể đo bằng  đề xi mét vuông ; một tiết học có thể tính bằng phút. Cô nhắc em một mẹo: Không cộng các số đo khác đơn vị khi chưa đổi. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 21,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Chọn đơn vị đo phù hợp: khối lượng, diện tích hay thời gian.",
+        "steps": [
+          "Đọc tên đại lượng và đơn vị.",
+          "Nhớ quan hệ đổi: khối lượng thường theo 10; diện tích theo 100; phút, giây theo 60.",
+          "Ước lượng rồi đo hoặc tính và kiểm tra tính hợp lí."
+        ],
+        "example": "Một bao gạo có thể nặng 10 kg; diện tích mặt bàn có thể đo bằng dm²; một tiết học có thể tính bằng phút.",
+        "mistake": "Không cộng các số đo khác đơn vị khi chưa đổi."
+      },
+      "file": "bai-21.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "a034e044180ed10b9f3bae5e00b25a56909b241440b6fe7db74428a10f870718",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 21: Luyện tập chung. Điều em cần nhớ là: Chọn đơn vị đo phù hợp: khối lượng, diện tích hay thời gian. Bước 1. Đọc tên đại lượng và đơn vị. Bước 2. Nhớ quan hệ đổi: khối lượng thường theo 10; diện tích theo 100; phút, giây theo 60. Bước 3. Ước lượng rồi đo hoặc tính và kiểm tra tính hợp lí. Cùng quan sát ví dụ với cô nhé. Một bao gạo có thể nặng 10 kg; diện tích mặt bàn có thể đo bằng  đề xi mét vuông ; một tiết học có thể tính bằng phút. Cô nhắc em một mẹo: Không cộng các số đo khác đơn vị khi chưa đổi. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 22,
+      "title": "Phép cộng các số có nhiều chữ số",
+      "guide": {
+        "rule": "Muốn cộng các số có nhiều chữ số, đặt các chữ số cùng hàng thẳng cột rồi cộng từ phải sang trái.",
+        "steps": [
+          "Viết thẳng hàng đơn vị, chục, trăm,...",
+          "Cộng từng cột; tổng từ 10 trở lên thì viết hàng đơn vị và nhớ sang cột tiếp.",
+          "Thử lại bằng cách đổi chỗ hai số hạng hoặc lấy tổng trừ một số hạng."
+        ],
+        "example": "52 475 + 24 471 = 76 946.",
+        "mistake": "Nhớ cộng thêm phần nhớ vào cột kế tiếp."
+      },
+      "file": "bai-22.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "8e59ee0cd320357c4bc1468464f4a6d3f4b21095012326e5a383ea72dd764b9b",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 22: Phép cộng các số có nhiều chữ số. Điều em cần nhớ là: Muốn cộng các số có nhiều chữ số, đặt các chữ số cùng hàng thẳng cột rồi cộng từ phải sang trái. Bước 1. Viết thẳng hàng đơn vị, chục, trăm,... Bước 2. Cộng từng cột; tổng từ 10 trở lên thì viết hàng đơn vị và nhớ sang cột tiếp. Bước 3. Thử lại bằng cách đổi chỗ hai số hạng hoặc lấy tổng trừ một số hạng. Cùng quan sát ví dụ với cô nhé. 52475  cộng  24471  bằng  76946. Cô nhắc em một mẹo: Nhớ cộng thêm phần nhớ vào cột kế tiếp. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 23,
+      "title": "Phép trừ các số có nhiều chữ số",
+      "guide": {
+        "rule": "Muốn trừ các số có nhiều chữ số, đặt thẳng hàng và trừ từ phải sang trái.",
+        "steps": [
+          "Đặt số bị trừ trên, số trừ dưới.",
+          "Nếu một hàng chưa đủ trừ thì đổi 1 đơn vị hàng bên trái thành 10 đơn vị hàng đó.",
+          "Thử lại: hiệu + số trừ = số bị trừ."
+        ],
+        "example": "63 178 − 11 478 = 51 700. Thử lại: 51 700 + 11 478 = 63 178.",
+        "mistake": "Khi mượn qua hàng có chữ số 0, hãy ghi rõ các lần đổi."
+      },
+      "file": "bai-23.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "9a1e186966a7aab1b83c7c24b70e8957b6b04c7856e2f56e33ec0308fd82f4d0",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 23: Phép trừ các số có nhiều chữ số. Điều em cần nhớ là: Muốn trừ các số có nhiều chữ số, đặt thẳng hàng và trừ từ phải sang trái. Bước 1. Đặt số bị trừ trên, số trừ dưới. Bước 2. Nếu một hàng chưa đủ trừ thì đổi 1 đơn vị hàng bên trái thành 10 đơn vị hàng đó. Bước 3. Thử lại: hiệu  cộng  số trừ  bằng  số bị trừ. Cùng quan sát ví dụ với cô nhé. 63178  trừ  11478  bằng  51700. Thử lại: 51700  cộng  11478  bằng  63178. Cô nhắc em một mẹo: Khi mượn qua hàng có chữ số 0, hãy ghi rõ các lần đổi. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 24,
+      "title": "Tính chất giao hoán và kết hợp của phép cộng",
+      "guide": {
+        "rule": "Giao hoán: a + b = b + a. Kết hợp: (a + b) + c = a + (b + c).",
+        "steps": [
+          "Tìm hai số có tổng tròn chục, tròn trăm hoặc tròn nghìn.",
+          "Đổi chỗ, nhóm chúng lại.",
+          "Tính tổng rồi cộng số còn lại."
+        ],
+        "example": "125 + 37 + 75 = (125 + 75) + 37 = 200 + 37 = 237.",
+        "mistake": "Chỉ đổi chỗ tự do các số hạng trong phép cộng; không áp dụng tùy ý cho phép trừ."
+      },
+      "file": "bai-24.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "e3f12288150bd25d8b09d8b4000bfa25f0b2d0603e80feb462c22ac7bba53e80",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 24: Tính chất giao hoán và kết hợp của phép cộng. Điều em cần nhớ là: Giao hoán: a  cộng  b  bằng  b  cộng  a. Kết hợp: (a  cộng  b)  cộng  c  bằng  a  cộng  (b  cộng  c). Bước 1. Tìm hai số có tổng tròn chục, tròn trăm hoặc tròn nghìn. Bước 2. Đổi chỗ, nhóm chúng lại. Bước 3. Tính tổng rồi cộng số còn lại. Cùng quan sát ví dụ với cô nhé. 125  cộng  37  cộng  75  bằng  (125  cộng  75)  cộng  37  bằng  200  cộng  37  bằng  237. Cô nhắc em một mẹo: Chỉ đổi chỗ tự do các số hạng trong phép cộng; không áp dụng tùy ý cho phép trừ. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 25,
+      "title": "Tìm hai số biết tổng và hiệu của hai số đó",
+      "guide": {
+        "rule": "Số bé = (tổng − hiệu) : 2. Số lớn = (tổng + hiệu) : 2.",
+        "steps": [
+          "Vẽ hai đoạn thẳng để thấy số lớn hơn số bé một phần bằng hiệu.",
+          "Bớt hiệu khỏi tổng để được hai lần số bé.",
+          "Tìm số bé rồi cộng hiệu để tìm số lớn; thử lại cả tổng lẫn hiệu."
+        ],
+        "example": "Tổng là 70, hiệu là 10. Số bé: (70 − 10) : 2 = 30. Số lớn: 30 + 10 = 40.",
+        "mistake": "Sau khi tính, kiểm tra hai số có đúng tổng và đúng hiệu đề cho hay không."
+      },
+      "file": "bai-25.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "4d9d7263c8a99d04b8657ce836716b6166208afe34cde2bcc05aaa18eb57252a",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 25: Tìm hai số biết tổng và hiệu của hai số đó. Điều em cần nhớ là: Số bé  bằng  (tổng  trừ  hiệu) chia 2. Số lớn  bằng  (tổng  cộng  hiệu) chia 2. Bước 1. Vẽ hai đoạn thẳng để thấy số lớn hơn số bé một phần bằng hiệu. Bước 2. Bớt hiệu khỏi tổng để được hai lần số bé. Bước 3. Tìm số bé rồi cộng hiệu để tìm số lớn; thử lại cả tổng lẫn hiệu. Cùng quan sát ví dụ với cô nhé. Tổng là 70, hiệu là 10. Số bé: (70  trừ  10) chia 2  bằng  30. Số lớn: 30  cộng  10  bằng  40. Cô nhắc em một mẹo: Sau khi tính, kiểm tra hai số có đúng tổng và đúng hiệu đề cho hay không. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 26,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Muốn cộng các số có nhiều chữ số, đặt các chữ số cùng hàng thẳng cột rồi cộng từ phải sang trái.",
+          "Muốn trừ các số có nhiều chữ số, đặt thẳng hàng và trừ từ phải sang trái.",
+          "Giao hoán: a + b = b + a. Kết hợp: (a + b) + c = a + (b + c).",
+          "Số bé = (tổng − hiệu) : 2. Số lớn = (tổng + hiệu) : 2."
+        ],
+        "example": "52 475 + 24 471 = 76 946.\n\n63 178 − 11 478 = 51 700. Thử lại: 51 700 + 11 478 = 63 178.\n\n125 + 37 + 75 = (125 + 75) + 37 = 200 + 37 = 237.\n\nTổng là 70, hiệu là 10. Số bé: (70 − 10) : 2 = 30. Số lớn: 30 + 10 = 40.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-26.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "306f8269b78b055e79dd2ecb63f484d8b4800658bc3142de5bee4bbd3c8a0a33",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 26: Luyện tập chung. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Muốn cộng các số có nhiều chữ số, đặt các chữ số cùng hàng thẳng cột rồi cộng từ phải sang trái. Bước 2. Muốn trừ các số có nhiều chữ số, đặt thẳng hàng và trừ từ phải sang trái. Bước 3. Giao hoán: a  cộng  b  bằng  b  cộng  a. Kết hợp: (a  cộng  b)  cộng  c  bằng  a  cộng  (b  cộng  c). Bước 4. Số bé  bằng  (tổng  trừ  hiệu) chia 2. Số lớn  bằng  (tổng  cộng  hiệu) chia 2. Cùng quan sát ví dụ với cô nhé. 52475  cộng  24471  bằng  76946.\n\n63178  trừ  11478  bằng  51700. Thử lại: 51700  cộng  11478  bằng  63178.\n\n125  cộng  37  cộng  75  bằng  (125  cộng  75)  cộng  37  bằng  200  cộng  37  bằng  237.\n\nTổng là 70, hiệu là 10. Số bé: (70  trừ  10) chia 2  bằng  30. Số lớn: 30  cộng  10  bằng  40. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 27,
+      "title": "Hai đường thẳng vuông góc",
+      "guide": {
+        "rule": "Hai đường thẳng cắt nhau tạo thành góc vuông là hai đường thẳng vuông góc.",
+        "steps": [
+          "Tìm giao điểm của hai đường thẳng.",
+          "Dùng góc vuông của ê ke để kiểm tra.",
+          "Hai đường thẳng vuông góc tạo bốn góc vuông tại giao điểm."
+        ],
+        "example": "Hai cạnh kề của hình chữ nhật vuông góc với nhau.",
+        "mistake": "Hai đường thẳng cắt nhau chưa chắc vuông góc."
+      },
+      "file": "bai-27.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "723c477bfc5507939633a4a8ec4ab669920812342f41cf7f694ab3295caabfd5",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 27: Hai đường thẳng vuông góc. Điều em cần nhớ là: Hai đường thẳng cắt nhau tạo thành góc vuông là hai đường thẳng vuông góc. Bước 1. Tìm giao điểm của hai đường thẳng. Bước 2. Dùng góc vuông của ê ke để kiểm tra. Bước 3. Hai đường thẳng vuông góc tạo bốn góc vuông tại giao điểm. Cùng quan sát ví dụ với cô nhé. Hai cạnh kề của hình chữ nhật vuông góc với nhau. Cô nhắc em một mẹo: Hai đường thẳng cắt nhau chưa chắc vuông góc. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 28,
+      "title": "Thực hành và trải nghiệm vẽ hai đường thẳng vuông góc",
+      "guide": {
+        "rule": "Dùng ê ke để vẽ đường thẳng đi qua một điểm và vuông góc với đường thẳng cho trước.",
+        "steps": [
+          "Đặt một cạnh góc vuông của ê ke trùng đường thẳng đã cho.",
+          "Trượt ê ke để cạnh góc vuông kia đi qua điểm cần vẽ.",
+          "Kẻ theo cạnh đó; kiểm tra lại góc 90°."
+        ],
+        "example": "Trên giấy, vẽ đường thẳng a nằm ngang và điểm O trên a. Dùng ê ke kẻ đường b qua O tạo góc 90° với a.",
+        "mistake": "Giữ ê ke cố định khi kẻ và dùng cạnh tạo góc vuông."
+      },
+      "file": "bai-28.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "0362cfa76b05b81fa426c5adb554acc8690b139eed47dff21a63457cd2c76682",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 28: Thực hành và trải nghiệm vẽ hai đường thẳng vuông góc. Điều em cần nhớ là: Dùng ê ke để vẽ đường thẳng đi qua một điểm và vuông góc với đường thẳng cho trước. Bước 1. Đặt một cạnh góc vuông của ê ke trùng đường thẳng đã cho. Bước 2. Trượt ê ke để cạnh góc vuông kia đi qua điểm cần vẽ. Bước 3. Kẻ theo cạnh đó; kiểm tra lại góc 90 độ . Cùng quan sát ví dụ với cô nhé. Trên giấy, vẽ đường thẳng a nằm ngang và điểm O trên a. Dùng ê ke kẻ đường b qua O tạo góc 90 độ  với a. Cô nhắc em một mẹo: Giữ ê ke cố định khi kẻ và dùng cạnh tạo góc vuông. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 29,
+      "title": "Hai đường thẳng song song",
+      "guide": {
+        "rule": "Hai đường thẳng song song không cắt nhau khi kéo dài mãi về hai phía.",
+        "steps": [
+          "Nhìn hai đường thẳng và tưởng tượng kéo dài.",
+          "Có thể kiểm tra bằng cách xem chúng cùng vuông góc với một đường thẳng khác.",
+          "Trong hình chữ nhật, mỗi cặp cạnh đối diện song song."
+        ],
+        "example": "Hai mép dài của thước thẳng là hình ảnh hai đường thẳng song song.",
+        "mistake": "Đường thẳng chưa giao nhau trong hình vẽ vẫn có thể cắt nhau khi kéo dài."
+      },
+      "file": "bai-29.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "1ad58662cfdc646ac8b3a4aca223d49bb1dedd46f7447856ac7dc342050c9a6e",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 29: Hai đường thẳng song song. Điều em cần nhớ là: Hai đường thẳng song song không cắt nhau khi kéo dài mãi về hai phía. Bước 1. Nhìn hai đường thẳng và tưởng tượng kéo dài. Bước 2. Có thể kiểm tra bằng cách xem chúng cùng vuông góc với một đường thẳng khác. Bước 3. Trong hình chữ nhật, mỗi cặp cạnh đối diện song song. Cùng quan sát ví dụ với cô nhé. Hai mép dài của thước thẳng là hình ảnh hai đường thẳng song song. Cô nhắc em một mẹo: Đường thẳng chưa giao nhau trong hình vẽ vẫn có thể cắt nhau khi kéo dài. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 30,
+      "title": "Thực hành và trải nghiệm vẽ hai đường thẳng song song",
+      "guide": {
+        "rule": "Có thể vẽ đường thẳng song song bằng cách dùng hai lần vuông góc.",
+        "steps": [
+          "Qua điểm đã cho, vẽ một đường phụ vuông góc với đường thẳng ban đầu.",
+          "Qua điểm đó, vẽ đường thẳng vuông góc với đường phụ.",
+          "Đường vừa vẽ song song với đường ban đầu; kiểm tra bằng thước và ê ke."
+        ],
+        "example": "Vẽ a nằm ngang. Qua M vẽ c vuông góc a. Qua M vẽ b vuông góc c. Khi đó b song song a nếu M không thuộc a.",
+        "mistake": "Điểm để vẽ đường song song phải nằm ngoài đường thẳng đã cho."
+      },
+      "file": "bai-30.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "edb4078d89ed209fd64a09ae4f8a87ab535547d937b58fbfca6fc5a42dcf5b0e",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 30: Thực hành và trải nghiệm vẽ hai đường thẳng song song. Điều em cần nhớ là: Có thể vẽ đường thẳng song song bằng cách dùng hai lần vuông góc. Bước 1. Qua điểm đã cho, vẽ một đường phụ vuông góc với đường thẳng ban đầu. Bước 2. Qua điểm đó, vẽ đường thẳng vuông góc với đường phụ. Bước 3. Đường vừa vẽ song song với đường ban đầu; kiểm tra bằng thước và ê ke. Cùng quan sát ví dụ với cô nhé. Vẽ a nằm ngang. Qua M vẽ c vuông góc a. Qua M vẽ b vuông góc c. Khi đó b song song a nếu M không thuộc a. Cô nhắc em một mẹo: Điểm để vẽ đường song song phải nằm ngoài đường thẳng đã cho. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 31,
+      "title": "Hình bình hành, hình thoi",
+      "guide": {
+        "rule": "Hình bình hành có hai cặp cạnh đối diện song song và bằng nhau. Hình thoi có bốn cạnh bằng nhau.",
+        "steps": [
+          "Quan sát các cặp cạnh đối diện.",
+          "Dùng thước để so độ dài và kiểm tra song song.",
+          "Hình thoi cũng có hai cặp cạnh đối diện song song."
+        ],
+        "example": "Một hình có hai cặp cạnh đối diện song song và bốn cạnh bằng nhau là hình thoi.",
+        "mistake": "Không nhận dạng chỉ vì hình nghiêng; cần kiểm tra đặc điểm các cạnh."
+      },
+      "file": "bai-31.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "eabd5444ae2965000b33c97c3cccee4faeae63869916c4a653117c59696993e9",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 31: Hình bình hành, hình thoi. Điều em cần nhớ là: Hình bình hành có hai cặp cạnh đối diện song song và bằng nhau. Hình thoi có bốn cạnh bằng nhau. Bước 1. Quan sát các cặp cạnh đối diện. Bước 2. Dùng thước để so độ dài và kiểm tra song song. Bước 3. Hình thoi cũng có hai cặp cạnh đối diện song song. Cùng quan sát ví dụ với cô nhé. Một hình có hai cặp cạnh đối diện song song và bốn cạnh bằng nhau là hình thoi. Cô nhắc em một mẹo: Không nhận dạng chỉ vì hình nghiêng; cần kiểm tra đặc điểm các cạnh. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 32,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình.",
+        "steps": [
+          "Kiểm tra góc bằng ê ke hoặc thước đo góc.",
+          "Tìm các cặp cạnh vuông góc, song song.",
+          "Đếm cạnh bằng nhau để phân biệt hình bình hành và hình thoi."
+        ],
+        "example": "Hình chữ nhật có bốn góc vuông, hai cặp cạnh đối diện song song và bằng nhau.",
+        "mistake": "Hãy nêu đặc điểm chứng minh, đừng chỉ nói hình trông giống."
+      },
+      "file": "bai-32.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "f0f283889ac870a7579d4d7c47c76cf6ce4d55ac338b8559b32cf0a40b3c3de4",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 32: Luyện tập chung. Điều em cần nhớ là: Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình. Bước 1. Kiểm tra góc bằng ê ke hoặc thước đo góc. Bước 2. Tìm các cặp cạnh vuông góc, song song. Bước 3. Đếm cạnh bằng nhau để phân biệt hình bình hành và hình thoi. Cùng quan sát ví dụ với cô nhé. Hình chữ nhật có bốn góc vuông, hai cặp cạnh đối diện song song và bằng nhau. Cô nhắc em một mẹo: Hãy nêu đặc điểm chứng minh, đừng chỉ nói hình trông giống. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 33,
+      "title": "Ôn tập các số đến lớp triệu",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Mười trăm nghìn là một triệu. Số 1 000 000 có bảy chữ số.",
+          "Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu.",
+          "Làm tròn đến hàng trăm nghìn: nhìn chữ số hàng chục nghìn.",
+          "Số có nhiều chữ số hơn thì lớn hơn. Nếu cùng số chữ số, so từng hàng từ trái sang phải.",
+          "Các số 0, 1, 2, 3,... là các số tự nhiên, xếp theo thứ tự từ bé đến lớn thành dãy số tự nhiên."
+        ],
+        "example": "305 214 đọc là ba trăm linh năm nghìn hai trăm mười bốn.\n\n12 345 678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300 000.\n\n3 462 000 làm tròn đến hàng trăm nghìn được 3 500 000 vì chữ số hàng chục nghìn là 6.\n\n2 315 000 < 2 351 000 vì ở hàng chục nghìn, 1 < 5.\n\nSau 999 là 1 000; trước 1 000 là 999. Số 0 không có số tự nhiên liền trước.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-33.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "bd7e1dcaf562ac1a03293ef2ae82e7102c55ce3fed8c0e870dbe7052011fd847",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 33: Ôn tập các số đến lớp triệu. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Mười trăm nghìn là một triệu. Số 1000000 có bảy chữ số. Bước 2. Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu. Bước 3. Làm tròn đến hàng trăm nghìn: nhìn chữ số hàng chục nghìn. Bước 4. Số có nhiều chữ số hơn thì lớn hơn. Nếu cùng số chữ số, so từng hàng từ trái sang phải. Bước 5. Các số 0, 1, 2, 3,... là các số tự nhiên, xếp theo thứ tự từ bé đến lớn thành dãy số tự nhiên. Cùng quan sát ví dụ với cô nhé. 305214 đọc là ba trăm linh năm nghìn hai trăm mười bốn.\n\n12345678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300000.\n\n3462000 làm tròn đến hàng trăm nghìn được 3500000 vì chữ số hàng chục nghìn là 6.\n\n2315000  nhỏ hơn  2351000 vì ở hàng chục nghìn, 1  nhỏ hơn  5.\n\nSau 999 là 1000; trước 1000 là 999. Số 0 không có số tự nhiên liền trước. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 34,
+      "title": "Ôn tập phép cộng, phép trừ",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Muốn cộng các số có nhiều chữ số, đặt các chữ số cùng hàng thẳng cột rồi cộng từ phải sang trái.",
+          "Muốn trừ các số có nhiều chữ số, đặt thẳng hàng và trừ từ phải sang trái.",
+          "Giao hoán: a + b = b + a. Kết hợp: (a + b) + c = a + (b + c).",
+          "Số bé = (tổng − hiệu) : 2. Số lớn = (tổng + hiệu) : 2."
+        ],
+        "example": "52 475 + 24 471 = 76 946.\n\n63 178 − 11 478 = 51 700. Thử lại: 51 700 + 11 478 = 63 178.\n\n125 + 37 + 75 = (125 + 75) + 37 = 200 + 37 = 237.\n\nTổng là 70, hiệu là 10. Số bé: (70 − 10) : 2 = 30. Số lớn: 30 + 10 = 40.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-34.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "cb10a7cf54068a489bfc5829a9fea724075c48e2651e2b9629c6076a67193cc5",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 34: Ôn tập phép cộng, phép trừ. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Muốn cộng các số có nhiều chữ số, đặt các chữ số cùng hàng thẳng cột rồi cộng từ phải sang trái. Bước 2. Muốn trừ các số có nhiều chữ số, đặt thẳng hàng và trừ từ phải sang trái. Bước 3. Giao hoán: a  cộng  b  bằng  b  cộng  a. Kết hợp: (a  cộng  b)  cộng  c  bằng  a  cộng  (b  cộng  c). Bước 4. Số bé  bằng  (tổng  trừ  hiệu) chia 2. Số lớn  bằng  (tổng  cộng  hiệu) chia 2. Cùng quan sát ví dụ với cô nhé. 52475  cộng  24471  bằng  76946.\n\n63178  trừ  11478  bằng  51700. Thử lại: 51700  cộng  11478  bằng  63178.\n\n125  cộng  37  cộng  75  bằng  (125  cộng  75)  cộng  37  bằng  200  cộng  37  bằng  237.\n\nTổng là 70, hiệu là 10. Số bé: (70  trừ  10) chia 2  bằng  30. Số lớn: 30  cộng  10  bằng  40. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 35,
+      "title": "Ôn tập hình học",
+      "guide": {
+        "rule": "Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình.",
+        "steps": [
+          "Kiểm tra góc bằng ê ke hoặc thước đo góc.",
+          "Tìm các cặp cạnh vuông góc, song song.",
+          "Đếm cạnh bằng nhau để phân biệt hình bình hành và hình thoi."
+        ],
+        "example": "Hình chữ nhật có bốn góc vuông, hai cặp cạnh đối diện song song và bằng nhau.",
+        "mistake": "Hãy nêu đặc điểm chứng minh, đừng chỉ nói hình trông giống."
+      },
+      "file": "bai-35.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "dd9c27a0d7a4dd58537c3d319489d84e2f81b3ab3be8b0a564a551771dcfa697",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 35: Ôn tập hình học. Điều em cần nhớ là: Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình. Bước 1. Kiểm tra góc bằng ê ke hoặc thước đo góc. Bước 2. Tìm các cặp cạnh vuông góc, song song. Bước 3. Đếm cạnh bằng nhau để phân biệt hình bình hành và hình thoi. Cùng quan sát ví dụ với cô nhé. Hình chữ nhật có bốn góc vuông, hai cặp cạnh đối diện song song và bằng nhau. Cô nhắc em một mẹo: Hãy nêu đặc điểm chứng minh, đừng chỉ nói hình trông giống. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 36,
+      "title": "Ôn tập đo lường",
+      "guide": {
+        "rule": "Chọn đơn vị đo phù hợp: khối lượng, diện tích hay thời gian.",
+        "steps": [
+          "Đọc tên đại lượng và đơn vị.",
+          "Nhớ quan hệ đổi: khối lượng thường theo 10; diện tích theo 100; phút, giây theo 60.",
+          "Ước lượng rồi đo hoặc tính và kiểm tra tính hợp lí."
+        ],
+        "example": "Một bao gạo có thể nặng 10 kg; diện tích mặt bàn có thể đo bằng dm²; một tiết học có thể tính bằng phút.",
+        "mistake": "Không cộng các số đo khác đơn vị khi chưa đổi."
+      },
+      "file": "bai-36.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "d40a7d0cf6d399e71ebc38641462fa6f1d7ac42e42afe1b2ee8f6cfc0ef38bb3",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 36: Ôn tập đo lường. Điều em cần nhớ là: Chọn đơn vị đo phù hợp: khối lượng, diện tích hay thời gian. Bước 1. Đọc tên đại lượng và đơn vị. Bước 2. Nhớ quan hệ đổi: khối lượng thường theo 10; diện tích theo 100; phút, giây theo 60. Bước 3. Ước lượng rồi đo hoặc tính và kiểm tra tính hợp lí. Cùng quan sát ví dụ với cô nhé. Một bao gạo có thể nặng 10 kg; diện tích mặt bàn có thể đo bằng  đề xi mét vuông ; một tiết học có thể tính bằng phút. Cô nhắc em một mẹo: Không cộng các số đo khác đơn vị khi chưa đổi. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 37,
+      "title": "Ôn tập chung",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Mỗi chữ số có giá trị tùy theo hàng của nó. Đọc số từ trái sang phải; viết đúng từng hàng.",
+          "Góc nhọn nhỏ hơn góc vuông; góc tù lớn hơn góc vuông và nhỏ hơn góc bẹt; góc bẹt bằng hai góc vuông.",
+          "Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu.",
+          "1 yến = 10 kg; 1 tạ = 100 kg = 10 yến; 1 tấn = 1 000 kg = 10 tạ.",
+          "1 m² = 100 dm²; 1 dm² = 100 cm²; 1 cm² = 100 mm².",
+          "1 phút = 60 giây; 1 giờ = 60 phút; 1 thế kỉ = 100 năm.",
+          "Muốn cộng các số có nhiều chữ số, đặt các chữ số cùng hàng thẳng cột rồi cộng từ phải sang trái.",
+          "Muốn trừ các số có nhiều chữ số, đặt thẳng hàng và trừ từ phải sang trái.",
+          "Số bé = (tổng − hiệu) : 2. Số lớn = (tổng + hiệu) : 2.",
+          "Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình."
+        ],
+        "example": "42 530 = 40 000 + 2 000 + 500 + 30. Số liền sau là 42 531.\n\n60° là góc nhọn, 90° là góc vuông, 120° là góc tù, 180° là góc bẹt.\n\n12 345 678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300 000.\n\n3 tấn 5 tạ = 3 000 kg + 500 kg = 3 500 kg.\n\n2 m² 35 dm² = 200 dm² + 35 dm² = 235 dm².\n\n2 phút 12 giây = 132 giây. Năm 2000 thuộc thế kỉ XX; năm 2001 thuộc thế kỉ XXI.\n\n52 475 + 24 471 = 76 946.\n\n63 178 − 11 478 = 51 700. Thử lại: 51 700 + 11 478 = 63 178.\n\nTổng là 70, hiệu là 10. Số bé: (70 − 10) : 2 = 30. Số lớn: 30 + 10 = 40.\n\nHình chữ nhật có bốn góc vuông, hai cặp cạnh đối diện song song và bằng nhau.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-37.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "36007cf4aac95fcdd9eaafb873ca89eaa8c5d0297128e4d505aae583bd24b605",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 37: Ôn tập chung. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Mỗi chữ số có giá trị tùy theo hàng của nó. Đọc số từ trái sang phải; viết đúng từng hàng. Bước 2. Góc nhọn nhỏ hơn góc vuông; góc tù lớn hơn góc vuông và nhỏ hơn góc bẹt; góc bẹt bằng hai góc vuông. Bước 3. Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu. Bước 4. 1 yến  bằng  10 kg; 1 tạ  bằng  100 kg  bằng  10 yến; 1 tấn  bằng  1000 kg  bằng  10 tạ. Bước 5. 1  mét vuông   bằng  100  đề xi mét vuông ; 1  đề xi mét vuông   bằng  100  xăng ti mét vuông ; 1  xăng ti mét vuông   bằng  100  mi li mét vuông . Bước 6. 1 phút  bằng  60 giây; 1 giờ  bằng  60 phút; 1 thế kỉ  bằng  100 năm. Bước 7. Muốn cộng các số có nhiều chữ số, đặt các chữ số cùng hàng thẳng cột rồi cộng từ phải sang trái. Bước 8. Muốn trừ các số có nhiều chữ số, đặt thẳng hàng và trừ từ phải sang trái. Bước 9. Số bé  bằng  (tổng  trừ  hiệu) chia 2. Số lớn  bằng  (tổng  cộng  hiệu) chia 2. Bước 10. Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình. Cùng quan sát ví dụ với cô nhé. 42530  bằng  40000  cộng  2000  cộng  500  cộng  30. Số liền sau là 42531.\n\n60 độ  là góc nhọn, 90 độ  là góc vuông, 120 độ  là góc tù, 180 độ  là góc bẹt.\n\n12345678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300000.\n\n3 tấn 5 tạ  bằng  3000 kg  cộng  500 kg  bằng  3500 kg.\n\n2  mét vuông  35  đề xi mét vuông   bằng  200  đề xi mét vuông   cộng  35  đề xi mét vuông   bằng  235  đề xi mét vuông .\n\n2 phút 12 giây  bằng  132 giây. Năm 2000 thuộc thế kỉ XX; năm 2001 thuộc thế kỉ XXI.\n\n52475  cộng  24471  bằng  76946.\n\n63178  trừ  11478  bằng  51700. Thử lại: 51700  cộng  11478  bằng  63178.\n\nTổng là 70, hiệu là 10. Số bé: (70  trừ  10) chia 2  bằng  30. Số lớn: 30  cộng  10  bằng  40.\n\nHình chữ nhật có bốn góc vuông, hai cặp cạnh đối diện song song và bằng nhau. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 38,
+      "title": "Nhân với số có một chữ số",
+      "guide": {
+        "rule": "Nhân số có nhiều chữ số với số có một chữ số theo từng hàng từ phải sang trái.",
+        "steps": [
+          "Đặt thẳng hàng đơn vị.",
+          "Nhân từng chữ số với số nhân, cộng phần nhớ.",
+          "Viết kết quả và thử ước lượng xem có hợp lí."
+        ],
+        "example": "160 140 × 7 = 1 120 980. Ví dụ này nằm ở trang 4 tập hai.",
+        "mistake": "Nếu tích một cột có hai chữ số, viết chữ số đơn vị và nhớ phần chục."
+      },
+      "file": "bai-38.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "059fda5ead474b95cbd6a808065fe8f11b803aa162c6eb3dd2f27a9bb86dcaf5",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 38: Nhân với số có một chữ số. Điều em cần nhớ là: Nhân số có nhiều chữ số với số có một chữ số theo từng hàng từ phải sang trái. Bước 1. Đặt thẳng hàng đơn vị. Bước 2. Nhân từng chữ số với số nhân, cộng phần nhớ. Bước 3. Viết kết quả và thử ước lượng xem có hợp lí. Cùng quan sát ví dụ với cô nhé. 160140  nhân  7  bằng  1120980. Ví dụ này nằm ở trang 4 tập hai. Cô nhắc em một mẹo: Nếu tích một cột có hai chữ số, viết chữ số đơn vị và nhớ phần chục. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 39,
+      "title": "Chia cho số có một chữ số",
+      "guide": {
+        "rule": "Chia số có nhiều chữ số cho số có một chữ số từ trái sang phải.",
+        "steps": [
+          "Lấy phần đầu đủ chia.",
+          "Mỗi lượt: chia, nhân, trừ rồi hạ chữ số tiếp theo.",
+          "Thử lại: thương × số chia + số dư = số bị chia."
+        ],
+        "example": "74 121 : 3 = 24 707. Thử lại 24 707 × 3 = 74 121.",
+        "mistake": "Ở một lượt nếu số đang xét nhỏ hơn số chia thì phải viết 0 vào thương khi đã bắt đầu chia."
+      },
+      "file": "bai-39.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "03be24783331a6141285d4d3f8c482a7f2f7a0c0a7ee37ef03bcb5eb29edcf5c",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 39: Chia cho số có một chữ số. Điều em cần nhớ là: Chia số có nhiều chữ số cho số có một chữ số từ trái sang phải. Bước 1. Lấy phần đầu đủ chia. Bước 2. Mỗi lượt: chia, nhân, trừ rồi hạ chữ số tiếp theo. Bước 3. Thử lại: thương  nhân  số chia  cộng  số dư  bằng  số bị chia. Cùng quan sát ví dụ với cô nhé. 74121 chia 3  bằng  24707. Thử lại 24707  nhân  3  bằng  74121. Cô nhắc em một mẹo: Ở một lượt nếu số đang xét nhỏ hơn số chia thì phải viết 0 vào thương khi đã bắt đầu chia. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 40,
+      "title": "Tính chất giao hoán và kết hợp của phép nhân",
+      "guide": {
+        "rule": "Giao hoán: a × b = b × a. Kết hợp: (a × b) × c = a × (b × c).",
+        "steps": [
+          "Tìm cặp thừa số tạo thành 10, 100 hoặc 1 000.",
+          "Đổi chỗ và nhóm thừa số.",
+          "Nhân kết quả với thừa số còn lại."
+        ],
+        "example": "25 × 7 × 4 = (25 × 4) × 7 = 100 × 7 = 700.",
+        "mistake": "Không áp dụng tính chất giao hoán cho phép chia."
+      },
+      "file": "bai-40.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "8bfebf8cc9bb4a214e947b2920bca36d9e1eee2260b534440be927dc5583a5e4",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 40: Tính chất giao hoán và kết hợp của phép nhân. Điều em cần nhớ là: Giao hoán: a  nhân  b  bằng  b  nhân  a. Kết hợp: (a  nhân  b)  nhân  c  bằng  a  nhân  (b  nhân  c). Bước 1. Tìm cặp thừa số tạo thành 10, 100 hoặc 1000. Bước 2. Đổi chỗ và nhóm thừa số. Bước 3. Nhân kết quả với thừa số còn lại. Cùng quan sát ví dụ với cô nhé. 25  nhân  7  nhân  4  bằng  (25  nhân  4)  nhân  7  bằng  100  nhân  7  bằng  700. Cô nhắc em một mẹo: Không áp dụng tính chất giao hoán cho phép chia. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 41,
+      "title": "Nhân, chia với 10, 100, 1 000,...",
+      "guide": {
+        "rule": "Nhân số tự nhiên với 10, 100, 1 000 là tăng giá trị các chữ số lên tương ứng 10, 100, 1 000 lần.",
+        "steps": [
+          "Nhân với 10, 100, 1 000: viết thêm lần lượt 1, 2, 3 chữ số 0 bên phải.",
+          "Chia một số tròn chục, tròn trăm, tròn nghìn tương ứng: bỏ bớt các chữ số 0.",
+          "Kiểm tra bằng phép tính ngược."
+        ],
+        "example": "375 × 10 = 3 750; 48 000 : 100 = 480.",
+        "mistake": "Chỉ bỏ chữ số 0 ở tận cùng khi chia hết theo trường hợp đã học."
+      },
+      "file": "bai-41.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "8c5e97a6de44d07ec453e2a553f188ffa78857922b157ff15002d97c7083007c",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 41: Nhân, chia với 10, 100, 1000,.... Điều em cần nhớ là: Nhân số tự nhiên với 10, 100, 1000 là tăng giá trị các chữ số lên tương ứng 10, 100, 1000 lần. Bước 1. Nhân với 10, 100, 1000 chia viết thêm lần lượt 1, 2, 3 chữ số 0 bên phải. Bước 2. Chia một số tròn chục, tròn trăm, tròn nghìn tương ứng: bỏ bớt các chữ số 0. Bước 3. Kiểm tra bằng phép tính ngược. Cùng quan sát ví dụ với cô nhé. 375  nhân  10  bằng  3750; 48000 chia 100  bằng  480. Cô nhắc em một mẹo: Chỉ bỏ chữ số 0 ở tận cùng khi chia hết theo trường hợp đã học. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 42,
+      "title": "Tính chất phân phối của phép nhân đối với phép cộng",
+      "guide": {
+        "rule": "Một số nhân với một tổng bằng tổng các tích của số đó với từng số hạng: a × (b + c) = a × b + a × c.",
+        "steps": [
+          "Tách số thành tổng dễ tính.",
+          "Nhân với từng phần.",
+          "Cộng các tích; có thể áp dụng ngược để đặt thừa số chung."
+        ],
+        "example": "12 × 25 + 12 × 75 = 12 × (25 + 75) = 1 200.",
+        "mistake": "Phải nhân với cả hai số hạng trong ngoặc."
+      },
+      "file": "bai-42.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "5ee9c62e022714646af948d616da43334fd3a4bb2c728435b8eee44ebe1a0d82",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 42: Tính chất phân phối của phép nhân đối với phép cộng. Điều em cần nhớ là: Một số nhân với một tổng bằng tổng các tích của số đó với từng số hạng: a  nhân  (b  cộng  c)  bằng  a  nhân  b  cộng  a  nhân  c. Bước 1. Tách số thành tổng dễ tính. Bước 2. Nhân với từng phần. Bước 3. Cộng các tích; có thể áp dụng ngược để đặt thừa số chung. Cùng quan sát ví dụ với cô nhé. 12  nhân  25  cộng  12  nhân  75  bằng  12  nhân  (25  cộng  75)  bằng  1200. Cô nhắc em một mẹo: Phải nhân với cả hai số hạng trong ngoặc. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 43,
+      "title": "Nhân với số có hai chữ số",
+      "guide": {
+        "rule": "Nhân với số có hai chữ số bằng cách tính hai tích riêng rồi cộng lại.",
+        "steps": [
+          "Nhân với chữ số hàng đơn vị.",
+          "Nhân với chữ số hàng chục; tích riêng thứ hai lùi sang trái một cột.",
+          "Cộng hai tích riêng."
+        ],
+        "example": "234 × 12 = 234 × 2 + 234 × 10 = 468 + 2 340 = 2 808.",
+        "mistake": "Tích riêng thứ hai ứng với hàng chục, không đặt ngang hàng đơn vị."
+      },
+      "file": "bai-43.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "0afa0e0a7a0448405e8e038e8da83d32c20a88c5a91ac055171c4925f02132af",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 43: Nhân với số có hai chữ số. Điều em cần nhớ là: Nhân với số có hai chữ số bằng cách tính hai tích riêng rồi cộng lại. Bước 1. Nhân với chữ số hàng đơn vị. Bước 2. Nhân với chữ số hàng chục; tích riêng thứ hai lùi sang trái một cột. Bước 3. Cộng hai tích riêng. Cùng quan sát ví dụ với cô nhé. 234  nhân  12  bằng  234  nhân  2  cộng  234  nhân  10  bằng  468  cộng  2340  bằng  2808. Cô nhắc em một mẹo: Tích riêng thứ hai ứng với hàng chục, không đặt ngang hàng đơn vị. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 44,
+      "title": "Chia cho số có hai chữ số",
+      "guide": {
+        "rule": "Chia cho số có hai chữ số vẫn thực hiện theo chu trình chia, nhân, trừ, hạ.",
+        "steps": [
+          "Ước lượng một chữ số của thương.",
+          "Nhân lại rồi trừ; nếu số dư còn lớn hơn hoặc bằng số chia thì điều chỉnh thương.",
+          "Hạ chữ số tiếp theo; kiểm tra số dư cuối cùng."
+        ],
+        "example": "3 756 : 12 = 313 vì 313 × 12 = 3 756.",
+        "mistake": "Mỗi lượt số dư phải nhỏ hơn số chia."
+      },
+      "file": "bai-44.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "0f430a474779cd7b832bb0bb849a23b582cbc18c2a2b335e487a94581bb01b5e",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 44: Chia cho số có hai chữ số. Điều em cần nhớ là: Chia cho số có hai chữ số vẫn thực hiện theo chu trình chia, nhân, trừ, hạ. Bước 1. Ước lượng một chữ số của thương. Bước 2. Nhân lại rồi trừ; nếu số dư còn lớn hơn hoặc bằng số chia thì điều chỉnh thương. Bước 3. Hạ chữ số tiếp theo; kiểm tra số dư cuối cùng. Cùng quan sát ví dụ với cô nhé. 3756 chia 12  bằng  313 vì 313  nhân  12  bằng  3756. Cô nhắc em một mẹo: Mỗi lượt số dư phải nhỏ hơn số chia. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 45,
+      "title": "Thực hành và trải nghiệm ước lượng trong tính toán",
+      "guide": {
+        "rule": "Ước lượng giúp dự đoán kết quả gần đúng và kiểm tra tính hợp lí.",
+        "steps": [
+          "Chọn số tròn chục, tròn trăm gần với số đã cho.",
+          "Thực hiện phép tính với số đã làm tròn.",
+          "Nói rõ đây là kết quả ước lượng, rồi so với kết quả chính xác nếu cần."
+        ],
+        "example": "198 × 5 gần bằng 200 × 5 = 1 000. Kết quả chính xác là 990.",
+        "mistake": "Kết quả gần đúng không thay cho đáp số chính xác khi đề yêu cầu tính đúng."
+      },
+      "file": "bai-45.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "121da4a8052234f079a0a8c3403dbc5fa6acc245ea7cf2de0e39cb468f279259",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 45: Thực hành và trải nghiệm ước lượng trong tính toán. Điều em cần nhớ là: Ước lượng giúp dự đoán kết quả gần đúng và kiểm tra tính hợp lí. Bước 1. Chọn số tròn chục, tròn trăm gần với số đã cho. Bước 2. Thực hiện phép tính với số đã làm tròn. Bước 3. Nói rõ đây là kết quả ước lượng, rồi so với kết quả chính xác nếu cần. Cùng quan sát ví dụ với cô nhé. 198  nhân  5 gần bằng 200  nhân  5  bằng  1000. Kết quả chính xác là 990. Cô nhắc em một mẹo: Kết quả gần đúng không thay cho đáp số chính xác khi đề yêu cầu tính đúng. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 46,
+      "title": "Tìm số trung bình cộng",
+      "guide": {
+        "rule": "Số trung bình cộng bằng tổng các số chia cho số các số hạng.",
+        "steps": [
+          "Cộng tất cả các số.",
+          "Đếm xem có bao nhiêu số.",
+          "Lấy tổng chia cho số lượng đó và viết đơn vị phù hợp."
+        ],
+        "example": "Ba bạn có 12, 15, 18 quyển sách. Trung bình: (12 + 15 + 18) : 3 = 15 quyển.",
+        "mistake": "Chia cho số lượng các số, không chia cho số lớn nhất."
+      },
+      "file": "bai-46.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "df5a75eb48793620d6e0a2aa0c04aa4e140cd3d40a0b3164099b76dc77502007",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 46: Tìm số trung bình cộng. Điều em cần nhớ là: Số trung bình cộng bằng tổng các số chia cho số các số hạng. Bước 1. Cộng tất cả các số. Bước 2. Đếm xem có bao nhiêu số. Bước 3. Lấy tổng chia cho số lượng đó và viết đơn vị phù hợp. Cùng quan sát ví dụ với cô nhé. Ba bạn có 12, 15, 18 quyển sách. Trung bình: (12  cộng  15  cộng  18) chia 3  bằng  15 quyển. Cô nhắc em một mẹo: Chia cho số lượng các số, không chia cho số lớn nhất. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 47,
+      "title": "Bài toán liên quan đến rút về đơn vị",
+      "guide": {
+        "rule": "Rút về đơn vị nghĩa là tìm giá trị của một phần bằng nhau trước.",
+        "steps": [
+          "Tìm một phần: lấy tổng chia cho số phần.",
+          "Nếu hỏi nhiều phần, nhân giá trị một phần với số phần cần tìm.",
+          "Nếu hỏi số phần, lấy tổng mới chia cho giá trị một phần."
+        ],
+        "example": "4 quyển vở giá 32 000 đồng. Một quyển giá 32 000 : 4 = 8 000 đồng. 7 quyển giá 8 000 × 7 = 56 000 đồng.",
+        "mistake": "Phân biệt câu hỏi tìm số phần với câu hỏi tìm giá trị nhiều phần."
+      },
+      "file": "bai-47.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "fb0ba40825921e7bdbe7df7ea5cc576b9200466125a45bb482018da6e2bd996b",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 47: Bài toán liên quan đến rút về đơn vị. Điều em cần nhớ là: Rút về đơn vị nghĩa là tìm giá trị của một phần bằng nhau trước. Bước 1. Tìm một phần: lấy tổng chia cho số phần. Bước 2. Nếu hỏi nhiều phần, nhân giá trị một phần với số phần cần tìm. Bước 3. Nếu hỏi số phần, lấy tổng mới chia cho giá trị một phần. Cùng quan sát ví dụ với cô nhé. 4 quyển vở giá 32000 đồng. Một quyển giá 32000 chia 4  bằng  8000 đồng. 7 quyển giá 8000  nhân  7  bằng  56000 đồng. Cô nhắc em một mẹo: Phân biệt câu hỏi tìm số phần với câu hỏi tìm giá trị nhiều phần. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 48,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Nhân số có nhiều chữ số với số có một chữ số theo từng hàng từ phải sang trái.",
+          "Chia số có nhiều chữ số cho số có một chữ số từ trái sang phải.",
+          "Giao hoán: a × b = b × a. Kết hợp: (a × b) × c = a × (b × c).",
+          "Nhân số tự nhiên với 10, 100, 1 000 là tăng giá trị các chữ số lên tương ứng 10, 100, 1 000 lần.",
+          "Một số nhân với một tổng bằng tổng các tích của số đó với từng số hạng: a × (b + c) = a × b + a × c.",
+          "Nhân với số có hai chữ số bằng cách tính hai tích riêng rồi cộng lại.",
+          "Chia cho số có hai chữ số vẫn thực hiện theo chu trình chia, nhân, trừ, hạ.",
+          "Ước lượng giúp dự đoán kết quả gần đúng và kiểm tra tính hợp lí.",
+          "Số trung bình cộng bằng tổng các số chia cho số các số hạng.",
+          "Rút về đơn vị nghĩa là tìm giá trị của một phần bằng nhau trước."
+        ],
+        "example": "160 140 × 7 = 1 120 980. Ví dụ này nằm ở trang 4 tập hai.\n\n74 121 : 3 = 24 707. Thử lại 24 707 × 3 = 74 121.\n\n25 × 7 × 4 = (25 × 4) × 7 = 100 × 7 = 700.\n\n375 × 10 = 3 750; 48 000 : 100 = 480.\n\n12 × 25 + 12 × 75 = 12 × (25 + 75) = 1 200.\n\n234 × 12 = 234 × 2 + 234 × 10 = 468 + 2 340 = 2 808.\n\n3 756 : 12 = 313 vì 313 × 12 = 3 756.\n\n198 × 5 gần bằng 200 × 5 = 1 000. Kết quả chính xác là 990.\n\nBa bạn có 12, 15, 18 quyển sách. Trung bình: (12 + 15 + 18) : 3 = 15 quyển.\n\n4 quyển vở giá 32 000 đồng. Một quyển giá 32 000 : 4 = 8 000 đồng. 7 quyển giá 8 000 × 7 = 56 000 đồng.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-48.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "c2f9b7e09b83af8d53dd5475e11f9b2bcaa36046fde078205a9df5cb4e9e95e7",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 48: Luyện tập chung. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Nhân số có nhiều chữ số với số có một chữ số theo từng hàng từ phải sang trái. Bước 2. Chia số có nhiều chữ số cho số có một chữ số từ trái sang phải. Bước 3. Giao hoán: a  nhân  b  bằng  b  nhân  a. Kết hợp: (a  nhân  b)  nhân  c  bằng  a  nhân  (b  nhân  c). Bước 4. Nhân số tự nhiên với 10, 100, 1000 là tăng giá trị các chữ số lên tương ứng 10, 100, 1000 lần. Bước 5. Một số nhân với một tổng bằng tổng các tích của số đó với từng số hạng: a  nhân  (b  cộng  c)  bằng  a  nhân  b  cộng  a  nhân  c. Bước 6. Nhân với số có hai chữ số bằng cách tính hai tích riêng rồi cộng lại. Bước 7. Chia cho số có hai chữ số vẫn thực hiện theo chu trình chia, nhân, trừ, hạ. Bước 8. Ước lượng giúp dự đoán kết quả gần đúng và kiểm tra tính hợp lí. Bước 9. Số trung bình cộng bằng tổng các số chia cho số các số hạng. Bước 10. Rút về đơn vị nghĩa là tìm giá trị của một phần bằng nhau trước. Cùng quan sát ví dụ với cô nhé. 160140  nhân  7  bằng  1120980. Ví dụ này nằm ở trang 4 tập hai.\n\n74121 chia 3  bằng  24707. Thử lại 24707  nhân  3  bằng  74121.\n\n25  nhân  7  nhân  4  bằng  (25  nhân  4)  nhân  7  bằng  100  nhân  7  bằng  700.\n\n375  nhân  10  bằng  3750; 48000 chia 100  bằng  480.\n\n12  nhân  25  cộng  12  nhân  75  bằng  12  nhân  (25  cộng  75)  bằng  1200.\n\n234  nhân  12  bằng  234  nhân  2  cộng  234  nhân  10  bằng  468  cộng  2340  bằng  2808.\n\n3756 chia 12  bằng  313 vì 313  nhân  12  bằng  3756.\n\n198  nhân  5 gần bằng 200  nhân  5  bằng  1000. Kết quả chính xác là 990.\n\nBa bạn có 12, 15, 18 quyển sách. Trung bình: (12  cộng  15  cộng  18) chia 3  bằng  15 quyển.\n\n4 quyển vở giá 32000 đồng. Một quyển giá 32000 chia 4  bằng  8000 đồng. 7 quyển giá 8000  nhân  7  bằng  56000 đồng. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 49,
+      "title": "Dãy số liệu thống kê",
+      "guide": {
+        "rule": "Dãy số liệu ghi lại các kết quả quan sát, đo đếm theo một thứ tự.",
+        "steps": [
+          "Đọc dãy số và ý nghĩa của mỗi số.",
+          "Đếm số phần tử; tìm số lớn nhất, bé nhất.",
+          "Tính tổng hoặc so sánh theo yêu cầu."
+        ],
+        "example": "Dãy 12, 15, 10, 18 có 4 số; lớn nhất 18, bé nhất 10, tổng là 55.",
+        "mistake": "Đếm số số liệu, không đếm số chữ số."
+      },
+      "file": "bai-49.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "cc8b7af3d5e3653a21f4c5603428561a8f11d4daf7c5904f644712899803c409",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 49: Dãy số liệu thống kê. Điều em cần nhớ là: Dãy số liệu ghi lại các kết quả quan sát, đo đếm theo một thứ tự. Bước 1. Đọc dãy số và ý nghĩa của mỗi số. Bước 2. Đếm số phần tử; tìm số lớn nhất, bé nhất. Bước 3. Tính tổng hoặc so sánh theo yêu cầu. Cùng quan sát ví dụ với cô nhé. Dãy 12, 15, 10, 18 có 4 số; lớn nhất 18, bé nhất 10, tổng là 55. Cô nhắc em một mẹo: Đếm số số liệu, không đếm số chữ số. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 50,
+      "title": "Biểu đồ cột",
+      "guide": {
+        "rule": "Biểu đồ cột dùng độ cao các cột để thể hiện số liệu.",
+        "steps": [
+          "Đọc tên biểu đồ và tên các đối tượng.",
+          "Đọc đơn vị và khoảng cách giữa các vạch ở trục số.",
+          "Đối chiếu đỉnh cột với thang đo để đọc giá trị rồi so sánh."
+        ],
+        "example": "Nếu mỗi vạch ứng với 5 quyển sách, cột cao đến vạch thứ 4 tính từ 0 biểu thị 20 quyển.",
+        "mistake": "Một ô không phải lúc nào cũng bằng 1; phải đọc thang đo."
+      },
+      "file": "bai-50.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "dbbe5fe927b5a7f4ee2a13bcfb34a397f506edf68fa094cc5171e610fde69867",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 50: Biểu đồ cột. Điều em cần nhớ là: Biểu đồ cột dùng độ cao các cột để thể hiện số liệu. Bước 1. Đọc tên biểu đồ và tên các đối tượng. Bước 2. Đọc đơn vị và khoảng cách giữa các vạch ở trục số. Bước 3. Đối chiếu đỉnh cột với thang đo để đọc giá trị rồi so sánh. Cùng quan sát ví dụ với cô nhé. Nếu mỗi vạch ứng với 5 quyển sách, cột cao đến vạch thứ 4 tính từ 0 biểu thị 20 quyển. Cô nhắc em một mẹo: Một ô không phải lúc nào cũng bằng 1; phải đọc thang đo. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 51,
+      "title": "Số lần xuất hiện của một sự kiện",
+      "guide": {
+        "rule": "Số lần xuất hiện của một sự kiện được xác định bằng cách quan sát và đếm.",
+        "steps": [
+          "Xác định sự kiện cần theo dõi.",
+          "Sau mỗi lần thử, ghi lại kết quả.",
+          "Đếm số lần sự kiện xuất hiện; tổng các loại kết quả phải bằng số lần thử."
+        ],
+        "example": "Tung đồng xu 10 lần được 6 lần mặt sấp và 4 lần mặt ngửa. Mặt sấp xuất hiện 6 lần.",
+        "mistake": "Không thể kết luận lần tung tiếp theo chắc chắn là sấp chỉ vì trước đó sấp nhiều hơn."
+      },
+      "file": "bai-51.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "45308d6d9c23d5f419a481aa2189b04f20a213a2625bf066a99229168ede07dc",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 51: Số lần xuất hiện của một sự kiện. Điều em cần nhớ là: Số lần xuất hiện của một sự kiện được xác định bằng cách quan sát và đếm. Bước 1. Xác định sự kiện cần theo dõi. Bước 2. Sau mỗi lần thử, ghi lại kết quả. Bước 3. Đếm số lần sự kiện xuất hiện; tổng các loại kết quả phải bằng số lần thử. Cùng quan sát ví dụ với cô nhé. Tung đồng xu 10 lần được 6 lần mặt sấp và 4 lần mặt ngửa. Mặt sấp xuất hiện 6 lần. Cô nhắc em một mẹo: Không thể kết luận lần tung tiếp theo chắc chắn là sấp chỉ vì trước đó sấp nhiều hơn. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 52,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Dãy số liệu ghi lại các kết quả quan sát, đo đếm theo một thứ tự.",
+          "Biểu đồ cột dùng độ cao các cột để thể hiện số liệu.",
+          "Số lần xuất hiện của một sự kiện được xác định bằng cách quan sát và đếm."
+        ],
+        "example": "Dãy 12, 15, 10, 18 có 4 số; lớn nhất 18, bé nhất 10, tổng là 55.\n\nNếu mỗi vạch ứng với 5 quyển sách, cột cao đến vạch thứ 4 tính từ 0 biểu thị 20 quyển.\n\nTung đồng xu 10 lần được 6 lần mặt sấp và 4 lần mặt ngửa. Mặt sấp xuất hiện 6 lần.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-52.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "61b9aa3386bdc695a20b4012d37fc50aa7e5a1b0e83925734a36c35b16643317",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 52: Luyện tập chung. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Dãy số liệu ghi lại các kết quả quan sát, đo đếm theo một thứ tự. Bước 2. Biểu đồ cột dùng độ cao các cột để thể hiện số liệu. Bước 3. Số lần xuất hiện của một sự kiện được xác định bằng cách quan sát và đếm. Cùng quan sát ví dụ với cô nhé. Dãy 12, 15, 10, 18 có 4 số; lớn nhất 18, bé nhất 10, tổng là 55.\n\nNếu mỗi vạch ứng với 5 quyển sách, cột cao đến vạch thứ 4 tính từ 0 biểu thị 20 quyển.\n\nTung đồng xu 10 lần được 6 lần mặt sấp và 4 lần mặt ngửa. Mặt sấp xuất hiện 6 lần. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 53,
+      "title": "Khái niệm phân số",
+      "guide": {
+        "rule": "Chia một đơn vị thành các phần bằng nhau. Phân số có tử số cho biết số phần được lấy, mẫu số cho biết số phần bằng nhau của đơn vị.",
+        "steps": [
+          "Đếm tổng số phần bằng nhau để xác định mẫu số.",
+          "Đếm số phần được chọn để xác định tử số.",
+          "Viết tử số trên, mẫu số dưới; mẫu số khác 0."
+        ],
+        "example": "Chia chiếc bánh thành 8 phần bằng nhau, lấy 3 phần: đã lấy 3/8 chiếc bánh.",
+        "mistake": "Các phần phải bằng nhau mới biểu diễn đúng phân số."
+      },
+      "file": "bai-53.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "1d1674423b3b1023180404bb8ff329b29ea14fc140f83f08f59b9cec85d9a011",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 53: Khái niệm phân số. Điều em cần nhớ là: Chia một đơn vị thành các phần bằng nhau. Phân số có tử số cho biết số phần được lấy, mẫu số cho biết số phần bằng nhau của đơn vị. Bước 1. Đếm tổng số phần bằng nhau để xác định mẫu số. Bước 2. Đếm số phần được chọn để xác định tử số. Bước 3. Viết tử số trên, mẫu số dưới; mẫu số khác 0. Cùng quan sát ví dụ với cô nhé. Chia chiếc bánh thành 8 phần bằng nhau, lấy 3 phần: đã lấy 3 phần 8 chiếc bánh. Cô nhắc em một mẹo: Các phần phải bằng nhau mới biểu diễn đúng phân số. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 54,
+      "title": "Phân số và phép chia số tự nhiên",
+      "guide": {
+        "rule": "Thương của phép chia một số tự nhiên cho một số tự nhiên khác 0 có thể viết thành phân số.",
+        "steps": [
+          "Số bị chia viết làm tử số.",
+          "Số chia viết làm mẫu số.",
+          "Mỗi số tự nhiên n cũng viết được thành n/1."
+        ],
+        "example": "3 : 4 = 3/4; 5 = 5/1.",
+        "mistake": "Không đảo ngược số bị chia và số chia khi viết phân số."
+      },
+      "file": "bai-54.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "16e2192be38f6b1b562df6ee4e444990c8626914ede64cd6f0ecdc937ca35d1b",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 54: Phân số và phép chia số tự nhiên. Điều em cần nhớ là: Thương của phép chia một số tự nhiên cho một số tự nhiên khác 0 có thể viết thành phân số. Bước 1. Số bị chia viết làm tử số. Bước 2. Số chia viết làm mẫu số. Bước 3. Mỗi số tự nhiên n cũng viết được thành n phần 1. Cùng quan sát ví dụ với cô nhé. 3 chia 4  bằng  3 phần 4; 5  bằng  5 phần 1. Cô nhắc em một mẹo: Không đảo ngược số bị chia và số chia khi viết phân số. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 55,
+      "title": "Tính chất cơ bản của phân số",
+      "guide": {
+        "rule": "Nhân hoặc chia cả tử số và mẫu số với cùng một số tự nhiên khác 0 thì được một phân số bằng phân số đã cho, khi các phép chia đều chia hết.",
+        "steps": [
+          "Chọn cùng một số cho tử và mẫu.",
+          "Thực hiện cùng phép nhân hoặc cùng phép chia.",
+          "So sánh phần được biểu diễn để hiểu vì sao giá trị không đổi."
+        ],
+        "example": "2/3 = (2 × 2)/(3 × 2) = 4/6.",
+        "mistake": "Không cộng cùng một số vào tử và mẫu để tạo phân số bằng nhau."
+      },
+      "file": "bai-55.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "83e2cfb354de6529a2f1ca7528fd3c63e7a9c67bee4978b0b2ca3d5b9196419b",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 55: Tính chất cơ bản của phân số. Điều em cần nhớ là: Nhân hoặc chia cả tử số và mẫu số với cùng một số tự nhiên khác 0 thì được một phân số bằng phân số đã cho, khi các phép chia đều chia hết. Bước 1. Chọn cùng một số cho tử và mẫu. Bước 2. Thực hiện cùng phép nhân hoặc cùng phép chia. Bước 3. So sánh phần được biểu diễn để hiểu vì sao giá trị không đổi. Cùng quan sát ví dụ với cô nhé. 2 phần 3  bằng  (2  nhân  2) phần (3  nhân  2)  bằng  4 phần 6. Cô nhắc em một mẹo: Không cộng cùng một số vào tử và mẫu để tạo phân số bằng nhau. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 56,
+      "title": "Rút gọn phân số",
+      "guide": {
+        "rule": "Rút gọn phân số là chia cả tử và mẫu cho một số tự nhiên lớn hơn 1 mà cả hai cùng chia hết.",
+        "steps": [
+          "Tìm một ước chung của tử và mẫu.",
+          "Chia cả hai cho số đó.",
+          "Tiếp tục đến khi không còn cùng chia hết cho số nào lớn hơn 1."
+        ],
+        "example": "12/18 = 6/9 = 2/3. Phân số 2/3 đã tối giản.",
+        "mistake": "Phải chia cả tử và mẫu cho cùng một số."
+      },
+      "file": "bai-56.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "a9fda3a2b6f5671960c3636d6197cd41c22f28b88c65f62a327608b9d80df08c",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 56: Rút gọn phân số. Điều em cần nhớ là: Rút gọn phân số là chia cả tử và mẫu cho một số tự nhiên lớn hơn 1 mà cả hai cùng chia hết. Bước 1. Tìm một ước chung của tử và mẫu. Bước 2. Chia cả hai cho số đó. Bước 3. Tiếp tục đến khi không còn cùng chia hết cho số nào lớn hơn 1. Cùng quan sát ví dụ với cô nhé. 12 phần 18  bằng  6 phần 9  bằng  2 phần 3. Phân số 2 phần 3 đã tối giản. Cô nhắc em một mẹo: Phải chia cả tử và mẫu cho cùng một số. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 57,
+      "title": "Quy đồng mẫu số các phân số",
+      "guide": {
+        "rule": "Quy đồng mẫu số là biến các phân số thành các phân số bằng chúng và có cùng mẫu số.",
+        "steps": [
+          "Chọn mẫu số chung là một số chia hết cho các mẫu.",
+          "Tìm thừa số phụ bằng mẫu chung chia cho mẫu cũ.",
+          "Nhân cả tử và mẫu với thừa số phụ."
+        ],
+        "example": "1/3 = 4/12; 1/4 = 3/12. Hai phân số đã có cùng mẫu là 12.",
+        "mistake": "Đổi mẫu thì phải nhân tử với cùng thừa số."
+      },
+      "file": "bai-57.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "b251045bee5ae20aad10e0cb7df220604153bf916fb59d32f0762e5671917337",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 57: Quy đồng mẫu số các phân số. Điều em cần nhớ là: Quy đồng mẫu số là biến các phân số thành các phân số bằng chúng và có cùng mẫu số. Bước 1. Chọn mẫu số chung là một số chia hết cho các mẫu. Bước 2. Tìm thừa số phụ bằng mẫu chung chia cho mẫu cũ. Bước 3. Nhân cả tử và mẫu với thừa số phụ. Cùng quan sát ví dụ với cô nhé. 1 phần 3  bằng  4 phần 12; 1 phần 4  bằng  3 phần 12. Hai phân số đã có cùng mẫu là 12. Cô nhắc em một mẹo: Đổi mẫu thì phải nhân tử với cùng thừa số. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 58,
+      "title": "So sánh phân số",
+      "guide": {
+        "rule": "Cùng mẫu số: phân số có tử lớn hơn thì lớn hơn. Khác mẫu số: có thể quy đồng rồi so sánh.",
+        "steps": [
+          "Kiểm tra mẫu số đã bằng nhau chưa.",
+          "Nếu chưa, quy đồng mẫu số.",
+          "So sánh hai tử số; chú ý so sánh với 1 khi thuận tiện."
+        ],
+        "example": "2/3 = 8/12; 3/4 = 9/12. Vì 8 < 9 nên 2/3 < 3/4.",
+        "mistake": "Không chỉ so tử số khi hai mẫu số khác nhau."
+      },
+      "file": "bai-58.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "113e28a4d7179064eb4eae41588d91ca8d7050afbdf2dca241e6a7400caac12a",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 58: So sánh phân số. Điều em cần nhớ là: Cùng mẫu số: phân số có tử lớn hơn thì lớn hơn. Khác mẫu số: có thể quy đồng rồi so sánh. Bước 1. Kiểm tra mẫu số đã bằng nhau chưa. Bước 2. Nếu chưa, quy đồng mẫu số. Bước 3. So sánh hai tử số; chú ý so sánh với 1 khi thuận tiện. Cùng quan sát ví dụ với cô nhé. 2 phần 3  bằng  8 phần 12; 3 phần 4  bằng  9 phần 12. Vì 8  nhỏ hơn  9 nên 2 phần 3  nhỏ hơn  3 phần 4. Cô nhắc em một mẹo: Không chỉ so tử số khi hai mẫu số khác nhau. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 59,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Chia một đơn vị thành các phần bằng nhau. Phân số có tử số cho biết số phần được lấy, mẫu số cho biết số phần bằng nhau của đơn vị.",
+          "Thương của phép chia một số tự nhiên cho một số tự nhiên khác 0 có thể viết thành phân số.",
+          "Nhân hoặc chia cả tử số và mẫu số với cùng một số tự nhiên khác 0 thì được một phân số bằng phân số đã cho, khi các phép chia đều chia hết.",
+          "Rút gọn phân số là chia cả tử và mẫu cho một số tự nhiên lớn hơn 1 mà cả hai cùng chia hết.",
+          "Quy đồng mẫu số là biến các phân số thành các phân số bằng chúng và có cùng mẫu số.",
+          "Cùng mẫu số: phân số có tử lớn hơn thì lớn hơn. Khác mẫu số: có thể quy đồng rồi so sánh."
+        ],
+        "example": "Chia chiếc bánh thành 8 phần bằng nhau, lấy 3 phần: đã lấy 3/8 chiếc bánh.\n\n3 : 4 = 3/4; 5 = 5/1.\n\n2/3 = (2 × 2)/(3 × 2) = 4/6.\n\n12/18 = 6/9 = 2/3. Phân số 2/3 đã tối giản.\n\n1/3 = 4/12; 1/4 = 3/12. Hai phân số đã có cùng mẫu là 12.\n\n2/3 = 8/12; 3/4 = 9/12. Vì 8 < 9 nên 2/3 < 3/4.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-59.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "ad5dcf2920d1e53657a918286d6448862f7a194fb0aa757488e0b2da3db53934",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 59: Luyện tập chung. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Chia một đơn vị thành các phần bằng nhau. Phân số có tử số cho biết số phần được lấy, mẫu số cho biết số phần bằng nhau của đơn vị. Bước 2. Thương của phép chia một số tự nhiên cho một số tự nhiên khác 0 có thể viết thành phân số. Bước 3. Nhân hoặc chia cả tử số và mẫu số với cùng một số tự nhiên khác 0 thì được một phân số bằng phân số đã cho, khi các phép chia đều chia hết. Bước 4. Rút gọn phân số là chia cả tử và mẫu cho một số tự nhiên lớn hơn 1 mà cả hai cùng chia hết. Bước 5. Quy đồng mẫu số là biến các phân số thành các phân số bằng chúng và có cùng mẫu số. Bước 6. Cùng mẫu số: phân số có tử lớn hơn thì lớn hơn. Khác mẫu số: có thể quy đồng rồi so sánh. Cùng quan sát ví dụ với cô nhé. Chia chiếc bánh thành 8 phần bằng nhau, lấy 3 phần: đã lấy 3 phần 8 chiếc bánh.\n\n3 chia 4  bằng  3 phần 4; 5  bằng  5 phần 1.\n\n2 phần 3  bằng  (2  nhân  2) phần (3  nhân  2)  bằng  4 phần 6.\n\n12 phần 18  bằng  6 phần 9  bằng  2 phần 3. Phân số 2 phần 3 đã tối giản.\n\n1 phần 3  bằng  4 phần 12; 1 phần 4  bằng  3 phần 12. Hai phân số đã có cùng mẫu là 12.\n\n2 phần 3  bằng  8 phần 12; 3 phần 4  bằng  9 phần 12. Vì 8  nhỏ hơn  9 nên 2 phần 3  nhỏ hơn  3 phần 4. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 60,
+      "title": "Phép cộng phân số",
+      "guide": {
+        "rule": "Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+        "steps": [
+          "Xem mẫu số đã giống nhau chưa.",
+          "Quy đồng nếu cần, rồi cộng các tử số.",
+          "Rút gọn kết quả nếu có thể."
+        ],
+        "example": "1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2.",
+        "mistake": "Không cộng các mẫu số."
+      },
+      "file": "bai-60.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "c931cf66e7d5d9e270ee7f083ac13984f294bcaeefbd0497323395af77692e4b",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 60: Phép cộng phân số. Điều em cần nhớ là: Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước. Bước 1. Xem mẫu số đã giống nhau chưa. Bước 2. Quy đồng nếu cần, rồi cộng các tử số. Bước 3. Rút gọn kết quả nếu có thể. Cùng quan sát ví dụ với cô nhé. 1 phần 3  cộng  1 phần 6  bằng  2 phần 6  cộng  1 phần 6  bằng  3 phần 6  bằng  1 phần 2. Cô nhắc em một mẹo: Không cộng các mẫu số. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 61,
+      "title": "Phép trừ phân số",
+      "guide": {
+        "rule": "Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+        "steps": [
+          "Quy đồng mẫu số nếu cần.",
+          "Lấy tử số thứ nhất trừ tử số thứ hai, giữ mẫu chung.",
+          "Rút gọn và kiểm tra bằng phép cộng."
+        ],
+        "example": "3/4 − 1/2 = 3/4 − 2/4 = 1/4.",
+        "mistake": "Không trừ cả mẫu số."
+      },
+      "file": "bai-61.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "3d634156bc04860266ef2a5003d9ef9774d9590b35c19f701a30012395365400",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 61: Phép trừ phân số. Điều em cần nhớ là: Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước. Bước 1. Quy đồng mẫu số nếu cần. Bước 2. Lấy tử số thứ nhất trừ tử số thứ hai, giữ mẫu chung. Bước 3. Rút gọn và kiểm tra bằng phép cộng. Cùng quan sát ví dụ với cô nhé. 3 phần 4  trừ  1 phần 2  bằng  3 phần 4  trừ  2 phần 4  bằng  1 phần 4. Cô nhắc em một mẹo: Không trừ cả mẫu số. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 62,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+          "Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước."
+        ],
+        "example": "1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2.\n\n3/4 − 1/2 = 3/4 − 2/4 = 1/4.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-62.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "dc4775020e88891d5059cb614bbc9a198600d3dee0d4e6ad71189d5b0cabc05e",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 62: Luyện tập chung. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước. Bước 2. Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước. Cùng quan sát ví dụ với cô nhé. 1 phần 3  cộng  1 phần 6  bằng  2 phần 6  cộng  1 phần 6  bằng  3 phần 6  bằng  1 phần 2.\n\n3 phần 4  trừ  1 phần 2  bằng  3 phần 4  trừ  2 phần 4  bằng  1 phần 4. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 63,
+      "title": "Phép nhân phân số",
+      "guide": {
+        "rule": "Nhân hai phân số: nhân tử số với tử số, mẫu số với mẫu số.",
+        "steps": [
+          "Có thể rút gọn các thừa số chung trước khi nhân.",
+          "Nhân các tử và nhân các mẫu.",
+          "Rút gọn kết quả."
+        ],
+        "example": "2/3 × 3/5 = 6/15 = 2/5.",
+        "mistake": "Phép nhân phân số không bắt buộc quy đồng mẫu."
+      },
+      "file": "bai-63.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "d544754c27df6174baba038a5c259ec9fcc6370aa77f626579b01cd5be013291",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 63: Phép nhân phân số. Điều em cần nhớ là: Nhân hai phân số: nhân tử số với tử số, mẫu số với mẫu số. Bước 1. Có thể rút gọn các thừa số chung trước khi nhân. Bước 2. Nhân các tử và nhân các mẫu. Bước 3. Rút gọn kết quả. Cùng quan sát ví dụ với cô nhé. 2 phần 3  nhân  3 phần 5  bằng  6 phần 15  bằng  2 phần 5. Cô nhắc em một mẹo: Phép nhân phân số không bắt buộc quy đồng mẫu. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 64,
+      "title": "Phép chia phân số",
+      "guide": {
+        "rule": "Chia cho một phân số khác 0 là nhân với phân số đảo ngược của nó.",
+        "steps": [
+          "Giữ nguyên phân số thứ nhất.",
+          "Đổi phép chia thành nhân, đảo tử và mẫu của phân số thứ hai.",
+          "Nhân rồi rút gọn."
+        ],
+        "example": "2/3 : 4/5 = 2/3 × 5/4 = 10/12 = 5/6.",
+        "mistake": "Chỉ đảo phân số thứ hai; không được chia cho phân số có tử số 0."
+      },
+      "file": "bai-64.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "728f1ea0facdb50f3be213dab1154afc2bea1e5adeff5d58710fdf6d9de62211",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 64: Phép chia phân số. Điều em cần nhớ là: Chia cho một phân số khác 0 là nhân với phân số đảo ngược của nó. Bước 1. Giữ nguyên phân số thứ nhất. Bước 2. Đổi phép chia thành nhân, đảo tử và mẫu của phân số thứ hai. Bước 3. Nhân rồi rút gọn. Cùng quan sát ví dụ với cô nhé. 2 phần 3 chia 4 phần 5  bằng  2 phần 3  nhân  5 phần 4  bằng  10 phần 12  bằng  5 phần 6. Cô nhắc em một mẹo: Chỉ đảo phân số thứ hai; không được chia cho phân số có tử số 0. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 65,
+      "title": "Tìm phân số của một số",
+      "guide": {
+        "rule": "Muốn tìm a/b của một số, có thể lấy số đó chia cho b rồi nhân với a.",
+        "steps": [
+          "Xác định số ban đầu và phân số cần tìm.",
+          "Chia số ban đầu cho mẫu số.",
+          "Nhân kết quả với tử số và ghi đơn vị."
+        ],
+        "example": "Tìm 3/4 của 28 học sinh: 28 : 4 × 3 = 21 học sinh.",
+        "mistake": "Phân biệt tìm 3/4 của 28 với lấy 28 chia cho 3/4."
+      },
+      "file": "bai-65.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "3e9cf9c0b1bf501efeec8395a78d2165366161e80a90b31a760268b372b75560",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 65: Tìm phân số của một số. Điều em cần nhớ là: Muốn tìm a phần b của một số, có thể lấy số đó chia cho b rồi nhân với a. Bước 1. Xác định số ban đầu và phân số cần tìm. Bước 2. Chia số ban đầu cho mẫu số. Bước 3. Nhân kết quả với tử số và ghi đơn vị. Cùng quan sát ví dụ với cô nhé. Tìm 3 phần 4 của 28 học sinh: 28 chia 4  nhân  3  bằng  21 học sinh. Cô nhắc em một mẹo: Phân biệt tìm 3 phần 4 của 28 với lấy 28 chia cho 3 phần 4. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 66,
+      "title": "Luyện tập chung",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+          "Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+          "Nhân hai phân số: nhân tử số với tử số, mẫu số với mẫu số.",
+          "Chia cho một phân số khác 0 là nhân với phân số đảo ngược của nó.",
+          "Muốn tìm a/b của một số, có thể lấy số đó chia cho b rồi nhân với a."
+        ],
+        "example": "1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2.\n\n3/4 − 1/2 = 3/4 − 2/4 = 1/4.\n\n2/3 × 3/5 = 6/15 = 2/5.\n\n2/3 : 4/5 = 2/3 × 5/4 = 10/12 = 5/6.\n\nTìm 3/4 của 28 học sinh: 28 : 4 × 3 = 21 học sinh.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-66.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "ee93b73d3f7857bbee6c5b8d9f43d8f674e58a396f20b3ceb5a848cbbc6b300a",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 66: Luyện tập chung. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước. Bước 2. Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước. Bước 3. Nhân hai phân số: nhân tử số với tử số, mẫu số với mẫu số. Bước 4. Chia cho một phân số khác 0 là nhân với phân số đảo ngược của nó. Bước 5. Muốn tìm a phần b của một số, có thể lấy số đó chia cho b rồi nhân với a. Cùng quan sát ví dụ với cô nhé. 1 phần 3  cộng  1 phần 6  bằng  2 phần 6  cộng  1 phần 6  bằng  3 phần 6  bằng  1 phần 2.\n\n3 phần 4  trừ  1 phần 2  bằng  3 phần 4  trừ  2 phần 4  bằng  1 phần 4.\n\n2 phần 3  nhân  3 phần 5  bằng  6 phần 15  bằng  2 phần 5.\n\n2 phần 3 chia 4 phần 5  bằng  2 phần 3  nhân  5 phần 4  bằng  10 phần 12  bằng  5 phần 6.\n\nTìm 3 phần 4 của 28 học sinh: 28 chia 4  nhân  3  bằng  21 học sinh. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 67,
+      "title": "Ôn tập số tự nhiên",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Mười trăm nghìn là một triệu. Số 1 000 000 có bảy chữ số.",
+          "Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu.",
+          "Làm tròn đến hàng trăm nghìn: nhìn chữ số hàng chục nghìn.",
+          "Số có nhiều chữ số hơn thì lớn hơn. Nếu cùng số chữ số, so từng hàng từ trái sang phải.",
+          "Các số 0, 1, 2, 3,... là các số tự nhiên, xếp theo thứ tự từ bé đến lớn thành dãy số tự nhiên."
+        ],
+        "example": "305 214 đọc là ba trăm linh năm nghìn hai trăm mười bốn.\n\n12 345 678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300 000.\n\n3 462 000 làm tròn đến hàng trăm nghìn được 3 500 000 vì chữ số hàng chục nghìn là 6.\n\n2 315 000 < 2 351 000 vì ở hàng chục nghìn, 1 < 5.\n\nSau 999 là 1 000; trước 1 000 là 999. Số 0 không có số tự nhiên liền trước.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-67.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "1c7fcee344751adc44db26bd196191c353fc5dc17f99cf54e6c06852b09a08e8",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 67: Ôn tập số tự nhiên. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Mười trăm nghìn là một triệu. Số 1000000 có bảy chữ số. Bước 2. Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu. Bước 3. Làm tròn đến hàng trăm nghìn: nhìn chữ số hàng chục nghìn. Bước 4. Số có nhiều chữ số hơn thì lớn hơn. Nếu cùng số chữ số, so từng hàng từ trái sang phải. Bước 5. Các số 0, 1, 2, 3,... là các số tự nhiên, xếp theo thứ tự từ bé đến lớn thành dãy số tự nhiên. Cùng quan sát ví dụ với cô nhé. 305214 đọc là ba trăm linh năm nghìn hai trăm mười bốn.\n\n12345678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300000.\n\n3462000 làm tròn đến hàng trăm nghìn được 3500000 vì chữ số hàng chục nghìn là 6.\n\n2315000  nhỏ hơn  2351000 vì ở hàng chục nghìn, 1  nhỏ hơn  5.\n\nSau 999 là 1000; trước 1000 là 999. Số 0 không có số tự nhiên liền trước. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 68,
+      "title": "Ôn tập phép tính với số tự nhiên",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Nhân số có nhiều chữ số với số có một chữ số theo từng hàng từ phải sang trái.",
+          "Chia số có nhiều chữ số cho số có một chữ số từ trái sang phải.",
+          "Giao hoán: a × b = b × a. Kết hợp: (a × b) × c = a × (b × c).",
+          "Nhân số tự nhiên với 10, 100, 1 000 là tăng giá trị các chữ số lên tương ứng 10, 100, 1 000 lần.",
+          "Một số nhân với một tổng bằng tổng các tích của số đó với từng số hạng: a × (b + c) = a × b + a × c.",
+          "Nhân với số có hai chữ số bằng cách tính hai tích riêng rồi cộng lại.",
+          "Chia cho số có hai chữ số vẫn thực hiện theo chu trình chia, nhân, trừ, hạ.",
+          "Ước lượng giúp dự đoán kết quả gần đúng và kiểm tra tính hợp lí.",
+          "Số trung bình cộng bằng tổng các số chia cho số các số hạng.",
+          "Rút về đơn vị nghĩa là tìm giá trị của một phần bằng nhau trước."
+        ],
+        "example": "160 140 × 7 = 1 120 980. Ví dụ này nằm ở trang 4 tập hai.\n\n74 121 : 3 = 24 707. Thử lại 24 707 × 3 = 74 121.\n\n25 × 7 × 4 = (25 × 4) × 7 = 100 × 7 = 700.\n\n375 × 10 = 3 750; 48 000 : 100 = 480.\n\n12 × 25 + 12 × 75 = 12 × (25 + 75) = 1 200.\n\n234 × 12 = 234 × 2 + 234 × 10 = 468 + 2 340 = 2 808.\n\n3 756 : 12 = 313 vì 313 × 12 = 3 756.\n\n198 × 5 gần bằng 200 × 5 = 1 000. Kết quả chính xác là 990.\n\nBa bạn có 12, 15, 18 quyển sách. Trung bình: (12 + 15 + 18) : 3 = 15 quyển.\n\n4 quyển vở giá 32 000 đồng. Một quyển giá 32 000 : 4 = 8 000 đồng. 7 quyển giá 8 000 × 7 = 56 000 đồng.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-68.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "aa1495ad1069957c48f8138a504fe92575826b42fe2890fa8d8355c9dd4d66a2",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 68: Ôn tập phép tính với số tự nhiên. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Nhân số có nhiều chữ số với số có một chữ số theo từng hàng từ phải sang trái. Bước 2. Chia số có nhiều chữ số cho số có một chữ số từ trái sang phải. Bước 3. Giao hoán: a  nhân  b  bằng  b  nhân  a. Kết hợp: (a  nhân  b)  nhân  c  bằng  a  nhân  (b  nhân  c). Bước 4. Nhân số tự nhiên với 10, 100, 1000 là tăng giá trị các chữ số lên tương ứng 10, 100, 1000 lần. Bước 5. Một số nhân với một tổng bằng tổng các tích của số đó với từng số hạng: a  nhân  (b  cộng  c)  bằng  a  nhân  b  cộng  a  nhân  c. Bước 6. Nhân với số có hai chữ số bằng cách tính hai tích riêng rồi cộng lại. Bước 7. Chia cho số có hai chữ số vẫn thực hiện theo chu trình chia, nhân, trừ, hạ. Bước 8. Ước lượng giúp dự đoán kết quả gần đúng và kiểm tra tính hợp lí. Bước 9. Số trung bình cộng bằng tổng các số chia cho số các số hạng. Bước 10. Rút về đơn vị nghĩa là tìm giá trị của một phần bằng nhau trước. Cùng quan sát ví dụ với cô nhé. 160140  nhân  7  bằng  1120980. Ví dụ này nằm ở trang 4 tập hai.\n\n74121 chia 3  bằng  24707. Thử lại 24707  nhân  3  bằng  74121.\n\n25  nhân  7  nhân  4  bằng  (25  nhân  4)  nhân  7  bằng  100  nhân  7  bằng  700.\n\n375  nhân  10  bằng  3750; 48000 chia 100  bằng  480.\n\n12  nhân  25  cộng  12  nhân  75  bằng  12  nhân  (25  cộng  75)  bằng  1200.\n\n234  nhân  12  bằng  234  nhân  2  cộng  234  nhân  10  bằng  468  cộng  2340  bằng  2808.\n\n3756 chia 12  bằng  313 vì 313  nhân  12  bằng  3756.\n\n198  nhân  5 gần bằng 200  nhân  5  bằng  1000. Kết quả chính xác là 990.\n\nBa bạn có 12, 15, 18 quyển sách. Trung bình: (12  cộng  15  cộng  18) chia 3  bằng  15 quyển.\n\n4 quyển vở giá 32000 đồng. Một quyển giá 32000 chia 4  bằng  8000 đồng. 7 quyển giá 8000  nhân  7  bằng  56000 đồng. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 69,
+      "title": "Ôn tập phân số",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Chia một đơn vị thành các phần bằng nhau. Phân số có tử số cho biết số phần được lấy, mẫu số cho biết số phần bằng nhau của đơn vị.",
+          "Thương của phép chia một số tự nhiên cho một số tự nhiên khác 0 có thể viết thành phân số.",
+          "Nhân hoặc chia cả tử số và mẫu số với cùng một số tự nhiên khác 0 thì được một phân số bằng phân số đã cho, khi các phép chia đều chia hết.",
+          "Rút gọn phân số là chia cả tử và mẫu cho một số tự nhiên lớn hơn 1 mà cả hai cùng chia hết.",
+          "Quy đồng mẫu số là biến các phân số thành các phân số bằng chúng và có cùng mẫu số.",
+          "Cùng mẫu số: phân số có tử lớn hơn thì lớn hơn. Khác mẫu số: có thể quy đồng rồi so sánh."
+        ],
+        "example": "Chia chiếc bánh thành 8 phần bằng nhau, lấy 3 phần: đã lấy 3/8 chiếc bánh.\n\n3 : 4 = 3/4; 5 = 5/1.\n\n2/3 = (2 × 2)/(3 × 2) = 4/6.\n\n12/18 = 6/9 = 2/3. Phân số 2/3 đã tối giản.\n\n1/3 = 4/12; 1/4 = 3/12. Hai phân số đã có cùng mẫu là 12.\n\n2/3 = 8/12; 3/4 = 9/12. Vì 8 < 9 nên 2/3 < 3/4.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-69.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "cce4f24e78748194d1edfe6878cc01d5211b459cacad3e5d7a242342f14323c3",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 69: Ôn tập phân số. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Chia một đơn vị thành các phần bằng nhau. Phân số có tử số cho biết số phần được lấy, mẫu số cho biết số phần bằng nhau của đơn vị. Bước 2. Thương của phép chia một số tự nhiên cho một số tự nhiên khác 0 có thể viết thành phân số. Bước 3. Nhân hoặc chia cả tử số và mẫu số với cùng một số tự nhiên khác 0 thì được một phân số bằng phân số đã cho, khi các phép chia đều chia hết. Bước 4. Rút gọn phân số là chia cả tử và mẫu cho một số tự nhiên lớn hơn 1 mà cả hai cùng chia hết. Bước 5. Quy đồng mẫu số là biến các phân số thành các phân số bằng chúng và có cùng mẫu số. Bước 6. Cùng mẫu số: phân số có tử lớn hơn thì lớn hơn. Khác mẫu số: có thể quy đồng rồi so sánh. Cùng quan sát ví dụ với cô nhé. Chia chiếc bánh thành 8 phần bằng nhau, lấy 3 phần: đã lấy 3 phần 8 chiếc bánh.\n\n3 chia 4  bằng  3 phần 4; 5  bằng  5 phần 1.\n\n2 phần 3  bằng  (2  nhân  2) phần (3  nhân  2)  bằng  4 phần 6.\n\n12 phần 18  bằng  6 phần 9  bằng  2 phần 3. Phân số 2 phần 3 đã tối giản.\n\n1 phần 3  bằng  4 phần 12; 1 phần 4  bằng  3 phần 12. Hai phân số đã có cùng mẫu là 12.\n\n2 phần 3  bằng  8 phần 12; 3 phần 4  bằng  9 phần 12. Vì 8  nhỏ hơn  9 nên 2 phần 3  nhỏ hơn  3 phần 4. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 70,
+      "title": "Ôn tập phép tính với phân số",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+          "Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+          "Nhân hai phân số: nhân tử số với tử số, mẫu số với mẫu số.",
+          "Chia cho một phân số khác 0 là nhân với phân số đảo ngược của nó.",
+          "Muốn tìm a/b của một số, có thể lấy số đó chia cho b rồi nhân với a."
+        ],
+        "example": "1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2.\n\n3/4 − 1/2 = 3/4 − 2/4 = 1/4.\n\n2/3 × 3/5 = 6/15 = 2/5.\n\n2/3 : 4/5 = 2/3 × 5/4 = 10/12 = 5/6.\n\nTìm 3/4 của 28 học sinh: 28 : 4 × 3 = 21 học sinh.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-70.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "1fe4780c797381abfa812dd025defb49f90e6781ca31d90ebd9080f0225557a2",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 70: Ôn tập phép tính với phân số. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước. Bước 2. Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước. Bước 3. Nhân hai phân số: nhân tử số với tử số, mẫu số với mẫu số. Bước 4. Chia cho một phân số khác 0 là nhân với phân số đảo ngược của nó. Bước 5. Muốn tìm a phần b của một số, có thể lấy số đó chia cho b rồi nhân với a. Cùng quan sát ví dụ với cô nhé. 1 phần 3  cộng  1 phần 6  bằng  2 phần 6  cộng  1 phần 6  bằng  3 phần 6  bằng  1 phần 2.\n\n3 phần 4  trừ  1 phần 2  bằng  3 phần 4  trừ  2 phần 4  bằng  1 phần 4.\n\n2 phần 3  nhân  3 phần 5  bằng  6 phần 15  bằng  2 phần 5.\n\n2 phần 3 chia 4 phần 5  bằng  2 phần 3  nhân  5 phần 4  bằng  10 phần 12  bằng  5 phần 6.\n\nTìm 3 phần 4 của 28 học sinh: 28 chia 4  nhân  3  bằng  21 học sinh. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 71,
+      "title": "Ôn tập hình học và đo lường",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình.",
+          "1 yến = 10 kg; 1 tạ = 100 kg = 10 yến; 1 tấn = 1 000 kg = 10 tạ.",
+          "1 m² = 100 dm²; 1 dm² = 100 cm²; 1 cm² = 100 mm².",
+          "1 phút = 60 giây; 1 giờ = 60 phút; 1 thế kỉ = 100 năm."
+        ],
+        "example": "Hình chữ nhật có bốn góc vuông, hai cặp cạnh đối diện song song và bằng nhau.\n\n3 tấn 5 tạ = 3 000 kg + 500 kg = 3 500 kg.\n\n2 m² 35 dm² = 200 dm² + 35 dm² = 235 dm².\n\n2 phút 12 giây = 132 giây. Năm 2000 thuộc thế kỉ XX; năm 2001 thuộc thế kỉ XXI.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-71.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "bd7b95022a672c2acd4b0f01f6182fd2a8c56f80a771c16a7cd26198cbd2ac49",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 71: Ôn tập hình học và đo lường. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình. Bước 2. 1 yến  bằng  10 kg; 1 tạ  bằng  100 kg  bằng  10 yến; 1 tấn  bằng  1000 kg  bằng  10 tạ. Bước 3. 1  mét vuông   bằng  100  đề xi mét vuông ; 1  đề xi mét vuông   bằng  100  xăng ti mét vuông ; 1  xăng ti mét vuông   bằng  100  mi li mét vuông . Bước 4. 1 phút  bằng  60 giây; 1 giờ  bằng  60 phút; 1 thế kỉ  bằng  100 năm. Cùng quan sát ví dụ với cô nhé. Hình chữ nhật có bốn góc vuông, hai cặp cạnh đối diện song song và bằng nhau.\n\n3 tấn 5 tạ  bằng  3000 kg  cộng  500 kg  bằng  3500 kg.\n\n2  mét vuông  35  đề xi mét vuông   bằng  200  đề xi mét vuông   cộng  35  đề xi mét vuông   bằng  235  đề xi mét vuông .\n\n2 phút 12 giây  bằng  132 giây. Năm 2000 thuộc thế kỉ XX; năm 2001 thuộc thế kỉ XXI. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 72,
+      "title": "Ôn tập một số yếu tố thống kê và xác suất",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Dãy số liệu ghi lại các kết quả quan sát, đo đếm theo một thứ tự.",
+          "Biểu đồ cột dùng độ cao các cột để thể hiện số liệu.",
+          "Số lần xuất hiện của một sự kiện được xác định bằng cách quan sát và đếm."
+        ],
+        "example": "Dãy 12, 15, 10, 18 có 4 số; lớn nhất 18, bé nhất 10, tổng là 55.\n\nNếu mỗi vạch ứng với 5 quyển sách, cột cao đến vạch thứ 4 tính từ 0 biểu thị 20 quyển.\n\nTung đồng xu 10 lần được 6 lần mặt sấp và 4 lần mặt ngửa. Mặt sấp xuất hiện 6 lần.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-72.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "f78bfb76e9943cfd6db66d32bd1eaf29544696b2e77a2fe268b01c01625399fa",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 72: Ôn tập một số yếu tố thống kê và xác suất. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Dãy số liệu ghi lại các kết quả quan sát, đo đếm theo một thứ tự. Bước 2. Biểu đồ cột dùng độ cao các cột để thể hiện số liệu. Bước 3. Số lần xuất hiện của một sự kiện được xác định bằng cách quan sát và đếm. Cùng quan sát ví dụ với cô nhé. Dãy 12, 15, 10, 18 có 4 số; lớn nhất 18, bé nhất 10, tổng là 55.\n\nNếu mỗi vạch ứng với 5 quyển sách, cột cao đến vạch thứ 4 tính từ 0 biểu thị 20 quyển.\n\nTung đồng xu 10 lần được 6 lần mặt sấp và 4 lần mặt ngửa. Mặt sấp xuất hiện 6 lần. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    },
+    {
+      "lesson": 73,
+      "title": "Ôn tập chung",
+      "guide": {
+        "rule": "Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+        "steps": [
+          "Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu.",
+          "Nhân với số có hai chữ số bằng cách tính hai tích riêng rồi cộng lại.",
+          "Chia cho số có hai chữ số vẫn thực hiện theo chu trình chia, nhân, trừ, hạ.",
+          "Số bé = (tổng − hiệu) : 2. Số lớn = (tổng + hiệu) : 2.",
+          "Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình.",
+          "1 m² = 100 dm²; 1 dm² = 100 cm²; 1 cm² = 100 mm².",
+          "Số trung bình cộng bằng tổng các số chia cho số các số hạng.",
+          "Chia một đơn vị thành các phần bằng nhau. Phân số có tử số cho biết số phần được lấy, mẫu số cho biết số phần bằng nhau của đơn vị.",
+          "Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+          "Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+          "Nhân hai phân số: nhân tử số với tử số, mẫu số với mẫu số.",
+          "Chia cho một phân số khác 0 là nhân với phân số đảo ngược của nó.",
+          "Muốn tìm a/b của một số, có thể lấy số đó chia cho b rồi nhân với a.",
+          "Biểu đồ cột dùng độ cao các cột để thể hiện số liệu.",
+          "Số lần xuất hiện của một sự kiện được xác định bằng cách quan sát và đếm."
+        ],
+        "example": "12 345 678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300 000.\n\n234 × 12 = 234 × 2 + 234 × 10 = 468 + 2 340 = 2 808.\n\n3 756 : 12 = 313 vì 313 × 12 = 3 756.\n\nTổng là 70, hiệu là 10. Số bé: (70 − 10) : 2 = 30. Số lớn: 30 + 10 = 40.\n\nHình chữ nhật có bốn góc vuông, hai cặp cạnh đối diện song song và bằng nhau.\n\n2 m² 35 dm² = 200 dm² + 35 dm² = 235 dm².\n\nBa bạn có 12, 15, 18 quyển sách. Trung bình: (12 + 15 + 18) : 3 = 15 quyển.\n\nChia chiếc bánh thành 8 phần bằng nhau, lấy 3 phần: đã lấy 3/8 chiếc bánh.\n\n1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2.\n\n3/4 − 1/2 = 3/4 − 2/4 = 1/4.\n\n2/3 × 3/5 = 6/15 = 2/5.\n\n2/3 : 4/5 = 2/3 × 5/4 = 10/12 = 5/6.\n\nTìm 3/4 của 28 học sinh: 28 : 4 × 3 = 21 học sinh.\n\nNếu mỗi vạch ứng với 5 quyển sách, cột cao đến vạch thứ 4 tính từ 0 biểu thị 20 quyển.\n\nTung đồng xu 10 lần được 6 lần mặt sấp và 4 lần mặt ngửa. Mặt sấp xuất hiện 6 lần.",
+        "mistake": "Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại."
+      },
+      "file": "bai-73.mp3",
+      "voice": "vi-VN-HoaiMyNeural",
+      "sha256": "c894a2d0ae7d961f13834480bee722dcc29d556d9ee776b18d3a352154b55a22",
+      "text": "Chào em! Cô là Mai. Hôm nay mình cùng học bài 73: Ôn tập chung. Điều em cần nhớ là: Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả. Bước 1. Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu. Bước 2. Nhân với số có hai chữ số bằng cách tính hai tích riêng rồi cộng lại. Bước 3. Chia cho số có hai chữ số vẫn thực hiện theo chu trình chia, nhân, trừ, hạ. Bước 4. Số bé  bằng  (tổng  trừ  hiệu) chia 2. Số lớn  bằng  (tổng  cộng  hiệu) chia 2. Bước 5. Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình. Bước 6. 1  mét vuông   bằng  100  đề xi mét vuông ; 1  đề xi mét vuông   bằng  100  xăng ti mét vuông ; 1  xăng ti mét vuông   bằng  100  mi li mét vuông . Bước 7. Số trung bình cộng bằng tổng các số chia cho số các số hạng. Bước 8. Chia một đơn vị thành các phần bằng nhau. Phân số có tử số cho biết số phần được lấy, mẫu số cho biết số phần bằng nhau của đơn vị. Bước 9. Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước. Bước 10. Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước. Bước 11. Nhân hai phân số: nhân tử số với tử số, mẫu số với mẫu số. Bước 12. Chia cho một phân số khác 0 là nhân với phân số đảo ngược của nó. Bước 13. Muốn tìm a phần b của một số, có thể lấy số đó chia cho b rồi nhân với a. Bước 14. Biểu đồ cột dùng độ cao các cột để thể hiện số liệu. Bước 15. Số lần xuất hiện của một sự kiện được xác định bằng cách quan sát và đếm. Cùng quan sát ví dụ với cô nhé. 12345678 gồm 12 triệu, 345 nghìn và 678 đơn vị. Chữ số 3 có giá trị 300000.\n\n234  nhân  12  bằng  234  nhân  2  cộng  234  nhân  10  bằng  468  cộng  2340  bằng  2808.\n\n3756 chia 12  bằng  313 vì 313  nhân  12  bằng  3756.\n\nTổng là 70, hiệu là 10. Số bé: (70  trừ  10) chia 2  bằng  30. Số lớn: 30  cộng  10  bằng  40.\n\nHình chữ nhật có bốn góc vuông, hai cặp cạnh đối diện song song và bằng nhau.\n\n2  mét vuông  35  đề xi mét vuông   bằng  200  đề xi mét vuông   cộng  35  đề xi mét vuông   bằng  235  đề xi mét vuông .\n\nBa bạn có 12, 15, 18 quyển sách. Trung bình: (12  cộng  15  cộng  18) chia 3  bằng  15 quyển.\n\nChia chiếc bánh thành 8 phần bằng nhau, lấy 3 phần: đã lấy 3 phần 8 chiếc bánh.\n\n1 phần 3  cộng  1 phần 6  bằng  2 phần 6  cộng  1 phần 6  bằng  3 phần 6  bằng  1 phần 2.\n\n3 phần 4  trừ  1 phần 2  bằng  3 phần 4  trừ  2 phần 4  bằng  1 phần 4.\n\n2 phần 3  nhân  3 phần 5  bằng  6 phần 15  bằng  2 phần 5.\n\n2 phần 3 chia 4 phần 5  bằng  2 phần 3  nhân  5 phần 4  bằng  10 phần 12  bằng  5 phần 6.\n\nTìm 3 phần 4 của 28 học sinh: 28 chia 4  nhân  3  bằng  21 học sinh.\n\nNếu mỗi vạch ứng với 5 quyển sách, cột cao đến vạch thứ 4 tính từ 0 biểu thị 20 quyển.\n\nTung đồng xu 10 lần được 6 lần mặt sấp và 4 lần mặt ngửa. Mặt sấp xuất hiện 6 lần. Cô nhắc em một mẹo: Đọc kĩ yêu cầu, ghi đúng đơn vị và thử lại. Nếu chưa chắc, mở bài kiến thức trước đó để học lại. Em lấy giấy nháp, thử lại ví dụ rồi học trang sách cùng cô nhé!"
+    }
+  ]
+}

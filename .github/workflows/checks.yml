@@ -15,8 +15,11 @@ jobs:
       - name: Kiểm tra cú pháp JavaScript
         run: |
           node --check app.js
+          node --check voices.js
           node --check data.js
           node --check guides.js
           node --check questions.js
       - name: Kiểm tra chương trình và ngân hàng câu hỏi
         run: node scripts/verify-content.cjs
+      - name: Kiểm tra giọng nữ và âm thanh bài giảng
+        run: node scripts/verify-voices.cjs
