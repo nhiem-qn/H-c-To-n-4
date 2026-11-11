@@ -1,0 +1,1622 @@
+{
+  "voice": "vi-VN-HoaiMyNeural",
+  "rate": "+4%",
+  "pitch": "+10Hz",
+  "entries": [
+    {
+      "key": "0",
+      "text": "0",
+      "file": "5feceb66ffc86f38d9.mp3"
+    },
+    {
+      "key": "1",
+      "text": "1",
+      "file": "6b86b273ff34fce19d.mp3"
+    },
+    {
+      "key": "10",
+      "text": "10",
+      "file": "4a44dc15364204a80f.mp3"
+    },
+    {
+      "key": "11",
+      "text": "11",
+      "file": "4fc82b26aecb47d286.mp3"
+    },
+    {
+      "key": "12",
+      "text": "12",
+      "file": "6b51d431df5d7f141c.mp3"
+    },
+    {
+      "key": "13",
+      "text": "13",
+      "file": "3fdba35f04dc8c4629.mp3"
+    },
+    {
+      "key": "14",
+      "text": "14",
+      "file": "8527a891e224136950.mp3"
+    },
+    {
+      "key": "15",
+      "text": "15",
+      "file": "e629fa6598d732768f.mp3"
+    },
+    {
+      "key": "16",
+      "text": "16",
+      "file": "b17ef6d19c7a5b1ee8.mp3"
+    },
+    {
+      "key": "17",
+      "text": "17",
+      "file": "4523540f1504cd1710.mp3"
+    },
+    {
+      "key": "18",
+      "text": "18",
+      "file": "4ec9599fc203d176a3.mp3"
+    },
+    {
+      "key": "19",
+      "text": "19",
+      "file": "9400f1b21cb527d7fa.mp3"
+    },
+    {
+      "key": "2",
+      "text": "2",
+      "file": "d4735e3a265e16eee0.mp3"
+    },
+    {
+      "key": "20",
+      "text": "20",
+      "file": "f5ca38f748a1d6eaf7.mp3"
+    },
+    {
+      "key": "21",
+      "text": "21",
+      "file": "6f4b6612125fb3a0da.mp3"
+    },
+    {
+      "key": "22",
+      "text": "22",
+      "file": "785f3ec7eb32f30b90.mp3"
+    },
+    {
+      "key": "23",
+      "text": "23",
+      "file": "535fa30d7e25dd8a49.mp3"
+    },
+    {
+      "key": "24",
+      "text": "24",
+      "file": "c2356069e9d1e79ca9.mp3"
+    },
+    {
+      "key": "25",
+      "text": "25",
+      "file": "b7a56873cd771f2c44.mp3"
+    },
+    {
+      "key": "26",
+      "text": "26",
+      "file": "5f9c4ab08cac7457e9.mp3"
+    },
+    {
+      "key": "27",
+      "text": "27",
+      "file": "670671cd9740415622.mp3"
+    },
+    {
+      "key": "28",
+      "text": "28",
+      "file": "59e19706d51d39f667.mp3"
+    },
+    {
+      "key": "29",
+      "text": "29",
+      "file": "35135aaa6cc23891b4.mp3"
+    },
+    {
+      "key": "3",
+      "text": "3",
+      "file": "4e07408562bedb8b60.mp3"
+    },
+    {
+      "key": "30",
+      "text": "30",
+      "file": "624b60c58c9d8bfb6f.mp3"
+    },
+    {
+      "key": "31",
+      "text": "31",
+      "file": "eb1e33e8a81b697b75.mp3"
+    },
+    {
+      "key": "32",
+      "text": "32",
+      "file": "e29c9c180c6279b0b0.mp3"
+    },
+    {
+      "key": "33",
+      "text": "33",
+      "file": "c6f3ac57944a531490.mp3"
+    },
+    {
+      "key": "34",
+      "text": "34",
+      "file": "86e50149658661312a.mp3"
+    },
+    {
+      "key": "35",
+      "text": "35",
+      "file": "9f14025af0065b30e4.mp3"
+    },
+    {
+      "key": "36",
+      "text": "36",
+      "file": "76a50887d8f1c2e930.mp3"
+    },
+    {
+      "key": "37",
+      "text": "37",
+      "file": "7a61b53701befdae0e.mp3"
+    },
+    {
+      "key": "38",
+      "text": "38",
+      "file": "aea92132c4cbeb263e.mp3"
+    },
+    {
+      "key": "39",
+      "text": "39",
+      "file": "0b918943df0962bc7a.mp3"
+    },
+    {
+      "key": "4",
+      "text": "4",
+      "file": "4b227777d4dd1fc61c.mp3"
+    },
+    {
+      "key": "40",
+      "text": "40",
+      "file": "d59eced1ded07f84c1.mp3"
+    },
+    {
+      "key": "41",
+      "text": "41",
+      "file": "3d914f9348c9cc0ff8.mp3"
+    },
+    {
+      "key": "42",
+      "text": "42",
+      "file": "73475cb40a568e8da8.mp3"
+    },
+    {
+      "key": "43",
+      "text": "43",
+      "file": "44cb730c420480a047.mp3"
+    },
+    {
+      "key": "44",
+      "text": "44",
+      "file": "71ee45a3c0db9a9865.mp3"
+    },
+    {
+      "key": "45",
+      "text": "45",
+      "file": "811786ad1ae74adfdd.mp3"
+    },
+    {
+      "key": "46",
+      "text": "46",
+      "file": "25fc0e7096fc653718.mp3"
+    },
+    {
+      "key": "47",
+      "text": "47",
+      "file": "31489056e0916d59fe.mp3"
+    },
+    {
+      "key": "48",
+      "text": "48",
+      "file": "98010bd9270f9b100b.mp3"
+    },
+    {
+      "key": "49",
+      "text": "49",
+      "file": "0e17daca5f3e175f44.mp3"
+    },
+    {
+      "key": "5",
+      "text": "5",
+      "file": "ef2d127de37b942baa.mp3"
+    },
+    {
+      "key": "50",
+      "text": "50",
+      "file": "1a6562590ef19d1045.mp3"
+    },
+    {
+      "key": "51",
+      "text": "51",
+      "file": "031b4af5197ec30a92.mp3"
+    },
+    {
+      "key": "52",
+      "text": "52",
+      "file": "41cfc0d1f2d127b045.mp3"
+    },
+    {
+      "key": "53",
+      "text": "53",
+      "file": "2858dcd1057d3eae7f.mp3"
+    },
+    {
+      "key": "54",
+      "text": "54",
+      "file": "2fca346db656187102.mp3"
+    },
+    {
+      "key": "55",
+      "text": "55",
+      "file": "02d20bbd7e394ad599.mp3"
+    },
+    {
+      "key": "56",
+      "text": "56",
+      "file": "7688b6ef52555962d0.mp3"
+    },
+    {
+      "key": "57",
+      "text": "57",
+      "file": "c837649cce43f27291.mp3"
+    },
+    {
+      "key": "58",
+      "text": "58",
+      "file": "6208ef0f7750c11154.mp3"
+    },
+    {
+      "key": "59",
+      "text": "59",
+      "file": "3e1e967e9b793e908f.mp3"
+    },
+    {
+      "key": "6",
+      "text": "6",
+      "file": "e7f6c011776e8db7cd.mp3"
+    },
+    {
+      "key": "60",
+      "text": "60",
+      "file": "39fa9ec190eee7b6f4.mp3"
+    },
+    {
+      "key": "61",
+      "text": "61",
+      "file": "d029fa3a95e174a199.mp3"
+    },
+    {
+      "key": "62",
+      "text": "62",
+      "file": "81b8a03f97e8787c53.mp3"
+    },
+    {
+      "key": "63",
+      "text": "63",
+      "file": "da4ea2a5506f2693ea.mp3"
+    },
+    {
+      "key": "64",
+      "text": "64",
+      "file": "a68b412c4282555f15.mp3"
+    },
+    {
+      "key": "65",
+      "text": "65",
+      "file": "108c995b953c8a3556.mp3"
+    },
+    {
+      "key": "66",
+      "text": "66",
+      "file": "3ada92f28b4ceda385.mp3"
+    },
+    {
+      "key": "67",
+      "text": "67",
+      "file": "49d180ecf561328195.mp3"
+    },
+    {
+      "key": "68",
+      "text": "68",
+      "file": "a21855da08cb102d1d.mp3"
+    },
+    {
+      "key": "69",
+      "text": "69",
+      "file": "c75cb66ae28d8ebc6e.mp3"
+    },
+    {
+      "key": "7",
+      "text": "7",
+      "file": "7902699be42c8a8e46.mp3"
+    },
+    {
+      "key": "70",
+      "text": "70",
+      "file": "ff5a1ae012afa5d4c8.mp3"
+    },
+    {
+      "key": "71",
+      "text": "71",
+      "file": "7f2253d7e228b22a08.mp3"
+    },
+    {
+      "key": "72",
+      "text": "72",
+      "file": "8722616204217eddb3.mp3"
+    },
+    {
+      "key": "73",
+      "text": "73",
+      "file": "96061e92f58e4bdcde.mp3"
+    },
+    {
+      "key": "74",
+      "text": "74",
+      "file": "eb624dbe56eb6620ae.mp3"
+    },
+    {
+      "key": "75",
+      "text": "75",
+      "file": "f369cb89fc627e6689.mp3"
+    },
+    {
+      "key": "76",
+      "text": "76",
+      "file": "f74efabef12ea619e3.mp3"
+    },
+    {
+      "key": "77",
+      "text": "77",
+      "file": "a88a7902cb4ef697ba.mp3"
+    },
+    {
+      "key": "78",
+      "text": "78",
+      "file": "349c41201b62db8511.mp3"
+    },
+    {
+      "key": "79",
+      "text": "79",
+      "file": "98a3ab7c340e8a033e.mp3"
+    },
+    {
+      "key": "8",
+      "text": "8",
+      "file": "2c624232cdd2217712.mp3"
+    },
+    {
+      "key": "80",
+      "text": "80",
+      "file": "48449a14a4ff7d79bb.mp3"
+    },
+    {
+      "key": "81",
+      "text": "81",
+      "file": "5316ca1c5ddca8e6ce.mp3"
+    },
+    {
+      "key": "82",
+      "text": "82",
+      "file": "a46e37632fa6ca51a1.mp3"
+    },
+    {
+      "key": "83",
+      "text": "83",
+      "file": "bbb965ab0c80d6538c.mp3"
+    },
+    {
+      "key": "84",
+      "text": "84",
+      "file": "44c8031cb036a7350d.mp3"
+    },
+    {
+      "key": "85",
+      "text": "85",
+      "file": "b4944c6ff08dc6f43d.mp3"
+    },
+    {
+      "key": "86",
+      "text": "86",
+      "file": "434c9b5ae514646bbd.mp3"
+    },
+    {
+      "key": "87",
+      "text": "87",
+      "file": "bdd2d3af3a5a121349.mp3"
+    },
+    {
+      "key": "88",
+      "text": "88",
+      "file": "8b940be7fb78aaa6b6.mp3"
+    },
+    {
+      "key": "89",
+      "text": "89",
+      "file": "cd70bea023f752a056.mp3"
+    },
+    {
+      "key": "9",
+      "text": "9",
+      "file": "19581e27de7ced00ff.mp3"
+    },
+    {
+      "key": "90",
+      "text": "90",
+      "file": "69f59c273b6e669ac3.mp3"
+    },
+    {
+      "key": "91",
+      "text": "91",
+      "file": "1da51b8d8ff98f6a48.mp3"
+    },
+    {
+      "key": "92",
+      "text": "92",
+      "file": "8241649609f88ccd2a.mp3"
+    },
+    {
+      "key": "93",
+      "text": "93",
+      "file": "6e4001871c0cf27c76.mp3"
+    },
+    {
+      "key": "94",
+      "text": "94",
+      "file": "e3d6c4d4599e008823.mp3"
+    },
+    {
+      "key": "95",
+      "text": "95",
+      "file": "ad48ff99415b2f007d.mp3"
+    },
+    {
+      "key": "96",
+      "text": "96",
+      "file": "7b1a278f5abe8e9da9.mp3"
+    },
+    {
+      "key": "97",
+      "text": "97",
+      "file": "d6d824abba4afde811.mp3"
+    },
+    {
+      "key": "98",
+      "text": "98",
+      "file": "29db0c6782dbd50005.mp3"
+    },
+    {
+      "key": "99",
+      "text": "99",
+      "file": "8c1f1046219ddd216a.mp3"
+    },
+    {
+      "key": "A",
+      "text": "A",
+      "file": "559aead08264d5795d.mp3"
+    },
+    {
+      "key": "A bao nhiêu quyển",
+      "text": "A bao nhiêu quyển",
+      "file": "35296ad11a33b4a458.mp3"
+    },
+    {
+      "key": "B",
+      "text": "B",
+      "file": "df7e70e5021544f483.mp3"
+    },
+    {
+      "key": "B nhiều hơn",
+      "text": "B nhiều hơn",
+      "file": "bc117ef170dbfe3ddb.mp3"
+    },
+    {
+      "key": "Biểu đồ ghi số sách lớp",
+      "text": "Biểu đồ ghi số sách lớp",
+      "file": "39962e2b05df5ec62d.mp3"
+    },
+    {
+      "key": "C",
+      "text": "C",
+      "file": "6b23c0d5f35d1b11f9.mp3"
+    },
+    {
+      "key": "Chiếc bánh chia thành",
+      "text": "Chiếc bánh chia thành",
+      "file": "d96c40bfaae3a5ca45.mp3"
+    },
+    {
+      "key": "Chữ số",
+      "text": "Chữ số",
+      "file": "b9c91a3f54eed767c0.mp3"
+    },
+    {
+      "key": "Câu",
+      "text": "Câu",
+      "file": "fc3e1041179596f15d.mp3"
+    },
+    {
+      "key": "Cạnh thứ nhất trùng vạch",
+      "text": "Cạnh thứ nhất trùng vạch",
+      "file": "d397d8a0c153401d18.mp3"
+    },
+    {
+      "key": "Dãy",
+      "text": "Dãy",
+      "file": "5c782f82def0d697fc.mp3"
+    },
+    {
+      "key": "Dụng cụ nào phù hợp để kiểm tra góc vuông",
+      "text": "Dụng cụ nào phù hợp để kiểm tra góc vuông",
+      "file": "0eece7998c6efa044d.mp3"
+    },
+    {
+      "key": "Góc bẹt có số đo bao nhiêu độ",
+      "text": "Góc bẹt có số đo bao nhiêu độ",
+      "file": "ec33a450da1919169e.mp3"
+    },
+    {
+      "key": "Góc có số đo",
+      "text": "Góc có số đo",
+      "file": "f713c055f16ce90507.mp3"
+    },
+    {
+      "key": "Góc vuông có số đo bao nhiêu độ",
+      "text": "Góc vuông có số đo bao nhiêu độ",
+      "file": "de65e5f57c49702d3e.mp3"
+    },
+    {
+      "key": "Hai cạnh kề của hình chữ nhật có song song không",
+      "text": "Hai cạnh kề của hình chữ nhật có song song không",
+      "file": "656c2fc3d984ef5a44.mp3"
+    },
+    {
+      "key": "Hai cạnh kề của hình chữ nhật tạo góc bao nhiêu độ",
+      "text": "Hai cạnh kề của hình chữ nhật tạo góc bao nhiêu độ",
+      "file": "a2745a2236b047c9be.mp3"
+    },
+    {
+      "key": "Hai cạnh đối diện của hình chữ nhật có song song không",
+      "text": "Hai cạnh đối diện của hình chữ nhật có song song không",
+      "file": "15ec581bc85e5ad2a4.mp3"
+    },
+    {
+      "key": "Hai góc có số đo",
+      "text": "Hai góc có số đo",
+      "file": "b6dcc84c9b5e932e71.mp3"
+    },
+    {
+      "key": "Hai số có trung bình cộng là",
+      "text": "Hai số có trung bình cộng là",
+      "file": "403855ad0cad3cff5a.mp3"
+    },
+    {
+      "key": "Hai số có tổng",
+      "text": "Hai số có tổng",
+      "file": "e0cc67180663beaa86.mp3"
+    },
+    {
+      "key": "Hai đường thẳng cùng vuông góc với một đường thẳng và đi qua hai điểm khác nhau trên đường đó có song song không",
+      "text": "Hai đường thẳng cùng vuông góc với một đường thẳng và đi qua hai điểm khác nhau trên đường đó có song song không",
+      "file": "9e726acb8a1e8ef8bf.mp3"
+    },
+    {
+      "key": "Hai đường thẳng cắt nhau có luôn vuông góc không",
+      "text": "Hai đường thẳng cắt nhau có luôn vuông góc không",
+      "file": "128d2a8b7edfcbc714.mp3"
+    },
+    {
+      "key": "Hai đường thẳng cắt nhau tạo một góc",
+      "text": "Hai đường thẳng cắt nhau tạo một góc",
+      "file": "1f42cc7a2c078e45d2.mp3"
+    },
+    {
+      "key": "Hai đường thẳng song song có cắt nhau khi kéo dài mãi không",
+      "text": "Hai đường thẳng song song có cắt nhau khi kéo dài mãi không",
+      "file": "628b2052ad81858378.mp3"
+    },
+    {
+      "key": "Hai đường thẳng vuông góc có giao điểm không",
+      "text": "Hai đường thẳng vuông góc có giao điểm không",
+      "file": "a51c887fee64e95f16.mp3"
+    },
+    {
+      "key": "Hai đường thẳng vuông góc tạo thành mấy góc vuông",
+      "text": "Hai đường thẳng vuông góc tạo thành mấy góc vuông",
+      "file": "aa18eb286295f9e9f5.mp3"
+    },
+    {
+      "key": "Hình bình hành có mấy cặp cạnh đối diện song song",
+      "text": "Hình bình hành có mấy cặp cạnh đối diện song song",
+      "file": "1e8ef6b8588cf5799a.mp3"
+    },
+    {
+      "key": "Hình có hai cặp cạnh đối diện song song được gọi là gì",
+      "text": "Hình có hai cặp cạnh đối diện song song được gọi là gì",
+      "file": "3d5ec554c31bb51141.mp3"
+    },
+    {
+      "key": "Hình thoi có hai cặp cạnh đối diện song song không",
+      "text": "Hình thoi có hai cặp cạnh đối diện song song không",
+      "file": "2bdc2ac5320b341fb9.mp3"
+    },
+    {
+      "key": "Hình thoi có mấy cạnh bằng nhau",
+      "text": "Hình thoi có mấy cạnh bằng nhau",
+      "file": "66a1e450212c50bb30.mp3"
+    },
+    {
+      "key": "Khi đo góc, tâm thước phải trùng với đâu",
+      "text": "Khi đo góc, tâm thước phải trùng với đâu",
+      "file": "8f33dc7a715bfa2a2e.mp3"
+    },
+    {
+      "key": "Làm tròn",
+      "text": "Làm tròn",
+      "file": "1815f786e5499782ee.mp3"
+    },
+    {
+      "key": "Một góc bằng hai góc vuông Góc đó có số đo bao nhiêu độ",
+      "text": "Một góc bằng hai góc vuông Góc đó có số đo bao nhiêu độ",
+      "file": "cff9947979e1b1ed96.mp3"
+    },
+    {
+      "key": "Một hình bình hành có các cạnh đối diện bằng nhau Một cạnh dài",
+      "text": "Một hình bình hành có các cạnh đối diện bằng nhau Một cạnh dài",
+      "file": "5662d2f574b54e6d2a.mp3"
+    },
+    {
+      "key": "Một hình chữ nhật có mấy cặp cạnh đối diện song song",
+      "text": "Một hình chữ nhật có mấy cặp cạnh đối diện song song",
+      "file": "de4289706efbdfb81b.mp3"
+    },
+    {
+      "key": "Một hình thoi có cạnh dài",
+      "text": "Một hình thoi có cạnh dài",
+      "file": "3ed859f9b6ba60a267.mp3"
+    },
+    {
+      "key": "Một mẫu số chung của",
+      "text": "Một mẫu số chung của",
+      "file": "54895db1bd85f12c8f.mp3"
+    },
+    {
+      "key": "Một trại gà ngày đầu bán",
+      "text": "Một trại gà ngày đầu bán",
+      "file": "cefe0f34369c953a7a.mp3"
+    },
+    {
+      "key": "Một đường thẳng cắt cả hai đường thẳng song song tại hai điểm khác nhau Có mấy giao điểm",
+      "text": "Một đường thẳng cắt cả hai đường thẳng song song tại hai điểm khác nhau Có mấy giao điểm",
+      "file": "fcdbda0b16ed301ebd.mp3"
+    },
+    {
+      "key": "Ngày đầu cửa hàng bán",
+      "text": "Ngày đầu cửa hàng bán",
+      "file": "f2dacb49a377c1be52.mp3"
+    },
+    {
+      "key": "Năm",
+      "text": "Năm",
+      "file": "81a1daaab1491e952c.mp3"
+    },
+    {
+      "key": "Phép chia có số chia",
+      "text": "Phép chia có số chia",
+      "file": "905e5b0e5997de58bc.mp3"
+    },
+    {
+      "key": "Phương án A",
+      "text": "Phương án A",
+      "file": "d4cd43f75256c3796a.mp3"
+    },
+    {
+      "key": "Phương án B",
+      "text": "Phương án B",
+      "file": "24fcccbf1cf48b772a.mp3"
+    },
+    {
+      "key": "Phương án C",
+      "text": "Phương án C",
+      "file": "663f1aa1e07af6f543.mp3"
+    },
+    {
+      "key": "Phương án D",
+      "text": "Phương án D",
+      "file": "d7d7a9e698085cec82.mp3"
+    },
+    {
+      "key": "Quy đồng",
+      "text": "Quy đồng",
+      "file": "a66c13991303a0aff8.mp3"
+    },
+    {
+      "key": "Rút gọn",
+      "text": "Rút gọn",
+      "file": "40911610d59566fb4c.mp3"
+    },
+    {
+      "key": "Số",
+      "text": "Số",
+      "file": "82d17fe6b2079b8593.mp3"
+    },
+    {
+      "key": "Số bé bằng bao nhiêu",
+      "text": "Số bé bằng bao nhiêu",
+      "file": "9969bdf74c11905339.mp3"
+    },
+    {
+      "key": "Số bé là bao nhiêu",
+      "text": "Số bé là bao nhiêu",
+      "file": "7dfa61be11d20a007e.mp3"
+    },
+    {
+      "key": "Số bé nhất trong các số",
+      "text": "Số bé nhất trong các số",
+      "file": "ba7d7a97b5d2a98f4e.mp3"
+    },
+    {
+      "key": "Số chẵn lớn nhất có",
+      "text": "Số chẵn lớn nhất có",
+      "file": "85d40351feed131cbb.mp3"
+    },
+    {
+      "key": "Số dư lớn nhất có thể bằng bao nhiêu",
+      "text": "Số dư lớn nhất có thể bằng bao nhiêu",
+      "file": "75912fd7d0b37e4eec.mp3"
+    },
+    {
+      "key": "Số liền sau của",
+      "text": "Số liền sau của",
+      "file": "1f0dc9a0c3acdf0518.mp3"
+    },
+    {
+      "key": "Số liền trước của",
+      "text": "Số liền trước của",
+      "file": "bf7499fd990cb7edb0.mp3"
+    },
+    {
+      "key": "Số lớn nhất trong các số",
+      "text": "Số lớn nhất trong các số",
+      "file": "c142de00f23a16087d.mp3"
+    },
+    {
+      "key": "Số tự nhiên liền trước",
+      "text": "Số tự nhiên liền trước",
+      "file": "167843c12c0814f7cb.mp3"
+    },
+    {
+      "key": "Trong các số",
+      "text": "Trong các số",
+      "file": "6a87c18bc44169f739.mp3"
+    },
+    {
+      "key": "Trong số",
+      "text": "Trong số",
+      "file": "2cd32b897ffce36504.mp3"
+    },
+    {
+      "key": "Trung bình cộng của",
+      "text": "Trung bình cộng của",
+      "file": "8544c647ec34511236.mp3"
+    },
+    {
+      "key": "Tung đồng xu",
+      "text": "Tung đồng xu",
+      "file": "2fcd2dfdcabd46dde3.mp3"
+    },
+    {
+      "key": "Tìm",
+      "text": "Tìm",
+      "file": "bbe4749294996c67dd.mp3"
+    },
+    {
+      "key": "Tính",
+      "text": "Tính",
+      "file": "41fce7017d94b7082f.mp3"
+    },
+    {
+      "key": "Tính thuận tiện",
+      "text": "Tính thuận tiện",
+      "file": "d4f56e4ca65e3dcdda.mp3"
+    },
+    {
+      "key": "Tử số mới của",
+      "text": "Tử số mới của",
+      "file": "0c71d0dedf39ca9c1f.mp3"
+    },
+    {
+      "key": "Viết phân số bằng",
+      "text": "Viết phân số bằng",
+      "file": "dc4c044c2314863110.mp3"
+    },
+    {
+      "key": "Viết thương",
+      "text": "Viết thương",
+      "file": "a8e884f1fb2ffd9c51.mp3"
+    },
+    {
+      "key": "bằng",
+      "text": "bằng",
+      "file": "5b643900906249f830.mp3"
+    },
+    {
+      "key": "bằng bao nhiêu",
+      "text": "bằng bao nhiêu",
+      "file": "6a06c177ccacf60bab.mp3"
+    },
+    {
+      "key": "bằng chỗ trống phần",
+      "text": "bằng chỗ trống phần",
+      "file": "63a1ec2cf02fefa1d3.mp3"
+    },
+    {
+      "key": "chia",
+      "text": "chia",
+      "file": "3d4237d9383a7b6e60.mp3"
+    },
+    {
+      "key": "chia tử mới của",
+      "text": "chia tử mới của",
+      "file": "5f33dc858b691ed4cf.mp3"
+    },
+    {
+      "key": "chỗ trống",
+      "text": "chỗ trống",
+      "file": "6a1b090f957118fbb0.mp3"
+    },
+    {
+      "key": "chữ số",
+      "text": "chữ số",
+      "file": "790f261307beaa3ee0.mp3"
+    },
+    {
+      "key": "chữ số là số nào",
+      "text": "chữ số là số nào",
+      "file": "8360504fc205ea1109.mp3"
+    },
+    {
+      "key": "con, ngày ba bán bằng tổng hai ngày đầu Cả ba ngày bán bao nhiêu con",
+      "text": "con, ngày ba bán bằng tổng hai ngày đầu Cả ba ngày bán bao nhiêu con",
+      "file": "63862c448f3667eafd.mp3"
+    },
+    {
+      "key": "con, ngày hai bán ít hơn",
+      "text": "con, ngày hai bán ít hơn",
+      "file": "26c4878c1e50e22b0e.mp3"
+    },
+    {
+      "key": "có giá trị bao nhiêu",
+      "text": "có giá trị bao nhiêu",
+      "file": "f2dc874fb4734cfe57.mp3"
+    },
+    {
+      "key": "có mẫu số",
+      "text": "có mẫu số",
+      "file": "02dca5a80663a80951.mp3"
+    },
+    {
+      "key": "có số lớn nhất là bao nhiêu",
+      "text": "có số lớn nhất là bao nhiêu",
+      "file": "d4253d44f900585f7d.mp3"
+    },
+    {
+      "key": "cộng",
+      "text": "cộng",
+      "file": "0fea7fe66c92235e44.mp3"
+    },
+    {
+      "key": "của",
+      "text": "của",
+      "file": "56cf0ad460e8f82984.mp3"
+    },
+    {
+      "key": "dưới dạng phân số",
+      "text": "dưới dạng phân số",
+      "file": "100ec0f8044a8df868.mp3"
+    },
+    {
+      "key": "giây bằng bao nhiêu giây",
+      "text": "giây bằng bao nhiêu giây",
+      "file": "19f30032918e494e59.mp3"
+    },
+    {
+      "key": "giây bằng chỗ trống giây",
+      "text": "giây bằng chỗ trống giây",
+      "file": "e91ddc5da9e2e567c2.mp3"
+    },
+    {
+      "key": "giờ",
+      "text": "giờ",
+      "file": "2491e9934f2d569361.mp3"
+    },
+    {
+      "key": "hiệu",
+      "text": "hiệu",
+      "file": "31db17974a1f4c13ba.mp3"
+    },
+    {
+      "key": "ki lô gam bằng bao nhiêu ki lô gam",
+      "text": "ki lô gam bằng bao nhiêu ki lô gam",
+      "file": "e592d716cd936e0682.mp3"
+    },
+    {
+      "key": "ki lô gam bằng chỗ trống ki lô gam",
+      "text": "ki lô gam bằng chỗ trống ki lô gam",
+      "file": "56abebab584462f296.mp3"
+    },
+    {
+      "key": "ki lô mét hết",
+      "text": "ki lô mét hết",
+      "file": "f8c5758179c8f236d1.mp3"
+    },
+    {
+      "key": "ki lô mét hết bao nhiêu lít xăng",
+      "text": "ki lô mét hết bao nhiêu lít xăng",
+      "file": "59144bf2f430dda017.mp3"
+    },
+    {
+      "key": "là",
+      "text": "là",
+      "file": "0da86e0f6dc309524f.mp3"
+    },
+    {
+      "key": "là bao nhiêu",
+      "text": "là bao nhiêu",
+      "file": "cad1d07d3102b7f52d.mp3"
+    },
+    {
+      "key": "là gì",
+      "text": "là gì",
+      "file": "5572ce487f4017a0f1.mp3"
+    },
+    {
+      "key": "là số chẵn hay số lẻ",
+      "text": "là số chẵn hay số lẻ",
+      "file": "398a0f51437857f40c.mp3"
+    },
+    {
+      "key": "là số nào",
+      "text": "là số nào",
+      "file": "0f018c3dc83ee3ec0a.mp3"
+    },
+    {
+      "key": "làm tròn đến hàng trăm nghìn được số nào",
+      "text": "làm tròn đến hàng trăm nghìn được số nào",
+      "file": "e159795b2d9e309263.mp3"
+    },
+    {
+      "key": "lít xăng Đi",
+      "text": "lít xăng Đi",
+      "file": "ce3425aff79c77941f.mp3"
+    },
+    {
+      "key": "lần Mặt ngửa xuất hiện mấy lần",
+      "text": "lần Mặt ngửa xuất hiện mấy lần",
+      "file": "734bb5be0c423d7c23.mp3"
+    },
+    {
+      "key": "lần, mặt sấp xuất hiện",
+      "text": "lần, mặt sấp xuất hiện",
+      "file": "a7fcd547aaf98edcc3.mp3"
+    },
+    {
+      "key": "lẻ",
+      "text": "lẻ",
+      "file": "007fedf75bada48caa.mp3"
+    },
+    {
+      "key": "m cộng",
+      "text": "m cộng",
+      "file": "7b68475d230a05d6fd.mp3"
+    },
+    {
+      "key": "mi li mét vuông bằng bao nhiêu đề xi mét vuông",
+      "text": "mi li mét vuông bằng bao nhiêu đề xi mét vuông",
+      "file": "42828933278761de78.mp3"
+    },
+    {
+      "key": "mét vuông",
+      "text": "mét vuông",
+      "file": "5a446b63c84c710b60.mp3"
+    },
+    {
+      "key": "nghìn",
+      "text": "nghìn",
+      "file": "8576cd3f959b5bcebd.mp3"
+    },
+    {
+      "key": "nghìn tỷ",
+      "text": "nghìn tỷ",
+      "file": "c05641401e09064b58.mp3"
+    },
+    {
+      "key": "nhân",
+      "text": "nhân",
+      "file": "9883db89d3f19bc646.mp3"
+    },
+    {
+      "key": "nhân a khi a bằng",
+      "text": "nhân a khi a bằng",
+      "file": "977a4b972650fdcf1b.mp3"
+    },
+    {
+      "key": "phút",
+      "text": "phút",
+      "file": "7f3de329d0d4e647ac.mp3"
+    },
+    {
+      "key": "phút bằng bao nhiêu phút",
+      "text": "phút bằng bao nhiêu phút",
+      "file": "297ac8c97f83de7972.mp3"
+    },
+    {
+      "key": "phần",
+      "text": "phần",
+      "file": "87a88dd0e56d68925d.mp3"
+    },
+    {
+      "key": "phần Viết phân số chỉ phần bánh đã lấy",
+      "text": "phần Viết phân số chỉ phần bánh đã lấy",
+      "file": "fb629aa45f00d94afc.mp3"
+    },
+    {
+      "key": "phần bằng nhau, lấy",
+      "text": "phần bằng nhau, lấy",
+      "file": "1a2ac3f74c8c715d18.mp3"
+    },
+    {
+      "key": "phẩy",
+      "text": "phẩy",
+      "file": "7dd660158126ecac23.mp3"
+    },
+    {
+      "key": "quyển Lớp",
+      "text": "quyển Lớp",
+      "file": "ead023c671aa81ca28.mp3"
+    },
+    {
+      "key": "quyển cùng loại giá bao nhiêu đồng",
+      "text": "quyển cùng loại giá bao nhiêu đồng",
+      "file": "32a0a851ed2b8ca6cc.mp3"
+    },
+    {
+      "key": "quyển lớp",
+      "text": "quyển lớp",
+      "file": "fe1b0e175058c92545.mp3"
+    },
+    {
+      "key": "quyển ngày ba bằng tổng hai ngày đầu Cả ba ngày bán bao nhiêu quyển",
+      "text": "quyển ngày ba bằng tổng hai ngày đầu Cả ba ngày bán bao nhiêu quyển",
+      "file": "dc256815265382b0f3.mp3"
+    },
+    {
+      "key": "quyển vở giá",
+      "text": "quyển vở giá",
+      "file": "345b75c157ca4188ba.mp3"
+    },
+    {
+      "key": "quyển vở ngày hai ít hơn",
+      "text": "quyển vở ngày hai ít hơn",
+      "file": "b0486b882661f9c1c4.mp3"
+    },
+    {
+      "key": "số nào có chữ số hàng trăm là",
+      "text": "số nào có chữ số hàng trăm là",
+      "file": "85738735f5eabff1ba.mp3"
+    },
+    {
+      "key": "thuộc thế kỉ thứ mấy Nhập số",
+      "text": "thuộc thế kỉ thứ mấy Nhập số",
+      "file": "3485bbc8f8e1bfdd87.mp3"
+    },
+    {
+      "key": "triệu",
+      "text": "triệu",
+      "file": "6559b261ac31b06d07.mp3"
+    },
+    {
+      "key": "triệu tỷ",
+      "text": "triệu tỷ",
+      "file": "d41610b648ca955190.mp3"
+    },
+    {
+      "key": "trong số",
+      "text": "trong số",
+      "file": "41992988370d4afb93.mp3"
+    },
+    {
+      "key": "trăm",
+      "text": "trăm",
+      "file": "cb76808999afa7cd8b.mp3"
+    },
+    {
+      "key": "trừ",
+      "text": "trừ",
+      "file": "6b189eafa07706d325.mp3"
+    },
+    {
+      "key": "trừ m với m bằng",
+      "text": "trừ m với m bằng",
+      "file": "00ae943c6e7a064814.mp3"
+    },
+    {
+      "key": "tạ",
+      "text": "tạ",
+      "file": "4c41994b221073f3d3.mp3"
+    },
+    {
+      "key": "tấn",
+      "text": "tấn",
+      "file": "9cd387d398417d252e.mp3"
+    },
+    {
+      "key": "tỷ",
+      "text": "tỷ",
+      "file": "7d6466633091a632ea.mp3"
+    },
+    {
+      "key": "và",
+      "text": "và",
+      "file": "befa210d37d153269e.mp3"
+    },
+    {
+      "key": "và hiệu",
+      "text": "và hiệu",
+      "file": "e031fab1821a33b081.mp3"
+    },
+    {
+      "key": "với m bằng",
+      "text": "với m bằng",
+      "file": "839c62869669a16f13.mp3"
+    },
+    {
+      "key": "với mẫu chung",
+      "text": "với mẫu chung",
+      "file": "e91fc2a119ba8a41d9.mp3"
+    },
+    {
+      "key": "xăng ti mét Tổng độ dài bốn cạnh bằng bao nhiêu xăng ti mét",
+      "text": "xăng ti mét Tổng độ dài bốn cạnh bằng bao nhiêu xăng ti mét",
+      "file": "3cfbafca8775dc1b6c.mp3"
+    },
+    {
+      "key": "xăng ti mét thì cạnh đối diện dài bao nhiêu xăng ti mét",
+      "text": "xăng ti mét thì cạnh đối diện dài bao nhiêu xăng ti mét",
+      "file": "240117bf4d887a434a.mp3"
+    },
+    {
+      "key": "xăng ti mét vuông bằng bao nhiêu mi li mét vuông",
+      "text": "xăng ti mét vuông bằng bao nhiêu mi li mét vuông",
+      "file": "2d5c686855b395f43d.mp3"
+    },
+    {
+      "key": "yến bằng bao nhiêu yến",
+      "text": "yến bằng bao nhiêu yến",
+      "file": "913b6e6b743cf679bd.mp3"
+    },
+    {
+      "key": "Ô tô đi",
+      "text": "Ô tô đi",
+      "file": "fe75319f331013ed03.mp3"
+    },
+    {
+      "key": "âm",
+      "text": "âm",
+      "file": "3fc9fd61294990d3f2.mp3"
+    },
+    {
+      "key": "Điền dấu",
+      "text": "Điền dấu",
+      "file": "f0dba0cb6f763d36e2.mp3"
+    },
+    {
+      "key": "Điền lớn hơn , nhỏ hơn hoặc bằng",
+      "text": "Điền lớn hơn , nhỏ hơn hoặc bằng",
+      "file": "d6e2bbd5e9e7cb3ab5.mp3"
+    },
+    {
+      "key": "Điền số",
+      "text": "Điền số",
+      "file": "c56bb960ea038438d0.mp3"
+    },
+    {
+      "key": "được đọc như thế nào",
+      "text": "được đọc như thế nào",
+      "file": "e1e2bc607393ca51f2.mp3"
+    },
+    {
+      "key": "đến hàng trăm nghìn",
+      "text": "đến hàng trăm nghìn",
+      "file": "251fc63ff71d9461aa.mp3"
+    },
+    {
+      "key": "đến hàng trăm rồi nhân với",
+      "text": "đến hàng trăm rồi nhân với",
+      "file": "f46dd0eaf6b8a5d5d8.mp3"
+    },
+    {
+      "key": "đề xi mét vuông bằng chỗ trống đề xi mét vuông",
+      "text": "đề xi mét vuông bằng chỗ trống đề xi mét vuông",
+      "file": "05b88a96e7a12c2e7d.mp3"
+    },
+    {
+      "key": "để ước lượng tích Kết quả ước lượng là bao nhiêu",
+      "text": "để ước lượng tích Kết quả ước lượng là bao nhiêu",
+      "file": "008ffdad43517f5f1e.mp3"
+    },
+    {
+      "key": "đồng",
+      "text": "đồng",
+      "file": "90c70d4241e5d6db23.mp3"
+    },
+    {
+      "key": "độ , cạnh thứ hai chỉ",
+      "text": "độ , cạnh thứ hai chỉ",
+      "file": "df4a97daa81be2919e.mp3"
+    },
+    {
+      "key": "độ Chúng có vuông góc không",
+      "text": "độ Chúng có vuông góc không",
+      "file": "9e9d2f433609bc9a24.mp3"
+    },
+    {
+      "key": "độ Góc nào lớn hơn Nhập số đo",
+      "text": "độ Góc nào lớn hơn Nhập số đo",
+      "file": "d64b6862e3d2f8e72f.mp3"
+    },
+    {
+      "key": "độ là loại góc nào",
+      "text": "độ là loại góc nào",
+      "file": "fd9026879aee571e08.mp3"
+    },
+    {
+      "key": "độ trên cùng thang đo Góc có số đo bao nhiêu độ",
+      "text": "độ trên cùng thang đo Góc có số đo bao nhiêu độ",
+      "file": "8a978aa2bf433746d9.mp3"
+    },
+    {
+      "key": "độ và",
+      "text": "độ và",
+      "file": "ed43800313d818aff9.mp3"
+    },
+    {
+      "key": "hint:num",
+      "text": "Cô nhắc em nhé. Mỗi chữ số có giá trị tùy theo hàng của nó. Đọc số từ trái sang phải; viết đúng từng hàng.",
+      "file": "5a3afc04f6e13f87c3.mp3"
+    },
+    {
+      "key": "hint:calc",
+      "text": "Cô nhắc em nhé. Đặt thẳng các hàng khi cộng, trừ. Trong biểu thức, làm trong ngoặc trước, nhân chia trước, cộng trừ sau.",
+      "file": "f19d39f90a6e862dbe.mp3"
+    },
+    {
+      "key": "hint:parity",
+      "text": "Cô nhắc em nhé. Số chẵn có chữ số tận cùng là 0, 2, 4, 6, 8. Số lẻ có chữ số tận cùng là 1, 3, 5, 7, 9.",
+      "file": "bc75fa4756f0c50f22.mp3"
+    },
+    {
+      "key": "hint:expr",
+      "text": "Cô nhắc em nhé. Biểu thức chứa chữ dùng chữ thay cho một số. Khi biết giá trị của chữ, thay số vào rồi tính.",
+      "file": "eb2f2c710b5e0e3791.mp3"
+    },
+    {
+      "key": "hint:word",
+      "text": "Cô nhắc em nhé. Bài toán có ba bước tính cần tìm các kết quả trung gian trước khi trả lời câu hỏi cuối.",
+      "file": "43a3c9306a12f56f94.mp3"
+    },
+    {
+      "key": "hint:angle",
+      "text": "Cô nhắc em nhé. Đơn vị đo góc là độ, kí hiệu °. Dùng thước đo góc để đọc số đo.",
+      "file": "3daef75231aea92adb.mp3"
+    },
+    {
+      "key": "hint:angles",
+      "text": "Cô nhắc em nhé. Góc nhọn nhỏ hơn góc vuông; góc tù lớn hơn góc vuông và nhỏ hơn góc bẹt; góc bẹt bằng hai góc vuông.",
+      "file": "7613c69300ec43552d.mp3"
+    },
+    {
+      "key": "hint:million",
+      "text": "Cô nhắc em nhé. Mười trăm nghìn là một triệu. Số 1 000 000 có bảy chữ số.",
+      "file": "0d006ccebb9fbac1a1.mp3"
+    },
+    {
+      "key": "hint:place",
+      "text": "Cô nhắc em nhé. Cứ ba hàng hợp thành một lớp: lớp đơn vị, lớp nghìn, lớp triệu.",
+      "file": "a14d679cab66831a95.mp3"
+    },
+    {
+      "key": "hint:round",
+      "text": "Cô nhắc em nhé. Làm tròn đến hàng trăm nghìn: nhìn chữ số hàng chục nghìn.",
+      "file": "8454d9e957c7c1f245.mp3"
+    },
+    {
+      "key": "hint:compare",
+      "text": "Cô nhắc em nhé. Số có nhiều chữ số hơn thì lớn hơn. Nếu cùng số chữ số, so từng hàng từ trái sang phải.",
+      "file": "592393aa32ca1767cf.mp3"
+    },
+    {
+      "key": "hint:natural",
+      "text": "Cô nhắc em nhé. Các số 0, 1, 2, 3,... là các số tự nhiên, xếp theo thứ tự từ bé đến lớn thành dãy số tự nhiên.",
+      "file": "71e06f71ef876fd278.mp3"
+    },
+    {
+      "key": "hint:mass",
+      "text": "Cô nhắc em nhé. 1 yến = 10 kg; 1 tạ = 100 kg = 10 yến; 1 tấn = 1 000 kg = 10 tạ.",
+      "file": "6c19b7f0a4794865aa.mp3"
+    },
+    {
+      "key": "hint:areaunit",
+      "text": "Cô nhắc em nhé. 1 m² = 100 dm²; 1 dm² = 100 cm²; 1 cm² = 100 mm².",
+      "file": "17e623917c37ba7f24.mp3"
+    },
+    {
+      "key": "hint:time",
+      "text": "Cô nhắc em nhé. 1 phút = 60 giây; 1 giờ = 60 phút; 1 thế kỉ = 100 năm.",
+      "file": "d11e7be9924d2b8642.mp3"
+    },
+    {
+      "key": "hint:measure",
+      "text": "Cô nhắc em nhé. Chọn đơn vị đo phù hợp: khối lượng, diện tích hay thời gian.",
+      "file": "6d75013903ae69536a.mp3"
+    },
+    {
+      "key": "hint:add",
+      "text": "Cô nhắc em nhé. Muốn cộng các số có nhiều chữ số, đặt các chữ số cùng hàng thẳng cột rồi cộng từ phải sang trái.",
+      "file": "035621dd86e424780d.mp3"
+    },
+    {
+      "key": "hint:sub",
+      "text": "Cô nhắc em nhé. Muốn trừ các số có nhiều chữ số, đặt thẳng hàng và trừ từ phải sang trái.",
+      "file": "84dc135e93ecd78ca0.mp3"
+    },
+    {
+      "key": "hint:addprop",
+      "text": "Cô nhắc em nhé. Giao hoán: a + b = b + a. Kết hợp: (a + b) + c = a + (b + c).",
+      "file": "ed8a6b3f90c1b2f258.mp3"
+    },
+    {
+      "key": "hint:sumdiff",
+      "text": "Cô nhắc em nhé. Số bé = (tổng − hiệu) : 2. Số lớn = (tổng + hiệu) : 2.",
+      "file": "537bd1ab9c632d6b47.mp3"
+    },
+    {
+      "key": "hint:perp",
+      "text": "Cô nhắc em nhé. Hai đường thẳng cắt nhau tạo thành góc vuông là hai đường thẳng vuông góc.",
+      "file": "7aa30fd54e30b8ef0a.mp3"
+    },
+    {
+      "key": "hint:drawperp",
+      "text": "Cô nhắc em nhé. Dùng ê ke để vẽ đường thẳng đi qua một điểm và vuông góc với đường thẳng cho trước.",
+      "file": "9a7a8cf5f3e47877c8.mp3"
+    },
+    {
+      "key": "hint:parallel",
+      "text": "Cô nhắc em nhé. Hai đường thẳng song song không cắt nhau khi kéo dài mãi về hai phía.",
+      "file": "b6a11018ff6cfcf9c8.mp3"
+    },
+    {
+      "key": "hint:drawparallel",
+      "text": "Cô nhắc em nhé. Có thể vẽ đường thẳng song song bằng cách dùng hai lần vuông góc.",
+      "file": "cbdb41a6b4d3fc57cb.mp3"
+    },
+    {
+      "key": "hint:shapes",
+      "text": "Cô nhắc em nhé. Hình bình hành có hai cặp cạnh đối diện song song và bằng nhau. Hình thoi có bốn cạnh bằng nhau.",
+      "file": "9f8a89759cb3337730.mp3"
+    },
+    {
+      "key": "hint:geometry",
+      "text": "Cô nhắc em nhé. Dùng tính chất góc, đường thẳng và cạnh để nhận biết hình.",
+      "file": "0b317fa08a89cecfdf.mp3"
+    },
+    {
+      "key": "hint:mul",
+      "text": "Cô nhắc em nhé. Nhân số có nhiều chữ số với số có một chữ số theo từng hàng từ phải sang trái.",
+      "file": "61035031ddf7b5e0bd.mp3"
+    },
+    {
+      "key": "hint:div",
+      "text": "Cô nhắc em nhé. Chia số có nhiều chữ số cho số có một chữ số từ trái sang phải.",
+      "file": "db84bd20c9fae0f985.mp3"
+    },
+    {
+      "key": "hint:mulprop",
+      "text": "Cô nhắc em nhé. Giao hoán: a × b = b × a. Kết hợp: (a × b) × c = a × (b × c).",
+      "file": "14c789a0a968611f86.mp3"
+    },
+    {
+      "key": "hint:ten",
+      "text": "Cô nhắc em nhé. Nhân số tự nhiên với 10, 100, 1 000 là tăng giá trị các chữ số lên tương ứng 10, 100, 1 000 lần.",
+      "file": "b2db3dd507a930cc25.mp3"
+    },
+    {
+      "key": "hint:distribute",
+      "text": "Cô nhắc em nhé. Một số nhân với một tổng bằng tổng các tích của số đó với từng số hạng: a × (b + c) = a × b + a × c.",
+      "file": "efe77fd57039118068.mp3"
+    },
+    {
+      "key": "hint:mul2",
+      "text": "Cô nhắc em nhé. Nhân với số có hai chữ số bằng cách tính hai tích riêng rồi cộng lại.",
+      "file": "0f6572d34439877512.mp3"
+    },
+    {
+      "key": "hint:div2",
+      "text": "Cô nhắc em nhé. Chia cho số có hai chữ số vẫn thực hiện theo chu trình chia, nhân, trừ, hạ.",
+      "file": "7e7937b2bbe5ced78b.mp3"
+    },
+    {
+      "key": "hint:estimate",
+      "text": "Cô nhắc em nhé. Ước lượng giúp dự đoán kết quả gần đúng và kiểm tra tính hợp lí.",
+      "file": "b1a6578579071e9370.mp3"
+    },
+    {
+      "key": "hint:mean",
+      "text": "Cô nhắc em nhé. Số trung bình cộng bằng tổng các số chia cho số các số hạng.",
+      "file": "7708fbb6b6263febd1.mp3"
+    },
+    {
+      "key": "hint:unitary",
+      "text": "Cô nhắc em nhé. Rút về đơn vị nghĩa là tìm giá trị của một phần bằng nhau trước.",
+      "file": "5b54de503cccab02f0.mp3"
+    },
+    {
+      "key": "hint:stats",
+      "text": "Cô nhắc em nhé. Dãy số liệu ghi lại các kết quả quan sát, đo đếm theo một thứ tự.",
+      "file": "b21be272faf80a73b8.mp3"
+    },
+    {
+      "key": "hint:chart",
+      "text": "Cô nhắc em nhé. Biểu đồ cột dùng độ cao các cột để thể hiện số liệu.",
+      "file": "f1fdc563a5036f37da.mp3"
+    },
+    {
+      "key": "hint:event",
+      "text": "Cô nhắc em nhé. Số lần xuất hiện của một sự kiện được xác định bằng cách quan sát và đếm.",
+      "file": "03776c4bf53f89a1fb.mp3"
+    },
+    {
+      "key": "hint:fraction",
+      "text": "Cô nhắc em nhé. Chia một đơn vị thành các phần bằng nhau. Phân số có tử số cho biết số phần được lấy, mẫu số cho biết số phần bằng nhau của đơn vị.",
+      "file": "b8e2efea598cb5976d.mp3"
+    },
+    {
+      "key": "hint:fracdiv",
+      "text": "Cô nhắc em nhé. Thương của phép chia một số tự nhiên cho một số tự nhiên khác 0 có thể viết thành phân số.",
+      "file": "ad897f5097a5e9f823.mp3"
+    },
+    {
+      "key": "hint:equiv",
+      "text": "Cô nhắc em nhé. Nhân hoặc chia cả tử số và mẫu số với cùng một số tự nhiên khác 0 thì được một phân số bằng phân số đã cho, khi các phép chia đều chia hết.",
+      "file": "b11aa9a1f7211145a9.mp3"
+    },
+    {
+      "key": "hint:reduce",
+      "text": "Cô nhắc em nhé. Rút gọn phân số là chia cả tử và mẫu cho một số tự nhiên lớn hơn 1 mà cả hai cùng chia hết.",
+      "file": "a9375adb971462cd51.mp3"
+    },
+    {
+      "key": "hint:common",
+      "text": "Cô nhắc em nhé. Quy đồng mẫu số là biến các phân số thành các phân số bằng chúng và có cùng mẫu số.",
+      "file": "42d06505d12fb2d085.mp3"
+    },
+    {
+      "key": "hint:fraccompare",
+      "text": "Cô nhắc em nhé. Cùng mẫu số: phân số có tử lớn hơn thì lớn hơn. Khác mẫu số: có thể quy đồng rồi so sánh.",
+      "file": "524545b820e7ac83e8.mp3"
+    },
+    {
+      "key": "hint:fracadd",
+      "text": "Cô nhắc em nhé. Cộng hai phân số cùng mẫu: cộng các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+      "file": "2215b280fbd447adfc.mp3"
+    },
+    {
+      "key": "hint:fracsub",
+      "text": "Cô nhắc em nhé. Trừ hai phân số cùng mẫu: trừ các tử và giữ nguyên mẫu. Khác mẫu: quy đồng trước.",
+      "file": "f7ec8ddad4a2ec0400.mp3"
+    },
+    {
+      "key": "hint:fracmul",
+      "text": "Cô nhắc em nhé. Nhân hai phân số: nhân tử số với tử số, mẫu số với mẫu số.",
+      "file": "d972d121964eff4006.mp3"
+    },
+    {
+      "key": "hint:fracquot",
+      "text": "Cô nhắc em nhé. Chia cho một phân số khác 0 là nhân với phân số đảo ngược của nó.",
+      "file": "5dada1de52022dbafd.mp3"
+    },
+    {
+      "key": "hint:fractionof",
+      "text": "Cô nhắc em nhé. Muốn tìm a/b của một số, có thể lấy số đó chia cho b rồi nhân với a.",
+      "file": "0d2fdab7dbd5c184f6.mp3"
+    },
+    {
+      "key": "hint:review1",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "49157749078382d75d.mp3"
+    },
+    {
+      "key": "hint:review2",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "42caa62b82d8a2ee3b.mp3"
+    },
+    {
+      "key": "hint:review3",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "315c4185fb5c4da68e.mp3"
+    },
+    {
+      "key": "hint:term1",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "4ef60ea8914f917efc.mp3"
+    },
+    {
+      "key": "hint:review4",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "aac6f9d2622e317c71.mp3"
+    },
+    {
+      "key": "hint:statistics",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "c25ced5338de4cfcba.mp3"
+    },
+    {
+      "key": "hint:reviewfrac",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "0959dacf7df339ea5a.mp3"
+    },
+    {
+      "key": "hint:fracaddsub",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "d197a81e805cdae22c.mp3"
+    },
+    {
+      "key": "hint:fracops",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "cb62369984bd98395a.mp3"
+    },
+    {
+      "key": "hint:geommeasure",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "758d7c8397785eb417.mp3"
+    },
+    {
+      "key": "hint:year",
+      "text": "Cô nhắc em nhé. Cùng cô nối lại những điều đã học. Hãy chọn đúng cách giải, trình bày từng bước và tự kiểm tra kết quả.",
+      "file": "f4947174407f01bff7.mp3"
+    },
+    {
+      "key": "notice:urgent",
+      "text": "Sắp hết giờ rồi em nhé! Mình kiểm tra phép tính rồi chọn đáp án ngay nào.",
+      "file": "ad6cbd10627bb6b469.mp3"
+    },
+    {
+      "key": "notice:end",
+      "text": "Hết giờ rồi! Em dừng làm bài và cùng cô xem kết quả nhé.",
+      "file": "8a02f1583bc32c9356.mp3"
+    },
+    {
+      "key": "notice:ready",
+      "text": "Chào em! Cô là Mi A. Mình cùng đọc câu hỏi, làm nháp rồi chọn một đáp án nhé.",
+      "file": "08e78d62a7c4209c2c.mp3"
+    },
+    {
+      "key": "notice:half",
+      "text": "Mình đã đi được nửa thời gian rồi. Em nhớ áp dụng quy tắc vừa học, thử từng bước rồi chọn đáp án nhé.",
+      "file": "66fa0bfc426b493630.mp3"
+    }
+  ]
+}

@@ -113,3 +113,12 @@ Worker dùng Cron Trigger `0 13 * * *` (13h UTC = 20h Việt Nam) để tạo m�
 Admin chỉnh **Ngày thứ Hai bắt đầu tuần học 1** trên trang quản trị để chọn đúng bài theo lịch 35 tuần. Nếu chưa chỉnh, ứng dụng dùng thứ Hai đầu tiên tháng 9 của năm học hiện tại. Thứ Bảy/Chủ nhật ôn bài thứ Sáu; ngoài 175 ngày giữ mốc ngày 1 hoặc 175. Thay đổi lịch không thay đề đã tạo trong ngày. Sao lưu bao gồm cấu hình lịch và ánh xạ phòng thi tự động, đồng thời vẫn nhận được bản sao cũ chưa có các trường này.
 
 Thông báo hiện trên mọi trang trong ứng dụng. Bấm **Bật chuông nhắc thi** trong mỗi lần mở ứng dụng để trình duyệt cho phép âm thanh. Cần giữ trang mở và có Internet; đây là chuông trong ứng dụng, không phải thông báo đẩy khi đóng trình duyệt. Khi máy/tab ngủ, mở lại trang để nhận trạng thái giờ thi hiện tại.
+
+
+## Cô Mi A đọc đề và nhắc bài
+
+Phòng thi đọc câu hỏi khi mở câu; đến nửa thời gian, máy chủ gửi kiến thức liên quan để cô nhắc cho học sinh chưa nộp. Gần hết giờ (10 giây cuối với câu 60 giây), cô dừng phần đọc dài và nhắc chọn đáp án. Các mốc chỉ nhắc một lần mỗi câu, không lặp theo nhịp đồng bộ; học sinh đã trả lời không bị thúc giục tiếp. Kiến thức gợi ý được lấy từ phần lý thuyết theo chủ đề, không dùng đáp án hay lời giải của câu đang thi.
+
+`exam-teacher.js` ghép câu hỏi từ các cụm đọc và số, cùng các lời nhắc thu sẵn bằng giọng nữ `vi-VN-HoaiMyNeural` (+4%, +10Hz). Bản đọc nằm trong `assets/audio/exam/`, không cần dịch vụ tạo giọng hoặc khóa API khi học. Nếu thiếu bản đọc do sửa ngân hàng câu hỏi, chỉ giọng nữ tiếng Việt đã được xác định/xác nhận mới được dùng làm dự phòng. Có nút nghe lại đề và bật/tắt cô đọc; trình duyệt có thể yêu cầu bấm nút để cho phép âm thanh sau khi tải lại trang. Mở trực tiếp file HTML dùng chuỗi phát MP3; phục vụ qua HTTPS/localhost dùng Web Audio để ghép mượt hơn.
+
+Khi sửa mẫu câu hỏi: chạy `node scripts/prepare-exam-audio.cjs`, cài `edge-tts` trong môi trường phát triển, rồi chạy `python scripts/generate-exam-audio.py`. Công cụ tạo các tệp âm thanh một lần; ứng dụng học không phụ thuộc vào máy đã tạo chúng. Chạy `node scripts/verify-exam-teacher.cjs` và `node scripts/verify-exam-playback.mjs` để kiểm tra độ phủ, giọng, tính toàn vẹn và ưu tiên lời nhắc.

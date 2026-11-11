@@ -15,11 +15,11 @@ try{
  const [da,db]=await Promise.all([f.call('/api/daily'),f.call('/api/daily')]);assert.equal(da.code,db.code);assert.equal(da.status,'waiting');assert.equal(f.sql.prepare('SELECT COUNT(*) n FROM daily_exams').get().n,1);
  const [ra,rb]=await Promise.all([f.call('/api/daily/join','POST',{},ta),f.call('/api/daily/join','POST',{},tb)]);assert.equal(ra.room.code,rb.room.code);assert.equal(ra.room.automatic,true);assert.equal(ra.room.startsAt,Date.parse('2026-11-11T20:01:00+07:00'));
  const code=ra.room.code;await f.call('/api/admin/rooms/'+code+'/start','POST',{},admin.token,409);
- clock=da.startsAt;let snap=await f.call('/api/rooms/'+code+'/heartbeat','POST',{},ta);assert.equal(snap.room.status,'running');assert.equal(snap.room.index,0);assert(!('answer' in snap.question));assert.equal(snap.room.deadline,clock+60000);
+ clock=da.startsAt;let snap=await f.call('/api/rooms/'+code+'/heartbeat','POST',{},ta);assert.equal(snap.room.status,'running');assert.equal(snap.room.index,0);assert(!('answer' in snap.question));assert(!('hint' in snap.question),'do not expose a hint before half time');assert.equal(snap.room.deadline,clock+60000);
  const qs=JSON.parse(f.sql.prepare('SELECT questions FROM rooms WHERE code=?').get(code).questions);
  await f.call('/api/rooms/'+code+'/answer','POST',{index:0,value:qs[0].answer},ta);
  snap=await f.call('/api/rooms/'+code+'/heartbeat','POST',{},tb);assert.equal(snap.participants.find(p=>p.id===a.student.id).result,'submitted');assert(!('answer' in snap.question));
- clock+=60000;snap=await f.call('/api/rooms/'+code+'/heartbeat','POST',{},tb);assert.equal(snap.room.revealed,true);assert.equal(snap.question.answer,qs[0].answer);assert.equal(snap.participants.find(p=>p.id===a.student.id).result,'correct');
+ clock+=30000;snap=await f.call('/api/rooms/'+code+'/heartbeat','POST',{},tb);assert(snap.question.hint);assert(!('answer' in snap.question));clock+=30000;snap=await f.call('/api/rooms/'+code+'/heartbeat','POST',{},tb);assert.equal(snap.room.revealed,true);assert.equal(snap.question.answer,qs[0].answer);assert.equal(snap.participants.find(p=>p.id===a.student.id).result,'correct');
  await f.call('/api/rooms/'+code+'/answer','POST',{index:0,value:qs[0].answer},tb,409);
  clock+=8000;snap=await f.call('/api/rooms/'+code+'/heartbeat','POST',{},ta);assert.equal(snap.room.index,1);assert(!('answer' in snap.question));assert.equal(snap.submitted,false);
  // Returning after a sleeping/background tab jumps to the authoritative current question.

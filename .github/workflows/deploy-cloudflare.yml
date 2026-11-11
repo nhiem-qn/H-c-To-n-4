@@ -36,6 +36,8 @@ jobs:
         run: |
           node scripts/verify-content.cjs
           node scripts/verify-voices.cjs
+          node scripts/verify-exam-teacher.cjs
+          node scripts/verify-exam-playback.mjs
           node online-server/build.mjs
           node online-server/tests/server.test.mjs
           node online-server/tests/daily.test.mjs

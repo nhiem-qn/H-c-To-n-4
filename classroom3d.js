@@ -44,7 +44,7 @@ export class Classroom3D {
   // Fit the full seating area and name labels at every aspect ratio.
   for(let i=0;i<35;i++){this.camera.position.set(0,10*scale,13*scale+1.3);this.camera.lookAt(0,.8,1.3);this.camera.updateMatrixWorld();let fits=true;for(let x of [-9.5,9.5])for(let y of [0,2.7])for(let z of [-4.1,6.8]){let v=new THREE.Vector3(x,y,z).project(this.camera);if(Math.abs(v.x)>.94||Math.abs(v.y)>.86)fits=false}if(fits)break;scale*=1.045}
  }
- animate(t){if(this.disposed)return;let dt=Math.min((t-this.last)/1000,.05);this.last=t;
+ animate(t){if(this.disposed)return;let dt=Math.min((t-this.last)/1000,.2);this.last=t;
   for(let [id,obj] of this.people){let target=obj.path[obj.pathIndex];if(target){let delta=target.clone().sub(obj.group.position);delta.y=0;let distance=delta.length();if(distance<.08){obj.pathIndex++;if(obj.pathIndex>=obj.path.length){if(obj.leaving){this.scene.remove(obj.group);obj.shirt.dispose();this.labels.get(id)?.remove();this.labels.delete(id);this.people.delete(id);continue}obj.seated=true;obj.group.rotation.y=0;obj.group.position.y=-.15;obj.legs.forEach(l=>l.rotation.x=-.65)}}else{let direction=delta.normalize();obj.group.position.addScaledVector(direction,Math.min(distance,dt*4.2));obj.group.rotation.y=Math.atan2(direction.x,direction.z);obj.legs.forEach((l,i)=>l.rotation.x=Math.sin(t*.013+i*Math.PI)*.4);obj.arms.forEach((l,i)=>l.rotation.x=Math.sin(t*.013+i*Math.PI)*.3)}}
    let position=obj.group.position.clone().add(new THREE.Vector3(0,2.35,0)).project(this.camera),label=this.labels.get(id);if(label){label.style.left=((position.x*.5+.5)*this.container.clientWidth)+'px';label.style.top=((-position.y*.5+.5)*this.container.clientHeight)+'px';label.style.display=position.z<1?'block':'none'}
   }

@@ -17,6 +17,8 @@ jobs:
           node --check app.js
           node --check voices.js
           node --check online.js
+          node --check exam-teacher.js
+          node --check exam-audio.js
           node --check config.js
           node --check classroom3d.js
           node --check data.js
@@ -25,7 +27,10 @@ jobs:
       - name: Kiểm tra chương trình và ngân hàng câu hỏi
         run: node scripts/verify-content.cjs
       - name: Kiểm tra giọng nữ và âm thanh bài giảng
-        run: node scripts/verify-voices.cjs
+        run: |
+          node scripts/verify-voices.cjs
+          node scripts/verify-exam-teacher.cjs
+          node scripts/verify-exam-playback.mjs
       - name: Kiểm tra máy chủ và hai học sinh online
         run: |
           node online-server/build.mjs
