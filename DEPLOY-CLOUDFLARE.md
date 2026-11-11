@@ -104,3 +104,12 @@ node scripts/verify-online-client.mjs
 ```
 
 Cần Node.js 24. Việc chạy ứng dụng trên web không cần cài Node.js ở máy học sinh.
+
+
+## Thi ngày tự động và chuông trong ứng dụng
+
+Worker dùng Cron Trigger `0 13 * * *` (13h UTC = 20h Việt Nam) để tạo một đề 5 câu mỗi ngày. Trang web cũng tự kiểm tra và tạo bù đề nếu lịch Cron bị trễ. Một ngày chỉ có một phòng tự động, tối đa 40 thí sinh. 20h mở lớp, 20h01 bắt đầu; mỗi câu 60 giây làm bài và 8 giây xem đáp án. Máy chủ tự chuyển câu, chốt kết quả, và từ chối câu trả lời trễ. Học sinh đã đăng nhập bấm **Vào thi ngay**; không cần nhập mã phòng ngày. Thi tuần/tháng do admin tạo, vẫn vào bằng mã phòng.
+
+Admin chỉnh **Ngày thứ Hai bắt đầu tuần học 1** trên trang quản trị để chọn đúng bài theo lịch 35 tuần. Nếu chưa chỉnh, ứng dụng dùng thứ Hai đầu tiên tháng 9 của năm học hiện tại. Thứ Bảy/Chủ nhật ôn bài thứ Sáu; ngoài 175 ngày giữ mốc ngày 1 hoặc 175. Thay đổi lịch không thay đề đã tạo trong ngày. Sao lưu bao gồm cấu hình lịch và ánh xạ phòng thi tự động, đồng thời vẫn nhận được bản sao cũ chưa có các trường này.
+
+Thông báo hiện trên mọi trang trong ứng dụng. Bấm **Bật chuông nhắc thi** trong mỗi lần mở ứng dụng để trình duyệt cho phép âm thanh. Cần giữ trang mở và có Internet; đây là chuông trong ứng dụng, không phải thông báo đẩy khi đóng trình duyệt. Khi máy/tab ngủ, mở lại trang để nhận trạng thái giờ thi hiện tại.

@@ -22,6 +22,13 @@
       "when": 1794388000000,
       "tag": "0002_import_checkpoint",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1794390000000,
+      "tag": "0003_daily_exams",
+      "breakpoints": true
     }
   ]
 }

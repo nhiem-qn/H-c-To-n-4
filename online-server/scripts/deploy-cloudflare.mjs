@@ -34,7 +34,7 @@ let dbName=workerName+'-db',database=null;
 for(let page=1;page<=100;page++){let rows=await cf('/d1/database?per_page=100&page='+page);database=rows.find(d=>d.name===dbName);if(database||rows.length<100)break}
 if(!database)database=await cf('/d1/database','POST',{name:dbName});
 const databaseId=database.uuid||database.id;if(!databaseId)throw Error('Cloudflare chưa trả về ID cơ sở dữ liệu.');
-const config={name:workerName,main:'dist/server/index.js',compatibility_date:'2025-01-01',workers_dev:true,vars:{AUTH_MODE:'standalone',APP_URL:appUrl,ADMIN_USERNAME:username},d1_databases:[{binding:'DB',database_name:dbName,database_id:databaseId,migrations_dir:'drizzle'}]};
+const config={name:workerName,main:'dist/server/index.js',compatibility_date:'2025-01-01',workers_dev:true,triggers:{crons:['0 13 * * *']},vars:{AUTH_MODE:'standalone',APP_URL:appUrl,ADMIN_USERNAME:username},d1_databases:[{binding:'DB',database_name:dbName,database_id:databaseId,migrations_dir:'drizzle'}]};
 writeFileSync('wrangler.generated.json',JSON.stringify(config,null,2));
 run(['d1','migrations','apply','DB','--remote','--config','wrangler.generated.json']);
 run(['deploy','--config','wrangler.generated.json']);

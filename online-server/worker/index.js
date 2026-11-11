@@ -34,10 +34,10 @@ async function admin(request,env){
  const session=await first(env.DB,'SELECT token_hash,version FROM admin_sessions WHERE token_hash=? AND expires_at>?',await hash(token),now());
  if(!session||!equal(session.version,await credentialVersion(env)))fail(401,'Phiên admin đã hết hạn. Vui lòng đăng nhập lại.');return env.ADMIN_USERNAME||'admin'
 }
-const TRANSFER_FIELDS={students:['id','name','normalized','pin_hash','pin_salt','active','created_at'],rooms:['code','title','questions','status','question_index','started_at','deadline','seconds','created_at','ended_at'],participants:['room_code','student_id','seat','joined_at','last_seen','present','blocked'],answers:['room_code','student_id','question_index','value','correct','submitted_at'],progress:['student_id','payload','updated_at']};
+const TRANSFER_FIELDS={students:['id','name','normalized','pin_hash','pin_salt','active','created_at'],rooms:['code','title','questions','status','question_index','started_at','deadline','seconds','created_at','ended_at'],participants:['room_code','student_id','seat','joined_at','last_seen','present','blocked'],answers:['room_code','student_id','question_index','value','correct','submitted_at'],progress:['student_id','payload','updated_at'],app_settings:['key','value'],daily_exams:['exam_date','room_code','lesson_day']};
 async function exportData(env){let job=await first(env.DB,'SELECT status FROM data_transfer WHERE id=1');if(job?.status==='pending')fail(409,'Đang khôi phục dữ liệu; hãy hoàn tất trước khi xuất.');let tables={};for(let [name,fields] of Object.entries(TRANSFER_FIELDS))tables[name]=await all(env.DB,'SELECT '+fields.join(',')+' FROM '+name+' ORDER BY rowid');return{format:'MIA-BACKUP',version:1,exportedAt:new Date().toISOString(),tables}}
 async function importData(env,backup){
- if(backup?.format!=='MIA-BACKUP'||backup.version!==1||!backup.tables)fail(400,'Không đúng tệp sao lưu MIA.');let count=0;
+ if(backup?.format!=='MIA-BACKUP'||backup.version!==1||!backup.tables)fail(400,'Không đúng tệp sao lưu MIA.');for(let table of ['app_settings','daily_exams'])if(!(table in backup.tables))backup.tables[table]=[];let count=0;
  for(let [name,fields] of Object.entries(TRANSFER_FIELDS)){let rows=backup.tables[name];if(!Array.isArray(rows))fail(400,'Thiếu dữ liệu '+name);count+=rows.length;for(let row of rows){if(!row||typeof row!=='object'||fields.some(f=>!(f in row)||!(row[f]===null||typeof row[f]==='string'||(typeof row[f]==='number'&&Number.isFinite(row[f])))))fail(400,'Dữ liệu '+name+' không hợp lệ.')}}
  if(count>20000)fail(413,'Bản sao vượt quá 20.000 bản ghi.');
  const students=new Set(backup.tables.students.map(s=>s.id)),rooms=new Set(backup.tables.rooms.map(r=>r.code));
@@ -49,6 +49,8 @@ async function importData(env,backup){
  for(let r of backup.tables.rooms){roomCode(r.code);let qs;try{qs=JSON.parse(r.questions)}catch{fail(400,'Đề thi trong bản sao không hợp lệ.')}if(!Array.isArray(qs)||qs.length<1||qs.length>25||qs.some(q=>typeof q.q!=='string'||typeof q.answer!=='string'||!Array.isArray(q.options)))fail(400,'Đề thi trong bản sao không hợp lệ.')}
  for(let row of [...backup.tables.participants,...backup.tables.answers])if(!students.has(row.student_id)||!rooms.has(row.room_code))fail(400,'Bản sao thiếu học sinh hoặc phòng được tham chiếu.');
  for(let p of backup.tables.progress){if(!students.has(p.student_id))fail(400,'Tiến độ không có học sinh tương ứng.');try{JSON.parse(p.payload)}catch{fail(400,'Tiến độ trong bản sao không hợp lệ.')}}
+ if(new Set(backup.tables.daily_exams.map(x=>x.exam_date)).size!==backup.tables.daily_exams.length||new Set(backup.tables.daily_exams.map(x=>x.room_code)).size!==backup.tables.daily_exams.length||backup.tables.daily_exams.some(x=>!rooms.has(x.room_code)||!/^20[0-9]{2}-[0-9]{2}-[0-9]{2}$/.test(x.exam_date)||!Number.isInteger(x.lesson_day)||x.lesson_day<1||x.lesson_day>175))fail(400,'Lịch thi trong bản sao không hợp lệ.');
+ if(new Set(backup.tables.app_settings.map(x=>x.key)).size!==backup.tables.app_settings.length||backup.tables.app_settings.some(x=>x.key!=='school_start'||!/^20[0-9]{2}-[0-9]{2}-[0-9]{2}$/.test(x.value)||!Number.isFinite(Date.parse(x.value+'T00:00:00Z'))||new Date(x.value+'T00:00:00Z').getUTCDay()!==1))fail(400,'Cấu hình lịch học trong bản sao không hợp lệ.');
  const checksum=await hash(JSON.stringify(backup)),job=await first(env.DB,'SELECT * FROM data_transfer WHERE id=1');
  let manifest=[];for(let [table,fields] of Object.entries(TRANSFER_FIELDS)){let rows=backup.tables[table];for(let offset=0;offset<rows.length;offset+=25){let chunk=rows.slice(offset,offset+25);manifest.push({table,count:chunk.length,hash:await hash(JSON.stringify(chunk))})}}
  if(job?.status==='pending'&&job.checksum!==checksum)fail(409,'Hãy dùng đúng tệp đang nhập dở để hoàn tất.');
@@ -73,15 +75,48 @@ async function rateLimit(env,key,max=12){let time=now(),bucket=key+':'+Math.floo
 function roomCode(value){let c=String(value||'').trim().toUpperCase();if(!/^[A-Z2-9]{6}$/.test(c))fail(400,'Mã phòng gồm 6 chữ hoặc số.');return c}
 async function getRoom(env,value){let c=roomCode(value),r=await first(env.DB,'SELECT * FROM rooms WHERE code=?',c);if(!r)fail(404,'Không tìm thấy phòng thi.');return r}
 function choices(q){if(q.options)return q.options;let n=numeric(q.answer),list=[q.answer];if(n!==null){let parts=q.answer.split('/');let extra=parts.length===2?[`${Number(parts[0])+1}/${parts[1]}`,`${parts[0]}/${Number(parts[1])+1}`,`${Number(parts[0])+2}/${Number(parts[1])+1}`]:[String(n+1),String(Math.max(0,n-1)),String(n+10),String(n+2)];for(let x of extra)if(!list.some(y=>correct(x,y)))list.push(x)}if(list.length<2)fail(500,'Câu hỏi chưa có phương án hợp lệ.');return list.slice(0,4).sort(()=>Math.random()-.5)}
+// Daily exams follow Vietnam time. The server clock is authoritative; cron and
+// requests use the same idempotent creation path (including after a missed cron).
+const DAILY_SECONDS=60,DAILY_REVEAL_MS=8000,DAILY_LOBBY_MS=60000;
+function vietnamDate(t){return new Date(t+7*3600000).toISOString().slice(0,10)}
+function defaultSchoolStart(date){let year=Number(date.slice(0,4));if(date.slice(5)<'09-01')year--;let d=new Date(Date.UTC(year,8,1));d.setUTCDate(1+(8-d.getUTCDay())%7);return d.toISOString().slice(0,10)}
+async function dailyPlan(env,t=now()){
+ let date=vietnamDate(t),saved=await first(env.DB,"SELECT value FROM app_settings WHERE key='school_start'"),schoolStart=saved?.value||defaultSchoolStart(date);
+ let offset=Math.floor((Date.parse(date+'T00:00:00Z')-Date.parse(schoolStart+'T00:00:00Z'))/86400000),day=Math.max(1,Math.min(175,Math.floor(Math.max(0,offset)/7)*5+Math.min(Math.max(0,offset)%7,4)+1));
+ let opensAt=Date.parse(date+'T20:00:00+07:00');return{date,day,schoolStart,opensAt,startsAt:opensAt+DAILY_LOBBY_MS,timezone:'Asia/Ho_Chi_Minh',seconds:DAILY_SECONDS,revealSeconds:8}
+}
+async function ensureDaily(env,t=now()){
+ await run(env.DB,"UPDATE rooms SET status='ended',question_index=json_array_length(questions)-1,deadline=created_at+60000+(json_array_length(questions)-1)*68000+60000,ended_at=created_at+60000+json_array_length(questions)*68000 WHERE code IN(SELECT room_code FROM daily_exams) AND status!='ended' AND created_at+60000+json_array_length(questions)*68000<=?",t);
+ let plan=await dailyPlan(env,t);if(t<plan.opensAt)return{plan,room:null};
+ let entry=await first(env.DB,'SELECT room_code FROM daily_exams WHERE exam_date=?',plan.date);
+ if(!entry){let exam=makeExam(plan.day,'daily'),qs=exam.qs.map(q=>({...q,options:choices(q)})),c=code().slice(0,6);
+  // A transaction and unique date guarantee one room even when cron and pupils arrive together.
+  await env.DB.batch([env.DB.prepare("INSERT OR IGNORE INTO rooms(code,title,questions,seconds,created_at) SELECT ?,?,?,?,? WHERE NOT EXISTS(SELECT 1 FROM daily_exams WHERE exam_date=?)").bind(c,'🌙 Thi ngày '+plan.date+' · Ngày học '+plan.day,JSON.stringify(qs),DAILY_SECONDS,plan.opensAt,plan.date),env.DB.prepare('INSERT OR IGNORE INTO daily_exams(exam_date,room_code,lesson_day) SELECT ?,?,? WHERE EXISTS(SELECT 1 FROM rooms WHERE code=?)').bind(plan.date,c,plan.day,c)]);
+  entry=await first(env.DB,'SELECT room_code FROM daily_exams WHERE exam_date=?',plan.date)
+ }
+ let room=await getRoom(env,entry.room_code);return{plan,room:await advanceDaily(env,room,t)}
+}
+async function advanceDaily(env,r,t=now()){
+ let entry=await first(env.DB,'SELECT exam_date,lesson_day FROM daily_exams WHERE room_code=?',r.code);if(!entry)return r;
+ r.automatic=true;r.examDate=entry.exam_date;r.lessonDay=entry.lesson_day;
+ if(r.status==='ended')return r;
+ let start=Date.parse(entry.exam_date+'T20:00:00+07:00')+DAILY_LOBBY_MS,total=JSON.parse(r.questions).length,slot=DAILY_SECONDS*1000+DAILY_REVEAL_MS,index=Math.floor((t-start)/slot);
+ if(t<start){r.startsAt=start;return r}
+ if(index>=total){await run(env.DB,"UPDATE rooms SET status='ended',question_index=?,ended_at=?,deadline=? WHERE code=? AND status!='ended'",total-1,start+total*slot,start+(total-1)*slot+DAILY_SECONDS*1000,r.code)}
+ else await run(env.DB,"UPDATE rooms SET status='running',question_index=?,started_at=?,deadline=? WHERE code=? AND status!='ended' AND question_index<=?",index,start+index*slot,start+index*slot+DAILY_SECONDS*1000,r.code,index);
+ return{...await getRoom(env,r.code),automatic:true,examDate:entry.exam_date,lessonDay:entry.lesson_day,startsAt:start}
+}
+async function dailyStatus(env){let {plan,room}=await ensureDaily(env);if(room)plan.day=room.lessonDay;let lesson=LESSONS[DAYS[plan.day-1].lesson-1];return{serverTime:now(),...plan,lesson:lesson.title,status:room?.status||'upcoming',code:room?.code||null,total:room?JSON.parse(room.questions).length:5,endsAt:plan.startsAt+(room?JSON.parse(room.questions).length:5)*(DAILY_SECONDS*1000+DAILY_REVEAL_MS)}}
 async function snapshot(env,r,self=null,isAdmin=false){
+ r=await advanceDaily(env,r);
  let time=now(),questions=JSON.parse(r.questions),q=questions[r.question_index],revealed=r.status==='ended'||(r.status==='running'&&time>=r.deadline),rows=await all(env.DB,'SELECT p.*,s.name FROM participants p JOIN students s ON s.id=p.student_id WHERE room_code=? ORDER BY seat',r.code),answers=await all(env.DB,'SELECT student_id,question_index,correct,submitted_at,value FROM answers WHERE room_code=?',r.code);
  const visibleIndex=revealed?r.question_index:r.question_index-1;
  let participants=rows.map(p=>{let mine=answers.filter(a=>a.student_id===p.student_id),current=mine.find(a=>a.question_index===r.question_index);return{id:p.student_id,name:p.name,seat:p.seat,online:!!p.present&&p.last_seen>time-ONLINE_MS&&!p.blocked,blocked:!!p.blocked,joinedAt:p.joined_at,result:revealed?(current?(current.correct?'correct':'wrong'):'missing'):(current?'submitted':'waiting'),score:mine.filter(a=>a.question_index<=visibleIndex&&a.correct).length,answered:mine.filter(a=>a.question_index<=visibleIndex).length}});
  let question=r.status==='waiting'?null:q?{index:r.question_index+1,total:questions.length,text:q.q,options:q.options,source:q.source,...(revealed?{answer:q.answer,explanation:q.why}:{})}:null;
- return{serverTime:time,room:{code:r.code,title:r.title,status:r.status,index:r.question_index,total:questions.length,seconds:r.seconds,deadline:r.deadline,startedAt:r.started_at,revealed},question,participants,selfId:self?.id||null,submitted:self?answers.some(a=>a.student_id===self.id&&a.question_index===r.question_index):false,isAdmin}
+ return{serverTime:time,room:{code:r.code,title:r.title,status:r.status,index:r.question_index,total:questions.length,seconds:r.seconds,deadline:r.deadline,startedAt:r.started_at,revealed,automatic:!!r.automatic,startsAt:r.startsAt||null,nextAt:r.automatic&&r.deadline?r.deadline+DAILY_REVEAL_MS:null},question,participants,selfId:self?.id||null,submitted:self?answers.some(a=>a.student_id===self.id&&a.question_index===r.question_index):false,isAdmin}
 }
 async function api(request,env,url){const p=url.pathname,method=request.method;
- if(p==='/api/health')return json({ok:true,app:'Học Toán cùng MIA',version:2,authMode:standalone(env)?'standalone':'sites'});
+ if(p==='/api/health')return json({ok:true,app:'Học Toán cùng MIA',version:3,dailyExamTime:'20:00',timezone:'Asia/Ho_Chi_Minh',authMode:standalone(env)?'standalone':'sites'});
  if(p==='/api/admin-auth/status')return json({mode:standalone(env)?'standalone':'sites',configured:standalone(env)?adminConfigured(env):true});
  if(p==='/api/admin-auth/login'&&method==='POST'){
   if(!standalone(env))fail(409,'Máy chủ cũ vẫn dùng đăng nhập chủ ứng dụng. Hãy triển khai bản độc lập từ GitHub Actions.');if(!adminConfigured(env))fail(503,'Chưa cấu hình mật khẩu admin trên máy chủ.');
@@ -92,6 +127,8 @@ async function api(request,env,url){const p=url.pathname,method=request.method;
  }
  if(p==='/api/admin-auth/logout'&&method==='POST'){await admin(request,env);await run(env.DB,'DELETE FROM admin_sessions WHERE token_hash=?',await hash((request.headers.get('authorization')||'').slice(7)));return json({ok:true})}
  if(!['/api/admin/session','/api/admin/export','/api/admin/import'].includes(p)){let transfer=await first(env.DB,'SELECT status FROM data_transfer WHERE id=1');if(transfer?.status==='pending')fail(503,'Đang khôi phục bản sao lưu. Admin cần nhập lại đúng tệp để hoàn tất.')}
+ if(p==='/api/daily'&&method==='GET')return json(await dailyStatus(env));
+ if(p==='/api/daily/join'&&method==='POST'){await student(request,env);let d=await ensureDaily(env);if(!d.room)fail(409,'Bài thi mở lúc 20h giờ Việt Nam.');if(d.room.status==='ended')fail(409,'Bài thi hôm nay đã kết thúc. Hẹn em lúc 20h ngày mai!');return api(request,env,new URL('/api/rooms/'+d.room.code+'/join',url.origin))}
  if(p==='/api/login'&&method==='POST'){
   const b=await body(request),name=normalizeName(b.name),ip=request.headers.get('cf-connecting-ip')||'unknown';await rateLimit(env,'ip:'+ip,120);await rateLimit(env,'name:'+name,10);
   const s=await first(env.DB,'SELECT * FROM students WHERE normalized=? AND active=1',name);if(!s||!equal(s.pin_hash,await hash(s.pin_salt+':'+String(b.pin||'').trim().toUpperCase())))fail(401,'Tên hoặc mã riêng không đúng. Hãy hỏi admin để được cấp lại.');
@@ -109,6 +146,7 @@ async function api(request,env,url){const p=url.pathname,method=request.method;
   if(method!=='GET'&&request.headers.get('origin')!==url.origin&&(!standalone(env)||request.headers.get('origin')!==new URL(appUrl(env)).origin))fail(403,'Yêu cầu quản trị phải gửi từ trang admin.');
   if(p==='/api/admin/export'&&method==='GET')return json(await exportData(env));
   if(p==='/api/admin/import'&&method==='POST'){const b=await body(request,8000000);return json(b.backup?await importData(env,b.backup):await importBatch(env,b))}
+  if(p==='/api/admin/daily-settings'){if(method==='GET')return json(await dailyStatus(env));if(method==='POST'){let b=await body(request),date=String(b.schoolStart||'');if(!/^20[0-9]{2}-[0-9]{2}-[0-9]{2}$/.test(date)||!Number.isFinite(Date.parse(date+'T00:00:00Z'))||new Date(date+'T00:00:00Z').toISOString().slice(0,10)!==date||new Date(date+'T00:00:00Z').getUTCDay()!==1)fail(400,'Chọn ngày thứ Hai bắt đầu tuần học 1.');await run(env.DB,"INSERT INTO app_settings(key,value) VALUES('school_start',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",date);return json(await dailyStatus(env))}}
   if(p==='/api/admin/session')return json({role:'admin',appUrl:appUrl(env),ownerId:owner});
   if(p==='/api/admin/students'&&method==='GET')return json({students:await all(env.DB,'SELECT s.id,s.name,s.active,s.created_at,p.updated_at FROM students s LEFT JOIN progress p ON p.student_id=s.id ORDER BY s.created_at DESC LIMIT 2000')});
   if(p==='/api/admin/students'&&method==='POST'){
@@ -124,11 +162,11 @@ async function api(request,env,url){const p=url.pathname,method=request.method;
   if(p==='/api/admin/rooms'&&method==='GET')return json({rooms:(await all(env.DB,'SELECT code,title,status,created_at,question_index FROM rooms ORDER BY created_at DESC LIMIT 50')),lessons:LESSONS.map(l=>({id:l.id,title:l.title})),days:DAYS.map(d=>({id:d.id,lesson:d.lesson}))});
   if(p==='/api/admin/rooms'&&method==='POST'){
    const b=await body(request),day=Number(b.day),seconds=Number(b.seconds||30),count=Number(b.count||10);if(!Number.isInteger(day)||day<1||day>175||!Number.isInteger(seconds)||seconds<10||seconds>300||!Number.isInteger(count)||count<1||count>25)fail(400,'Kiểm tra ngày học, số câu (1–25) và thời gian (10–300 giây).');
-   let exam=makeExam(day,b.kind==='daily'?'daily':b.kind==='term'?'term':'week');let qs=exam.qs.slice(0,count).map(q=>({...q,options:choices(q)}));let c=code().slice(0,6);await run(env.DB,'INSERT INTO rooms(code,title,questions,seconds,created_at) VALUES(?,?,?,?,?)',c,String(b.title||'Phòng thi cùng MIA').slice(0,80),JSON.stringify(qs),seconds,now());return json({code:c,appUrl:appUrl(env)+'?room='+c+'#online'},201)
+   let exam=makeExam(day,b.kind==='daily'?'daily':b.kind==='term'?'term':b.kind==='month'?'month':'week');let qs=exam.qs.slice(0,count).map(q=>({...q,options:choices(q)}));let c=code().slice(0,6);await run(env.DB,'INSERT INTO rooms(code,title,questions,seconds,created_at) VALUES(?,?,?,?,?)',c,String(b.title||'Phòng thi cùng MIA').slice(0,80),JSON.stringify(qs),seconds,now());return json({code:c,appUrl:appUrl(env)+'?room='+c+'#online'},201)
   }
   match=p.match(/^\/api\/admin\/rooms\/([A-Z2-9]{6})(?:\/(start|next|finish|kick|allow))?$/);
   if(match){let r=await getRoom(env,match[1]),action=match[2];if(method==='GET'&&!action)return json(await snapshot(env,r,null,true));
-   if(method==='POST'&&action){let t=now(),qs=JSON.parse(r.questions);
+   if(method==='POST'&&action){if(['start','next','finish'].includes(action)&&await first(env.DB,'SELECT room_code FROM daily_exams WHERE room_code=?',r.code))fail(409,'Bài thi ngày tự điều khiển theo đồng hồ 20h.');let t=now(),qs=JSON.parse(r.questions);
     if(action==='start'){if(r.status!=='waiting')fail(409,'Phòng đã bắt đầu.');await run(env.DB,"UPDATE rooms SET status='running',question_index=0,started_at=?,deadline=? WHERE code=? AND status='waiting'",t,t+r.seconds*1000,r.code)}
     if(action==='next'){if(r.status!=='running'||t<r.deadline)fail(409,'Hãy đợi hết giờ câu hiện tại trước khi chuyển câu.');if(r.question_index+1>=qs.length)await run(env.DB,"UPDATE rooms SET status='ended',ended_at=? WHERE code=?",t,r.code);else await run(env.DB,'UPDATE rooms SET question_index=question_index+1,started_at=?,deadline=? WHERE code=? AND question_index=?',t,t+r.seconds*1000,r.code,r.question_index)}
     if(action==='finish')await run(env.DB,"UPDATE rooms SET status='ended',ended_at=?,deadline=? WHERE code=?",t,t,r.code);
@@ -139,7 +177,7 @@ async function api(request,env,url){const p=url.pathname,method=request.method;
   fail(404,'Không có chức năng quản trị này.');
  }
  let m=p.match(/^\/api\/rooms\/([A-Z2-9]{6})(?:\/(join|heartbeat|leave|answer))?$/);
- if(m){const s=await student(request,env),r=await getRoom(env,m[1]),action=m[2],time=now();let member=await first(env.DB,'SELECT * FROM participants WHERE room_code=? AND student_id=?',r.code,s.id);
+ if(m){const s=await student(request,env),r=await advanceDaily(env,await getRoom(env,m[1])),action=m[2],time=now();let member=await first(env.DB,'SELECT * FROM participants WHERE room_code=? AND student_id=?',r.code,s.id);
   if(action==='join'&&method==='POST'){
    if(r.status==='ended')fail(409,'Phòng thi đã kết thúc.');if(member?.blocked)fail(403,'Admin đã mời bạn ra khỏi phòng.');
    if(member)await run(env.DB,'UPDATE participants SET present=1,last_seen=?,joined_at=? WHERE room_code=? AND student_id=?',time,time,r.code,s.id);
@@ -157,7 +195,7 @@ async function api(request,env,url){const p=url.pathname,method=request.method;
  }
  fail(404,'Không tìm thấy chức năng.');
 }
-export default {async fetch(request,env,ctx){const url=new URL(request.url),origin=request.headers.get('origin'),allowed=origin===new URL(appUrl(env)).origin||origin===url.origin;let response;
+export default {async scheduled(event,env,ctx){ctx.waitUntil((async()=>{let job=await first(env.DB,'SELECT status FROM data_transfer WHERE id=1');if(job?.status!=='pending')await ensureDaily(env,event.scheduledTime||now())})())},async fetch(request,env,ctx){const url=new URL(request.url),origin=request.headers.get('origin'),allowed=origin===new URL(appUrl(env)).origin||origin===url.origin;let response;
  try{
   if(request.method==='OPTIONS'){if(!allowed)return new Response(null,{status:403});response=new Response(null,{status:204})}
   else if(url.pathname==='/admin'&&standalone(env))return Response.redirect(appUrl(env)+'admin.html',302);

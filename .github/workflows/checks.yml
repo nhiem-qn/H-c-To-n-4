@@ -30,6 +30,7 @@ jobs:
         run: |
           node online-server/build.mjs
           node online-server/tests/server.test.mjs
+          node online-server/tests/daily.test.mjs
           node online-server/tests/standalone.test.mjs
           node online-server/tests/cloudflare-onboarding.test.mjs
           node scripts/verify-online-client.mjs
