@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';import {fixture,TEST_PASSWORD} from './fixtures.mjs';
-const f=fixture(),admin=await f.call('/api/admin-auth/login','POST',{username:'mia-admin',password:TEST_PASSWORD});
+const f=fixture();assert(f.sql.prepare('EXPLAIN QUERY PLAN SELECT * FROM answers WHERE student_id=? ORDER BY submitted_at DESC LIMIT 200').all('test').some(row=>row.detail.includes('answers_student_time')),'history uses a per-pupil index rather than scanning every child');const admin=await f.call('/api/admin-auth/login','POST',{username:'mia-admin',password:TEST_PASSWORD});
 const a=await f.call('/api/admin/students','POST',{name:'Mây học Toán'},admin.token,201),b=await f.call('/api/admin/students','POST',{name:'Sóc học Toán'},admin.token,201);
 const login=async p=>(await f.call('/api/login','POST',{name:p.student.name,pin:p.pin})).token;let ta=await login(a),tb=await login(b);
 const room=await f.call('/api/admin/rooms','POST',{day:1,kind:'daily',count:5,seconds:60},admin.token,201);await f.call('/api/rooms/'+room.code+'/join','POST',{},ta);await f.call('/api/admin/rooms/'+room.code+'/start','POST',{},admin.token);const qs=JSON.parse(f.sql.prepare('SELECT questions FROM rooms WHERE code=?').get(room.code).questions);await f.call('/api/rooms/'+room.code+'/answer','POST',{index:0,value:qs[0].answer},ta);
