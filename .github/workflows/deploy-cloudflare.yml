@@ -32,6 +32,8 @@ jobs:
           ADMIN_PASSWORD: ${{ secrets.MIA_ADMIN_PASSWORD }}
         run: |
           node -e "for(const key of ['CF_TOKEN','CF_ACCOUNT','ADMIN_PASSWORD'])if(!process.env[key])throw Error('Thiếu secret: '+key+'. Xem DEPLOY-CLOUDFLARE.md.');if(process.env.ADMIN_PASSWORD.length<12)throw Error('Mật khẩu admin cần ít nhất 12 kí tự.');"
+      - name: Cài công cụ kiểm tra âm thanh
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Kiểm tra ứng dụng trước khi triển khai
         run: |
           node scripts/verify-content.cjs
