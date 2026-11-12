@@ -6,36 +6,56 @@ on:
   schedule:
     - cron: '7,22,37,52 * * * *'
 permissions:
-  contents: read
+  contents: write
   pages: write
-  id-token: write
 concurrency:
   group: github-pages
   cancel-in-progress: false
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Lấy kho website
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Kiểm tra bản ứng dụng mới
+        id: source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          latest=$(gh api repos/nhiem-qn/H-c-To-n-4/commits/main --jq '.sha')
+          current=$(python3 -c "import json,pathlib; p=pathlib.Path('deployment-info.json'); print(json.loads(p.read_text()).get('sourceCommit','') if p.exists() else '')")
+          echo "commit=$latest" >> "$GITHUB_OUTPUT"
+          if [ "$latest" = "$current" ]; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
       - name: Lấy mã ứng dụng mới nhất
+        if: steps.source.outputs.changed == 'true'
         uses: actions/checkout@v4
         with:
           repository: nhiem-qn/H-c-To-n-4
-          ref: main
-          path: app
+          ref: ${{ steps.source.outputs.commit }}
+          path: app-source
           persist-credentials: false
       - name: Chuẩn bị trang địa chỉ ngắn
-        run: python3 app/deployment/user-pages/export.py app public --app-url https://nhiem-qn.github.io/
-      - name: Cấu hình GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - name: Đóng gói trang web
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: public
-      - name: Xuất bản website
-        id: deployment
-        uses: actions/deploy-pages@v4
+        if: steps.source.outputs.changed == 'true'
+        run: python3 app-source/deployment/user-pages/export.py app-source "$RUNNER_TEMP/mia-public" --app-url https://nhiem-qn.github.io/
+      - name: Cập nhật bản xuất bản trên nhánh main
+        if: steps.source.outputs.changed == 'true'
+        run: |
+          rsync -a --delete --exclude='.git/' --exclude='.github/' --exclude='.gitignore' --exclude='app-source/' --exclude='README.md' "$RUNNER_TEMP/mia-public/" ./
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          if ! git diff --cached --quiet; then
+            git commit -m "Sync MIA from ${{ steps.source.outputs.commit }}"
+            git push origin HEAD:main
+          fi
+      - name: Yêu cầu GitHub Pages xuất bản
+        if: steps.source.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
