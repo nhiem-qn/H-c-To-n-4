@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Cài công cụ kiểm tra âm thanh
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Kiểm tra cú pháp JavaScript
         run: |
           node --check speech-reader.js
