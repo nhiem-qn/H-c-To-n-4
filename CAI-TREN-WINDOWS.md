@@ -10,9 +10,13 @@ Dùng Windows 10/11 **64 bit** và Chrome hoặc Edge.
 
 Gói Portable có sẵn Python Embedded chính thức từ python.org và toàn bộ mã/tài liệu/tệp âm thanh trong kho. Không cần cài Python, Node.js, Git hay dùng Codex. Tệp ZIP “Source code” tự động của GitHub chỉ có mã nguồn; muốn mở ngay hãy chọn đúng **MIA-Windows-Portable.zip**.
 
+## Đăng nhập để vào học
+
+Khi mở ứng dụng, con nhập **tên và mã riêng do admin cấp**. Khách chỉ xem giới thiệu và tên bài. Cần Internet để xác minh phiên trước khi mở phần học; tài khoản hết hạn/khóa không được vào. Phiên cũ lưu trên máy cũng phải được máy chủ xác minh lại khi mở hoặc tải lại trang.
+
 ## Local và online
 
-- Bài học, trang sách, giọng đọc thu sẵn, 3D và tự luyện được phục vụ từ máy. Thử tắt Internet vẫn có thể học. Tiến độ khách lưu trong trình duyệt, theo đúng địa chỉ local; không xóa dữ liệu trình duyệt nếu muốn giữ tiến độ.
+- Bài học, trang sách, giọng đọc thu sẵn, 3D và tự luyện được phục vụ từ máy. Sau khi đã đăng nhập và giữ nguyên phiên đang mở, nội dung trên máy vẫn có thể dùng khi mạng tạm mất. Mở lại/tải lại trang khi mất Internet sẽ phải chờ xác minh đăng nhập. Tiến độ khách lưu trong trình duyệt, theo đúng địa chỉ local; không xóa dữ liệu trình duyệt nếu muốn giữ tiến độ.
 - Đăng nhập bằng tên/mã đã cấp, admin, đồng bộ, đếm online, bảng thi đua và phòng thi nhiều người vẫn cần Internet và máy chủ Cloudflare hiện tại. Dữ liệu tài khoản đang có không nằm trong ZIP, không bị di chuyển hoặc ghi đè.
 - Bản local có đường nối API chỉ lắng nghe ở máy này; máy chủ vẫn kiểm tra tên/mã và quyền admin. Không có mật khẩu, API token hay bản sao dữ liệu học sinh trong gói.
 - Tiến độ khách đã học trên GitHub không tự chuyển sang localhost. Tài khoản đã đồng bộ có thể đăng nhập để tải lại tiến độ. Khi chuyển từ file HTML sang localhost, hai nơi cũng có vùng lưu tiến độ riêng.

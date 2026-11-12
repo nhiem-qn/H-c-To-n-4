@@ -17,7 +17,7 @@ Tải **MIA-Windows-Portable.zip** trong [GitHub Releases](https://github.com/nh
 
 ## Chạy ứng dụng
 
-Giữ nguyên cấu trúc thư mục và mở `index.html` trong Chrome/Edge. Không cần npm hoặc bước build.
+Ứng dụng yêu cầu đăng nhập học sinh trước khi vào học. Khách chỉ xem giới thiệu và tên các bài. Bản Windows mở bằng `CHAY-MIA.cmd`; bản mã nguồn dùng máy chủ local ở dưới. Không cần npm hoặc bước build cho giao diện. Cần Internet để xác minh tài khoản khi mở hoặc tải lại ứng dụng; không dùng cách mở `index.html` trực tiếp bằng `file://` để đăng nhập.
 
 Để dùng localhost và thử micro:
 

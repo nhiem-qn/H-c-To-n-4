@@ -25,6 +25,7 @@ jobs:
           node --check advisor.js
           node --check admin-advisor.js
           node --check friends.js
+          node --check access.js
           node --check self-tests.js
           node --check admin-chat.js
           node --check lesson-studio.js
