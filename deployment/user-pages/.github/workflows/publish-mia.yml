@@ -1,0 +1,41 @@
+name: Xuất bản Học Toán cùng MIA
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Lấy mã ứng dụng mới nhất
+        uses: actions/checkout@v4
+        with:
+          repository: nhiem-qn/H-c-To-n-4
+          ref: main
+          path: app
+          persist-credentials: false
+      - name: Chuẩn bị trang địa chỉ ngắn
+        run: python3 app/deployment/user-pages/export.py app public --app-url https://nhiem-qn.github.io/
+      - name: Cấu hình GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Đóng gói trang web
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: Xuất bản website
+        id: deployment
+        uses: actions/deploy-pages@v4
