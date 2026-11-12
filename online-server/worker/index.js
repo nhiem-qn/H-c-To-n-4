@@ -127,7 +127,7 @@ async function snapshot(env,r,self=null,isAdmin=false){
  return{serverTime:time,room:{code:r.code,title:r.title,status:r.status,index:r.question_index,total:questions.length,seconds:r.seconds,deadline:r.deadline,startedAt:r.started_at,revealed,automatic:!!r.automatic,startsAt:r.startsAt||null,nextAt:r.automatic&&r.deadline?r.deadline+DAILY_REVEAL_MS:null,entryMode:r.entryMode||(r.automatic?'open':'code'),contestType:r.contestType||(r.automatic?'daily':'custom'),publicId:r.publicId||null},question,participants,selfId:self?.id||null,submitted:self?answers.some(a=>a.student_id===self.id&&a.question_index===r.question_index):false,isAdmin}
 }
 async function api(request,env,url){const p=url.pathname,method=request.method;
- if(p==='/api/health')return json({ok:true,app:'Học Toán cùng MIA',version:10,friendsChat:true,weekendSessions:[9,11,15,17,20],aiAdvisor:true,studentTerms:true,rewardsAndReports:true,weeklyContests:true,adaptiveLearning:true,examCoaching:true,dailyExamTime:'20:00',timezone:'Asia/Ho_Chi_Minh',authMode:standalone(env)?'standalone':'sites'});
+ if(p==='/api/health')return json({ok:true,app:'Học Toán cùng MIA',version:11,speechFallback:true,friendsChat:true,weekendSessions:[9,11,15,17,20],aiAdvisor:true,studentTerms:true,rewardsAndReports:true,weeklyContests:true,adaptiveLearning:true,examCoaching:true,dailyExamTime:'20:00',timezone:'Asia/Ho_Chi_Minh',authMode:standalone(env)?'standalone':'sites'});
  if(p==='/api/admin-auth/status')return json({mode:standalone(env)?'standalone':'sites',configured:standalone(env)?adminConfigured(env):true});
  if(p==='/api/admin-auth/login'&&method==='POST'){
   if(!standalone(env))fail(409,'Máy chủ cũ vẫn dùng đăng nhập chủ ứng dụng. Hãy triển khai bản độc lập từ GitHub Actions.');if(!adminConfigured(env))fail(503,'Chưa cấu hình mật khẩu admin trên máy chủ.');
@@ -152,6 +152,7 @@ async function api(request,env,url){const p=url.pathname,method=request.method;
  }
  if(p==='/api/friends'||p.startsWith('/api/chat/'))return socialApi(request,env,url,await student(request,env));
  if(p==='/api/advisor'&&method==='GET'){let s=await student(request,env);return json({advisor:await advisorFor(env,s.id),ai:await aiStatus(env,s.id)})}
+ if(p==='/api/voice'&&method==='POST'){let s=await student(request,env),b=await body(request,3000);return teachingAudio(env,s.id,s.name,b.text)}
  if(p==='/api/ai/lesson'&&method==='POST'){let s=await student(request,env);return json(await extendedLesson(env,s.id,await body(request,1000),await advisorFor(env,s.id)))}
  if(p==='/api/me'){const s=await student(request,env);return json({student:s})}
  if(p==='/api/logout'&&method==='POST'){await student(request,env);await run(env.DB,'DELETE FROM sessions WHERE token_hash=?',await hash((request.headers.get('authorization')||'').slice(7)));return json({ok:true})}
@@ -170,6 +171,7 @@ async function api(request,env,url){const p=url.pathname,method=request.method;
   if(p.startsWith('/api/admin/chat'))return adminChatApi(request,env,url);
   if(p==='/api/admin/advisor'&&method==='GET')return json({...await advisorOverview(env),ai:await aiStatus(env)});
   if(p==='/api/admin/ai-settings'){if(method==='POST'){let b=await body(request);if(typeof b.enabled!=='boolean')fail(400,'Chọn bật hoặc tắt AI.');await run(env.DB,'UPDATE ai_controls SET enabled=? WHERE id=1',b.enabled?1:0)}return json(await aiStatus(env))}
+  if(p==='/api/admin/voice-test'&&method==='POST')return teachingAudio(env,'admin','', 'Chào em, cô Mi A cùng em học toán nhé.');
   if(p==='/api/admin/ai-test'&&method==='POST')return json(await extendedLesson(env,'admin',{day:1,intent:'simpler'}));
   if(p==='/api/admin/session')return json({role:'admin',appUrl:appUrl(env),ownerId:owner});
   if(p==='/api/admin/students'&&method==='GET')return json({serverTime:now(),students:await all(env.DB,'SELECT s.id,s.name,s.active,s.created_at,s.expires_at,s.term_months,s.renewed_at,p.updated_at,CASE WHEN s.active=1 AND (s.expires_at IS NULL OR s.expires_at>?) AND (x.last_seen>=? OR EXISTS(SELECT 1 FROM participants q WHERE q.student_id=s.id AND q.present=1 AND q.last_seen>=?)) THEN 1 ELSE 0 END online FROM students s LEFT JOIN progress p ON p.student_id=s.id LEFT JOIN student_presence x ON x.student_id=s.id ORDER BY s.created_at DESC LIMIT 2000',now(),now()-90000,now()-ONLINE_MS)});

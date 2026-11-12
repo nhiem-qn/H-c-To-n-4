@@ -14,6 +14,7 @@ jobs:
           node-version: '24'
       - name: Kiểm tra cú pháp JavaScript
         run: |
+          node --check speech-reader.js
           node --check app.js
           node --check voices.js
           node --check online.js
@@ -43,6 +44,7 @@ jobs:
       - name: Kiểm tra giọng nữ và âm thanh bài giảng
         run: |
           node scripts/verify-voices.cjs
+          node scripts/verify-speech.cjs
           node scripts/verify-exam-teacher.cjs
           node scripts/verify-exam-playback.mjs
           node scripts/verify-learning.cjs
@@ -55,6 +57,7 @@ jobs:
         run: |
           node online-server/build.mjs
           node online-server/tests/server.test.mjs
+          node online-server/tests/speech.test.mjs
           node online-server/tests/daily.test.mjs
           node online-server/tests/contests.test.mjs
           node online-server/tests/learning.test.mjs

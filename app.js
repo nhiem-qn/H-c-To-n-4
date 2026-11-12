@@ -76,6 +76,7 @@ function waitForVoices(){
  return new Promise(resolve=>{let until=Date.now()+1500;function poll(){getVoices();if(voices.length||Date.now()>=until){fillVoices();resolve(voices)}else setTimeout(poll,100)}poll()})
 }
 async function say(text,force=false,override=null,audition=false){
+ if(!audition&&typeof MIAReader!=='undefined'){if(!state.audio&&!force)return;stopSpeech();return MIAReader.speak(text)}
  if(!('speechSynthesis'in window)){toast('Trình duyệt này chưa hỗ trợ đọc giọng. Em đọc phần chữ nhé.');return}
  if(!state.audio&&!force)return;
  let request=++speechRequest;pauseTeacherRecording();speechSynthesis.cancel();await waitForVoices();if(request!==speechRequest)return;
@@ -91,7 +92,7 @@ async function say(text,force=false,override=null,audition=false){
  })
 }
 function testVoice(){previewedVoiceURI='';updateVoiceHelp();return say('Chào em, cô là Mi A! Hôm nay mình cùng khám phá Toán lớp bốn nhé. Chưa hiểu thì cứ hỏi cô, mình sẽ thử từng bước một.',true,$('#voiceSelect').value,true)}
-function stopSpeech(){if(typeof MIAStudio!=='undefined')MIAStudio.stop();speechRequest++;pauseTeacherRecording();if('speechSynthesis'in window)speechSynthesis.cancel();if($('#readStatus'))$('#readStatus').textContent='Đã dừng đọc.'}
+function stopSpeech(){if(typeof MIAReader!=='undefined')MIAReader.stop();if(typeof MIAStudio!=='undefined')MIAStudio.stop();speechRequest++;pauseTeacherRecording();if('speechSynthesis'in window)speechSynthesis.cancel();if($('#readStatus'))$('#readStatus').textContent='Đã dừng đọc.'}
 function pauseTeacherRecording(){if(teacherAudio){let old=teacherAudio;teacherAudio=null;old.pause();old.removeAttribute('src');old.load()}}
 function playTeacherRecording(path,fallback){
  stopSpeech();let request=speechRequest,audio=new Audio(path),failed=false;teacherAudio=audio;
@@ -106,7 +107,7 @@ function readShortGuide(){if(window.MIAAccess&&!MIAAccess.require())return;let d
 function addMessage(text,child=false){messages.push({text,child});if(messages.length>60)messages.shift();renderMessages();if(!child)say(text)}
 function renderMessages(){let el=$('#messages');el.innerHTML=messages.map((m,i)=>`<div class="bubble ${m.child?'child':''}">${esc(m.text)}${!m.child?`<br><button class="btn secondary" onclick="say(messages[${i}].text,true)">▶ Nghe lại</button>`:''}</div>`).join('');el.scrollTop=el.scrollHeight}
 function toggleChat(open){if(open!==false&&window.MIAAccess&&!MIAAccess.require())return;let el=$('#chat');let show=typeof open==='boolean'?open:el.classList.contains('hidden');el.classList.toggle('hidden',!show);$('#chatLaunch').setAttribute('aria-expanded',String(show));if(show){if(!messages.length)addMessage(`Chào ${state.name}! Cô Mi A đây 🌷. Em có thể hỏi “giảng lại”, “ví dụ”, “gợi ý”, hoặc nhờ “cô hỏi em”. Mình đang xem ngày ${currentDay}.`);$('#chatInput').focus()}}
-async function ask(input){if(window.MIAAccess&&!MIAAccess.require())return;toggleChat(true);let text=String(input).trim();if(!text)return;addMessage(text,true);let n=normal(text),l=LESSONS[DAYS[currentDay-1].lesson-1],g=G[l.key];if(chatQuestion&&!/giang|vidu|goiy|bai|hoi|khonghieu|chao|dung/.test(n)){let ok=correct(spokenAnswer(text),chatQuestion.answer);addMessage(ok?'Đúng rồi, em giỏi lắm! '+chatQuestion.why:'Cảm ơn em đã thử! Đáp án là '+chatQuestion.answer+'. '+chatQuestion.why+' Mình đọc lại rồi thử một câu khác nhé.');chatQuestion=null;return}
+async function ask(input){if(typeof MIAReader!=='undefined')MIAReader.unlock();if(window.MIAAccess&&!MIAAccess.require())return;toggleChat(true);let text=String(input).trim();if(!text)return;addMessage(text,true);let n=normal(text),l=LESSONS[DAYS[currentDay-1].lesson-1],g=G[l.key];if(chatQuestion&&!/giang|vidu|goiy|bai|hoi|khonghieu|chao|dung/.test(n)){let ok=correct(spokenAnswer(text),chatQuestion.answer);addMessage(ok?'Đúng rồi, em giỏi lắm! '+chatQuestion.why:'Cảm ơn em đã thử! Đáp án là '+chatQuestion.answer+'. '+chatQuestion.why+' Mình đọc lại rồi thử một câu khác nhé.');chatQuestion=null;return}
 if(/giang|lythuyet|khonghieu|chuahieu|vidu|lammau|visao|thucte|doisong/.test(n)){let day=location.hash.startsWith('#lesson/')?currentDay:MIALearning.context(state,LESSONS,DAYS).day,intent=/visao/.test(n)?'why':/thucte|doisong/.test(n)?'real-life':/vidu|lammau/.test(n)?'example':'simpler';let reply=await MIAAdvisor.chat(day,intent);if(reply)addMessage(reply.text);return}
 if(/dung|imlang/.test(n)){stopSpeech();addMessage('Cô đã dừng. Khi muốn học tiếp, em nhắn cô nhé.');stopSpeech();return}
 if(/giang|lythuyet|khonghieu|chuahieu/.test(n))addMessage('Mình cùng đi chậm lại nhé! '+g.rule+'\n'+g.steps.map((s,i)=>(i+1)+'. '+s).join('\n'));
