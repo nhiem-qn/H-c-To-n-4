@@ -55,6 +55,7 @@ jobs:
           node online-server/tests/learning.test.mjs
           node online-server/tests/rewards.test.mjs
           node online-server/tests/student-terms.test.mjs
+          node online-server/tests/trials.test.mjs
           node online-server/tests/advisor.test.mjs
           node online-server/tests/social.test.mjs
           node online-server/tests/weekend-sessions.test.mjs

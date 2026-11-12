@@ -20,6 +20,7 @@ jobs:
           node --check app.js
           node --check voices.js
           node --check online.js
+          node --check trial.js
           node --check rewards.js
           node --check exam-teacher.js
           node --check exam-audio.js
@@ -65,6 +66,7 @@ jobs:
           node online-server/tests/learning.test.mjs
           node online-server/tests/rewards.test.mjs
           node online-server/tests/student-terms.test.mjs
+          node online-server/tests/trials.test.mjs
           node online-server/tests/advisor.test.mjs
           node online-server/tests/social.test.mjs
           node online-server/tests/weekend-sessions.test.mjs

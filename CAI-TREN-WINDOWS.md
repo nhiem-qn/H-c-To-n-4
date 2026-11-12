@@ -26,3 +26,5 @@ Khi mở ứng dụng, con nhập **tên và mã riêng do admin cấp**. Khách
 Nếu báo cổng 8000 đang bận, đóng cửa sổ MIA cũ rồi mở lại. Nếu vẫn bận, mở Terminal trong thư mục và chạy `runtime\python.exe CHAY-TREN-MAY.py 8001`. Địa chỉ mới sẽ là `http://127.0.0.1:8001/` và có vùng lưu tiến độ khách riêng.
 
 Bộ chạy Python bên thứ ba được giữ nguyên, kèm tệp LICENSE. Windows có thể hỏi trước khi mở tệp tải từ Internet; chỉ mở gói từ đúng kho `nhiem-qn/H-c-To-n-4`.
+
+Nút **Nhập tên bé · Học thử 1 tuần** cho phép tạo hồ sơ học thử trong 7 ngày, cần Internet để xác minh và lưu tiến độ. Dùng lại cùng trình duyệt để học tiếp. Admin có thể gia hạn hồ sơ học thử và cấp mã riêng, giữ nguyên tiến độ.

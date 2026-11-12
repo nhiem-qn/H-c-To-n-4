@@ -23,8 +23,8 @@ jobs:
           GH_REPO: ${{ github.repository }}
           RELEASE_COMMIT: ${{ github.sha }}
         run: |
-          if gh release view windows-portable-2026-11-12-speech >/dev/null 2>&1; then
-            gh release upload windows-portable-2026-11-12-speech /tmp/mia-windows/MIA-Windows-Portable.zip /tmp/mia-windows/SHA256.txt --clobber
+          if gh release view windows-portable-2026-11-12-trial >/dev/null 2>&1; then
+            gh release upload windows-portable-2026-11-12-trial /tmp/mia-windows/MIA-Windows-Portable.zip /tmp/mia-windows/SHA256.txt --clobber
           else
-            gh release create windows-portable-2026-11-12-speech /tmp/mia-windows/MIA-Windows-Portable.zip /tmp/mia-windows/SHA256.txt --target "$RELEASE_COMMIT" --title "Học Toán cùng MIA · Bản chạy local trên Windows" --notes-file CAI-TREN-WINDOWS.md
+            gh release create windows-portable-2026-11-12-trial /tmp/mia-windows/MIA-Windows-Portable.zip /tmp/mia-windows/SHA256.txt --target "$RELEASE_COMMIT" --title "Học Toán cùng MIA · Bản chạy local trên Windows" --notes-file CAI-TREN-WINDOWS.md
           fi
