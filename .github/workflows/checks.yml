@@ -22,6 +22,7 @@ jobs:
           node --check online.js
           node --check trial.js
           node --check rewards.js
+          node --check parent-insights.js
           node --check exam-teacher.js
           node --check exam-audio.js
           node --check learning.js
@@ -57,6 +58,7 @@ jobs:
           node scripts/verify-exam-playback.mjs
           node scripts/verify-learning.cjs
           node scripts/verify-advisor.cjs
+          node scripts/verify-parent-insights.cjs
           node scripts/verify-teaching.cjs
           node scripts/verify-self-tests.cjs
           node scripts/verify-lesson-visuals.cjs
@@ -71,6 +73,7 @@ jobs:
           node online-server/tests/contests.test.mjs
           node online-server/tests/learning.test.mjs
           node online-server/tests/rewards.test.mjs
+          node online-server/tests/parent-report.test.mjs
           node online-server/tests/student-terms.test.mjs
           node online-server/tests/trials.test.mjs
           node online-server/tests/advisor.test.mjs
