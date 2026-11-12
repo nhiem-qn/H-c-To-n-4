@@ -26,6 +26,7 @@ jobs:
           node --check admin-advisor.js
           node --check friends.js
           node --check access.js
+          node --check lesson-visuals.js
           node --check self-tests.js
           node --check admin-chat.js
           node --check lesson-studio.js
@@ -47,6 +48,7 @@ jobs:
           node scripts/verify-learning.cjs
           node scripts/verify-advisor.cjs
           node scripts/verify-self-tests.cjs
+          node scripts/verify-lesson-visuals.cjs
           node scripts/verify-studio-player.mjs
           node scripts/verify-studio-content.cjs
       - name: Kiểm tra máy chủ và hai học sinh online
