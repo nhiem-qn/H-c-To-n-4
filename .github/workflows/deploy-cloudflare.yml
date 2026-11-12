@@ -43,6 +43,7 @@ jobs:
           node scripts/verify-exam-playback.mjs
           node scripts/verify-learning.cjs
           node scripts/verify-advisor.cjs
+          node scripts/verify-teaching.cjs
           node scripts/verify-self-tests.cjs
           node scripts/verify-lesson-visuals.cjs
           node scripts/verify-studio-player.mjs
