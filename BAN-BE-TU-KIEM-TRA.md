@@ -24,7 +24,7 @@ Các chặng ngày/tuần/tháng/quý/giữa kỳ/học kỳ có nhãn **Ngày �
 
 ## Năm buổi cuối tuần
 
-Thứ Bảy và Chủ nhật có **9h, 11h, 15h, 17h, 20h**. Đây là giờ mở phòng; chờ vào lớp 1 phút rồi bắt đầu. Bốn buổi đầu là đề ôn tuần 10 câu, tự chuyển câu/chốt kết quả. Buổi 20h giữ lịch sẵn có: thứ Bảy thi ngày, Chủ nhật thi tuần hoặc phòng thay thế do admin đã lên lịch. Chủ nhật chỉ thông báo năm buổi tự động, không hiện thêm bài thi ngày song song lúc 20h. Những phòng admin tạo riêng vẫn có thể xuất hiện thêm ngoài lịch tự động.
+Thứ Bảy và Chủ nhật có **9h, 11h, 15h, 17h, 20h**. Đây là giờ mở phòng; chờ vào lớp 5 phút rồi bắt đầu. Bốn buổi đầu là đề ôn tuần 10 câu, tự chuyển câu/chốt kết quả. Buổi 20h giữ lịch sẵn có: thứ Bảy thi ngày, Chủ nhật thi tuần hoặc phòng thay thế do admin đã lên lịch. Chủ nhật chỉ thông báo năm buổi tự động, không hiện thêm bài thi ngày song song lúc 20h. Những phòng admin tạo riêng vẫn có thể xuất hiện thêm ngoài lịch tự động.
 
 Bé rảnh buổi nào thì bấm tham gia buổi đó, không cần mã cho phòng tự động và không bị trừ điểm vì bỏ qua. Chuông/thông báo trong ứng dụng cần ứng dụng đang mở và người dùng đã bật chuông; không có push khi đóng trình duyệt.
 

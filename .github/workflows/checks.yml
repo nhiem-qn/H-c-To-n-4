@@ -24,6 +24,7 @@ jobs:
           node --check rewards.js
           node --check parent-insights.js
           node --check exam-teacher.js
+          node --check exam-lobby.js
           node --check exam-audio.js
           node --check learning.js
           node --check advisor-core.js
@@ -55,6 +56,7 @@ jobs:
           node scripts/verify-voices.cjs
           node scripts/verify-speech.cjs
           node scripts/verify-exam-teacher.cjs
+          node scripts/verify-exam-lobby.cjs
           node scripts/verify-exam-playback.mjs
           node scripts/verify-learning.cjs
           node scripts/verify-advisor.cjs
@@ -70,6 +72,7 @@ jobs:
           node online-server/tests/server.test.mjs
           node online-server/tests/speech.test.mjs
           node online-server/tests/daily.test.mjs
+          node online-server/tests/lobby.test.mjs
           node online-server/tests/contests.test.mjs
           node online-server/tests/learning.test.mjs
           node online-server/tests/rewards.test.mjs

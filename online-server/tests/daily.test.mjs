@@ -13,7 +13,7 @@ try{
  await f.call('/api/daily/join','POST',{},ta,409);await f.call('/api/daily/join','POST',{},null,401);
  clock+=1000;let tasks=[];await worker.scheduled({scheduledTime:clock},f.env,{waitUntil:p=>tasks.push(p)});await Promise.all(tasks);
  const [da,db]=await Promise.all([f.call('/api/daily'),f.call('/api/daily')]);assert.equal(da.code,db.code);assert.equal(da.status,'waiting');assert.equal(f.sql.prepare('SELECT COUNT(*) n FROM daily_exams').get().n,1);
- const [ra,rb]=await Promise.all([f.call('/api/daily/join','POST',{},ta),f.call('/api/daily/join','POST',{},tb)]);assert.equal(ra.room.code,rb.room.code);assert.equal(ra.room.automatic,true);assert.equal(ra.room.startsAt,Date.parse('2026-11-11T20:01:00+07:00'));
+ const [ra,rb]=await Promise.all([f.call('/api/daily/join','POST',{},ta),f.call('/api/daily/join','POST',{},tb)]);assert.equal(ra.room.code,rb.room.code);assert.equal(ra.room.automatic,true);assert.equal(ra.room.startsAt,Date.parse('2026-11-11T20:05:00+07:00'));
  const code=ra.room.code;await f.call('/api/admin/rooms/'+code+'/start','POST',{},admin.token,409);
  clock=da.startsAt;let snap=await f.call('/api/rooms/'+code+'/heartbeat','POST',{},ta);assert.equal(snap.room.status,'running');assert.equal(snap.room.index,0);assert(!('answer' in snap.question));assert(!('hint' in snap.question),'do not expose a hint before half time');assert.equal(snap.room.deadline,clock+60000);
  const qs=JSON.parse(f.sql.prepare('SELECT questions FROM rooms WHERE code=?').get(code).questions);
