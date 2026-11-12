@@ -46,6 +46,18 @@ class LocalTests(unittest.TestCase):
         self.assertEqual(self.request('/api/presence', 'POST', '{}')[0], 403)
         self.assertEqual(self.request('/assets/')[0], 403)
 
+    def test_audio_ranges_allow_sentence_seek(self):
+        file = '/assets/audio/readings/67623a3062fd64494a.mp3'
+        original = (mia.ROOT / file.lstrip('/')).read_bytes()
+        for requested, expected in [('bytes=10-29', original[10:30]), ('bytes=-32', original[-32:]), ('bytes=20-', original[20:])]:
+            status, data = self.request(file, headers={'Range': requested})
+            self.assertEqual(status, 206)
+            self.assertEqual(data, expected)
+        self.assertEqual(self.request(file, headers={'Range': 'bytes=99999999-'})[0], 416)
+        self.assertEqual(self.request(file, headers={'Range': 'bytes=0-1,5-7'})[0], 416)
+        self.assertEqual(self.request(file, 'HEAD', headers={'Range': 'bytes=0-19'}), (206, b''))
+        self.assertEqual(self.request(file), (200, original))
+
     def test_fixed_upstream_and_token_preserved(self):
         class Response:
             status = 200

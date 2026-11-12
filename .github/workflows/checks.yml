@@ -45,6 +45,8 @@ jobs:
           node --check data.js
           node --check guides.js
           node --check questions.js
+      - name: Kiểm tra âm thanh khi chạy local
+        run: python3 scripts/verify-local.py
       - name: Kiểm tra chương trình và ngân hàng câu hỏi
         run: node scripts/verify-content.cjs
       - name: Kiểm tra giọng nữ và âm thanh bài giảng

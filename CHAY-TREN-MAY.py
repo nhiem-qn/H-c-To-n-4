@@ -4,6 +4,7 @@ from pathlib import Path
 from urllib.request import Request, build_opener, HTTPRedirectHandler
 from urllib.error import HTTPError, URLError
 import json
+import re
 import sys
 import webbrowser
 
@@ -67,6 +68,69 @@ class MIAHandler(SimpleHTTPRequestHandler):
             self.send_bytes(error.code, error.read(), error.headers.get('Content-Type', 'application/json'))
         except (URLError, TimeoutError, OSError):
             self.send_bytes(503, json.dumps({'error': 'Chưa kết nối được máy chủ online. Em vẫn có thể học và tự luyện trên máy.'}, ensure_ascii=False).encode(), 'application/json; charset=utf-8')
+
+    def send_head(self):
+        # Audio needs byte ranges so Chrome can resume at the next sentence.
+        self._audio_remaining = None
+        path = Path(self.translate_path(self.path))
+        if path.suffix.lower() != '.mp3' or not path.is_file():
+            return super().send_head()
+        if not path.resolve().is_relative_to(ROOT):
+            self.send_error(403)
+            return None
+        size = path.stat().st_size
+        start, end, status = 0, size - 1, 200
+        requested = self.headers.get('Range') if not self.headers.get('If-Range') else None
+        if requested:
+            match = re.fullmatch(r'bytes=(\d*)-(\d*)', requested.strip())
+            try:
+                if not match or not any(match.groups()):
+                    raise ValueError()
+                left, right = match.groups()
+                if left:
+                    start = int(left)
+                    end = min(int(right), size - 1) if right else size - 1
+                else:
+                    tail = int(right)
+                    if tail <= 0:
+                        raise ValueError()
+                    start = max(0, size - tail)
+                if start >= size or start > end:
+                    raise ValueError()
+            except ValueError:
+                self.send_response(416)
+                self.send_header('Content-Range', f'bytes */{size}')
+                self.send_header('Content-Length', '0')
+                self.end_headers()
+                return None
+            status = 206
+        try:
+            audio = path.open('rb')
+        except OSError:
+            self.send_error(404)
+            return None
+        audio.seek(start)
+        self._audio_remaining = max(0, end - start + 1)
+        self.send_response(status)
+        self.send_header('Content-Type', 'audio/mpeg')
+        self.send_header('Accept-Ranges', 'bytes')
+        self.send_header('Content-Length', str(self._audio_remaining))
+        self.send_header('X-Content-Type-Options', 'nosniff')
+        if status == 206:
+            self.send_header('Content-Range', f'bytes {start}-{end}/{size}')
+        self.end_headers()
+        return audio
+
+    def copyfile(self, source, outputfile):
+        remaining = getattr(self, '_audio_remaining', None)
+        if remaining is None:
+            return super().copyfile(source, outputfile)
+        while remaining:
+            chunk = source.read(min(65536, remaining))
+            if not chunk:
+                break
+            outputfile.write(chunk)
+            remaining -= len(chunk)
 
     def do_GET(self):
         if not self.local_request():
