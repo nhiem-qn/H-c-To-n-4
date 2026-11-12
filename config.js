@@ -2,6 +2,6 @@
 window.MIA_SERVER_CONFIG = {
   "apiUrl": "https://mia-online.mia-nhiem-qn-13c091.workers.dev",
   "mode": "standalone",
-  "appUrl": "https://nhiem-qn.github.io/H-c-To-n-4/",
+  "appUrl": "https://nhiem-qn.github.io/",
   "adminUsername": "admin"
 };

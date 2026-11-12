@@ -1,5 +1,5 @@
 import {LESSONS,DAYS,makeExam,makeRangeExam,correct,numeric} from './bank.js';
-const DEFAULT_APP='https://nhiem-qn.github.io/H-c-To-n-4/';
+const DEFAULT_APP='https://nhiem-qn.github.io/';
 function appUrl(env){return String(env.APP_URL||DEFAULT_APP).replace(/\/?$/,'/')}
 function standalone(env){return env.AUTH_MODE!=='sites'}
 const LIMIT=40,ONLINE_MS=22000,SESSION_MS=7*86400000;

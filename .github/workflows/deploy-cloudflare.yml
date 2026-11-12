@@ -80,7 +80,7 @@ jobs:
           MIA_ADMIN_PASSWORD: ${{ secrets.MIA_ADMIN_PASSWORD }}
           MIA_ADMIN_USERNAME: ${{ vars.MIA_ADMIN_USERNAME || 'admin' }}
           MIA_WORKER_NAME: ${{ vars.MIA_WORKER_NAME || 'mia-online' }}
-          MIA_APP_URL: ${{ vars.MIA_APP_URL }}
+          MIA_APP_URL: https://nhiem-qn.github.io/
           WRANGLER_SEND_METRICS: 'false'
         run: npm run deploy:cloudflare
       - name: Cập nhật máy chủ công khai của giao diện GitHub

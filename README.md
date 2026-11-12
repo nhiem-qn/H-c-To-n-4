@@ -4,9 +4,9 @@
 
 ## Các đường dẫn đang dùng
 
-- Ứng dụng: https://nhiem-qn.github.io/H-c-To-n-4/
-- Vào lớp / thi online: https://nhiem-qn.github.io/H-c-To-n-4/#online
-- Trang admin trên GitHub Pages: https://nhiem-qn.github.io/H-c-To-n-4/admin.html
+- Ứng dụng: https://nhiem-qn.github.io/
+- Vào lớp / thi online: https://nhiem-qn.github.io/#online
+- Trang admin trên GitHub Pages: https://nhiem-qn.github.io/admin.html
 - Triển khai độc lập: [DEPLOY-CLOUDFLARE.md](DEPLOY-CLOUDFLARE.md)
 
 Admin bản độc lập đăng nhập bằng tên và mật khẩu riêng. Mật khẩu được băm trên máy chủ; quyền được kiểm tra ở API, không dựa vào việc ẩn nút trên giao diện. GitHub Actions triển khai Worker + D1 vào tài khoản Cloudflare của bạn, không cần Codex/ChatGPT chạy. Trong lúc chưa chuyển, cấu hình `mode: legacy` giữ máy chủ cũ để không làm mất dữ liệu. Học sinh chỉ cần tên và mã riêng do admin cấp; mã được băm trên máy chủ, chỉ hiển thị một lần khi cấp hoặc đặt lại.
@@ -134,3 +134,5 @@ Phần “Nghe cô giảng, nhìn cô viết” mặc định đọc ở 0,85×;
 Báo cáo học tập cho phụ huynh: mục cài đặt “Dành cho phụ huynh” được ẩn, đường dẫn cũ #settings chuyển đến #parents. Báo cáo dùng chữ 14px, phần chú thích 12px, khung cuộn và mục mở rộng từng bài/từng câu. Phân tích theo tháng hoặc toàn bộ thời gian được chọn, dựa trên câu đã trả lời của bài tự kiểm tra và thi online đã công bố; không dùng lượt xem hoặc câu đang thi. Gộp câu trùng, ưu tiên kết quả máy chủ, phân biệt nguồn tự kiểm tra. Cần ít nhất 3 câu khác nhau để nhận xét phần cần ôn (đúng dưới 60%); ít nhất 5 câu, đúng từ 80% và chưa giảm gần đây mới ghi nhận điểm mạnh trong các câu đã làm. Nhắc phụ huynh ôn đúng chủ đề, khen nỗ lực, đủ bốn bước, nghỉ khi mệt và không so sánh trẻ. Đây là phân tích theo quy tắc, không gửi dữ liệu cá nhân đến AI bên ngoài. Phân tích online lấy tối đa 5.000 câu đã công bố trong khoảng chọn, độc lập với phân trang 40 cuộc thi.
 
 Thi tự động: nhắc trước giờ mở phòng 5 phút, nhắc lúc mở, chờ bạn 5 phút rồi bắt đầu theo đồng hồ máy chủ. Ví dụ 19:55 nhắc, 20:00 mở, 20:05 làm bài; cuối tuần tương tự từng khung 9/11/15/17/20h. Nhắc có tiếng cần bật chuông và giữ ứng dụng mở; không phải thông báo đẩy khi trình duyệt đã đóng. Lời chào đọc tên hiển thị của thành viên vừa vào, có hàng đợi và dừng khi vào câu hỏi. Riêng lời chào được phép dùng tên hiển thị theo yêu cầu của chủ ứng dụng: máy chủ lấy tên từ phòng đang tham gia và gửi đến dịch vụ đọc tiếng Việt, không gửi mã, hồ sơ hay hội thoại; AI phân tích bài học vẫn không nhận tên. Hướng dẫn giữa giờ mỗi câu chỉ mở ở nửa thời gian, không lộ đáp án. Phòng admin điều khiển tay vẫn do admin bắt đầu; phòng hẹn giờ mở trước câu hỏi 5 phút.
+
+Địa chỉ ngắn được xuất bản tại kho `nhiem-qn/nhiem-qn.github.io`. Mã ứng dụng và cộng tác vẫn ở `nhiem-qn/H-c-To-n-4`; kho website tự kiểm tra và đồng bộ khi có mã mới theo lịch khoảng 15 phút của GitHub. Có thể chạy Actions “Xuất bản Học Toán cùng MIA” ở kho website để cập nhật ngay. Trang cũ `https://nhiem-qn.github.io/H-c-To-n-4/` tiếp tục dùng chung máy chủ và tài khoản.
