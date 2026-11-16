@@ -82,6 +82,7 @@ jobs:
           node online-server/tests/advisor.test.mjs
           node online-server/tests/social.test.mjs
           node online-server/tests/weekend-sessions.test.mjs
+          node online-server/tests/daytime-sessions.test.mjs
           node online-server/tests/standalone.test.mjs
           node online-server/tests/cloudflare-onboarding.test.mjs
           node scripts/verify-online-client.mjs

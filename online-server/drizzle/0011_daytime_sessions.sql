@@ -1,0 +1,1 @@
+CREATE TABLE daytime_sessions(slot_date TEXT NOT NULL,minute INTEGER NOT NULL CHECK(minute BETWEEN 450 AND 1050 AND (minute-450)%10=0),room_code TEXT NOT NULL UNIQUE REFERENCES rooms(code),PRIMARY KEY(slot_date,minute));

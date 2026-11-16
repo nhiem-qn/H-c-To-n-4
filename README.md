@@ -138,3 +138,13 @@ Thi tự động: nhắc trước giờ mở phòng 5 phút, nhắc lúc mở, c
 Địa chỉ ngắn được xuất bản tại kho `nhiem-qn/nhiem-qn.github.io`. Mã ứng dụng và cộng tác vẫn ở `nhiem-qn/H-c-To-n-4`; kho website tự kiểm tra và đồng bộ khi có mã mới theo lịch khoảng 15 phút của GitHub. Có thể chạy Actions “Xuất bản Học Toán cùng MIA” ở kho website để cập nhật ngay. Trang cũ `https://nhiem-qn.github.io/H-c-To-n-4/` tiếp tục dùng chung máy chủ và tài khoản.
 
 Nút **Thoát tài khoản** nằm cạnh tên học sinh trên mọi trang sau khi xác minh đăng nhập. Thoát đóng quyền học ngay trên thiết bị, dừng giọng đọc/micro, rời phòng thi và trở về đăng nhập; máy chủ được yêu cầu lưu phần tiến độ đang chờ rồi thu hồi phiên cũ. Lịch sử và tiến độ riêng được giữ. Khi mất mạng, ứng dụng vẫn xóa đăng nhập tại máy; việc thu hồi phía máy chủ cần kết nối. Phản hồi xác minh hoặc vào phòng đến muộn không khôi phục tài khoản đã thoát.
+
+### Vui học ban ngày (giờ Việt Nam)
+
+- Thứ Hai–thứ Sáu: mở lượt mới mỗi 10 phút, từ 07:30 đến 17:30, không cần mã phòng. Chờ bạn 5 phút; 10 câu × (45 giây làm + 8 giây xem đáp án). Lượt cuối được thi đến hết giờ. Phòng chồng thời gian để luôn có lượt trong khung giờ.
+- Mỗi lượt: 7 câu Toán từ ngày 1–90 (toàn bộ tập 1/học kỳ I) + 3 câu đố hình ảnh/từ ngữ/quy luật; 60 câu đố có hình, đáp án và gợi ý đã kiểm tra. Đây là hoạt động bổ trợ, không thay thế SGK.
+- Cô đọc câu đố bằng bản ghi âm nữ, nhắc gợi ý giữa giờ; đáp án chỉ công bố hết giờ. Kết quả và hình được lưu trong báo cáo riêng của phụ huynh. Câu đố không dùng để kết luận điểm mạnh/yếu môn Toán.
+- Lượt vui học không cộng vào bảng điểm thi chính thức. Giữ lịch buổi tối và 5 buổi cuối tuần. Chuông các lượt ban ngày chỉ nhắc khi mở mục thi online để không ngắt bài học.
+- Máy chủ tạo các lượt đang mở/tiếp theo khi có yêu cầu lịch thi hoặc cron; không tạo sẵn toàn bộ 61 lượt/ngày khi không có người dùng. Migration D1 `0011_daytime_sessions.sql`, dữ liệu lịch được sao lưu/khôi phục cùng ứng dụng.
+
+Kiểm tra thay đổi: `node online-server/build.mjs`, `node online-server/tests/daytime-sessions.test.mjs`, các kiểm tra máy chủ hiện có, `node scripts/verify-speech.cjs`. Kiểm tra giao diện tùy chọn có Playwright/Chromium: `node scripts/verify-daytime-browser.cjs`. Ảnh giao diện máy tính và điện thoại ở `docs/screenshots/daytime-contests/`.
