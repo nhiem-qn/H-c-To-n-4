@@ -1,6 +1,6 @@
 const MIAOnline=(()=>{
  const API=String(window.MIA_SERVER_CONFIG?.apiUrl||'').replace(/\/+$/,'');
- let authEpoch=0;let verified=false,accessPhase='guest';let auth=null,room=null,snapshot=null,pollTimer=null,view3d=null,loading=false,busy=false,clockOffset=0,feedClockOffset=0,syncTimer=null,lastSyncError=0,generation=0,selected=null,roomVersion=0;
+ const progressWrites=new Set();let authEpoch=0;let verified=false,accessPhase='guest';let auth=null,room=null,snapshot=null,pollTimer=null,view3d=null,loading=false,busy=false,clockOffset=0,feedClockOffset=0,syncTimer=null,lastSyncError=0,generation=0,selected=null,roomVersion=0;
  try{auth=JSON.parse(localStorage.getItem('mia-online-session')||'null')}catch{}if(auth?.token)accessPhase='checking';
  let daily=null,dailyLoading=false,dailyTimer=null,bellContext=null,bellEnabled=false,lastBellDate='',dailyWakeTimer=null,contestEvents=[],pendingInvite=null,announced=new Set();
  const coach=typeof ExamCoach!=='undefined'?ExamCoach.create():null;let teacherEnabled=true,teacherCue='',teacherLine='Cô Mi A sẽ đọc đề và đồng hành cùng em.',teacherPhase='ready';
@@ -25,7 +25,7 @@ const MIAOnline=(()=>{
  async function init(){let revision=++authEpoch;verified=false;let logoutButton=$('#logoutAccountButton');if(logoutButton)logoutButton.hidden=true;accessPhase=auth?.token?'checking':'guest';if(window.MIAAccess&&typeof route==='function')route();refreshDaily();clearInterval(dailyTimer);dailyTimer=setInterval(refreshDaily,15000);if(!auth?.token)return;try{let d=await api('me');if(revision!==authEpoch||!auth)return;auth.student=d.student;await loadProgress();if(revision!==authEpoch)return;verified=true;accessPhase='member';recordAuth();window.MIATrial?.update(auth.student,d.serverTime);redraw();if(location.hash.split('/')[0]!=='#online')route();let invite=new URLSearchParams(location.search).get('event');if(invite)await joinContest(invite);else if(new URLSearchParams(location.search).get('daily')==='1')await joinDaily()}catch(e){if(revision!==authEpoch)return;verified=false;if(e.status===401){auth=null;accessPhase='guest';recordAuth()}else accessPhase='unavailable';if(typeof route==='function')route();status(e.status===401?e.message:'Chưa xác minh được tài khoản. Con kiểm tra Internet rồi thử lại nhé.')}}
 
  async function logout(){
-  let departing=auth,oldRoom=room,pending=syncTimer!==null,payload=pending&&auth?JSON.parse(JSON.stringify(state)):null;
+  let departing=auth,oldRoom=room,writes=[...progressWrites].filter(w=>w.token===auth?.token).map(w=>w.promise),pending=syncTimer!==null,payload=(pending||writes.length)&&auth?JSON.parse(JSON.stringify(state)):null;
   authEpoch++;clearTimeout(syncTimer);syncTimer=null;busy=false;loading=false;verified=false;accessPhase='guest';auth=null;room=null;roomVersion++;stopPolling();destroyScene();snapshot=null;pendingInvite=null;stopSpeech();
   if(typeof recognition!=='undefined'&&recognition){recognition.abort();recognition=null}
   recordAuth();storageKey='vuontoan4-v1';let guest=null;try{guest=JSON.parse(localStorage.getItem(storageKey)||'null')}catch{}
@@ -33,8 +33,9 @@ const MIAOnline=(()=>{
   if(!departing?.token)return;
   async function send(path,method,data){let controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),5000);try{return await fetch(API+'/api/'+path,{method,headers:{Authorization:'Bearer '+departing.token,'Content-Type':'application/json'},body:JSON.stringify(data||{}),cache:'no-store',signal:controller.signal,keepalive:path!=='progress'})}finally{clearTimeout(timeout)}}
   // Local access is already closed; finish saving and revoke only the old token.
-  if(payload)try{await send('progress','PUT',{progress:payload})}catch{}
   if(oldRoom)try{await send('rooms/'+oldRoom+'/leave','POST',{})}catch{}
+  await Promise.allSettled(writes);
+  if(payload)try{await send('progress','PUT',{progress:payload})}catch{}
   try{await send('logout','POST',{})}catch{}
  }
 
@@ -84,7 +85,7 @@ const MIAOnline=(()=>{
  async function joinDaily(forceDaily=false){let revision=authEpoch;if(typeof MIAExamLobby!=='undefined')MIAExamLobby.unlock();if(busy)return;let preferred=preferredEvent();if(!forceDaily&&preferred?.canJoin&&preferred.id!=='daily')return joinContest(preferred.id);if(typeof ExamTeacher!=='undefined')ExamTeacher.unlock();if(!auth?.token){pendingInvite='daily';location.hash='#online';redraw();toast('Em đăng nhập bằng tên và mã riêng một lần để vào thi.');return}if(room){if(snapshot?.room.contestType==='daily')return;toast('Em hãy rời phòng hiện tại trước khi vào bài thi ngày.');return}busy=true;try{let d=await api('daily/join','POST',{});if(revision!==authEpoch||!auth)return;snapshot=d;clockOffset=d.serverTime-Date.now();room=d.room.code;roomVersion++;selected=null;stopSpeech();location.hash='#online';redraw();startPolling();renderDailyNotice()}catch(e){if(revision!==authEpoch)return;toast(e.message);if(e.status===401){auth=null;recordAuth();location.hash='#online';redraw()}}finally{if(revision===authEpoch)busy=false}}
  window.addEventListener('focus',refreshDaily);
  window.addEventListener('storage',event=>{if(event.key!=='mia-online-session'||event.newValue!==null||!auth?.token)return;try{if(JSON.parse(event.oldValue||'null')?.token===auth.token)expireSession('Tài khoản đã thoát ở cửa sổ khác. Con đăng nhập lại để vào học nhé.')}catch{}});
- function queueProgress(value){if(!auth?.token)return;clearTimeout(syncTimer);const id=auth.student.id,payload=JSON.parse(JSON.stringify(value));syncTimer=setTimeout(async()=>{if(!auth||auth.student.id!==id)return;try{await api('progress','PUT',{progress:payload})}catch(e){if(Date.now()-lastSyncError>30000){lastSyncError=Date.now();toast('Tiến độ đã lưu trên máy; chưa đồng bộ được lên máy chủ.')}}},900)}
+ function queueProgress(value){if(!auth?.token)return;clearTimeout(syncTimer);const id=auth.student.id,token=auth.token,payload=JSON.parse(JSON.stringify(value));syncTimer=setTimeout(async()=>{syncTimer=null;if(!auth||auth.student.id!==id||auth.token!==token)return;let write={token,promise:null};write.promise=api('progress','PUT',{progress:payload}).catch(()=>{if(auth?.token===token&&Date.now()-lastSyncError>30000){lastSyncError=Date.now();toast('Tiến độ đã lưu trên máy; chưa đồng bộ được lên máy chủ.')}}).finally(()=>progressWrites.delete(write));progressWrites.add(write);await write.promise},900)}
  window.addEventListener('pagehide',()=>{if(room&&auth?.token)fetch(API+'/api/rooms/'+room+'/leave',{method:'POST',headers:{Authorization:'Bearer '+auth.token,'Content-Type':'application/json'},body:'{}',keepalive:true}).catch(()=>{})});
  return{request:api,startTrial:data=>login({preventDefault(){},submitter:{disabled:false},target:document.getElementById('trialForm'),trialData:data}),endTrial:()=>{expireSession('Con đã học thử đủ 7 ngày. Hãy nhờ phụ huynh liên hệ admin cấp mã để tiếp tục và giữ tiến độ nhé.')},voiceAudio:text=>api('voice','POST',{text},true),isLoggedIn:()=>verified&&!!auth?.token,accessState:()=>accessPhase,signInAgain:()=>expireSession('Con nhập tên và mã riêng để vào học nhé.'),render,mount,init,logout,join,joinDaily,joinContest,enableBell,refreshDaily,repeatQuestion,toggleTeacher,leave,answer,beforeRoute,queueProgress,adminUrl:new URL('admin.html',document.baseURI||'https://nhiem-qn.github.io/H-c-To-n-4/').href}
 })();
