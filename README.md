@@ -148,3 +148,7 @@ Nút **Thoát tài khoản** nằm cạnh tên học sinh trên mọi trang sau 
 - Máy chủ tạo các lượt đang mở/tiếp theo khi có yêu cầu lịch thi hoặc cron; không tạo sẵn toàn bộ các lượt trong ngày khi không có người dùng. Migration D1 `0011_daytime_sessions.sql` và `0012_daytime_extended.sql`, dữ liệu lịch được sao lưu/khôi phục cùng ứng dụng.
 
 Kiểm tra thay đổi: `node online-server/build.mjs`, `node online-server/tests/daytime-sessions.test.mjs`, các kiểm tra máy chủ hiện có, `node scripts/verify-speech.cjs`. Kiểm tra giao diện tùy chọn có Playwright/Chromium: `node scripts/verify-daytime-browser.cjs`. Ảnh giao diện máy tính và điện thoại ở `docs/screenshots/daytime-contests/`.
+
+### Tự vào phòng thi 3D
+
+Tài khoản đã xác minh, khi mở `#online`, được tự xếp vào phòng đang mở và cho vào trực tiếp. Ưu tiên phòng đang chờ bắt đầu, rồi phòng thi chính trước lượt vui học; nếu chỉ có phòng đang thi thì vào phòng đó. Không tự vào phòng dùng mã hoặc thay thế lời mời phòng cụ thể. Chưa có phòng thì xem lịch và tự vào khi phòng mở trong lúc vẫn ở mục thi. Rời phòng sẽ giữ con ở trang lịch; chuyển sang mục khác rồi quay lại mới bật tự vào lần nữa. Phản hồi đến chậm sau khi đổi mục/thoát tài khoản không đưa con trở lại phòng và chỗ ngồi đã nhận được giải phóng. Khi trình duyệt chặn âm thanh tự phát, con có thể bấm “Nghe lại đề” để bật giọng cô.
